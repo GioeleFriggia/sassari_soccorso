@@ -33,10 +33,157 @@
   }
 }
 
-.card {
-  padding: 2em;
+/* HomePage.css */
+.navbar-space {
+  height: 60px; /* Altezza dello spazio vuoto sopra il carosello */
 }
 
-.read-the-docs {
-  color: #888;
+.card-row .col {
+  display: flex;
+  padding: 15px; /* Optional: adjust spacing between cards */
+}
+
+.uniform-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures all cards are the same height */
+}
+
+.uniform-card .card-img-top {
+  width: 100%; /* Ensures the image covers the width */
+  height: 340px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures the image covers the space without distorting */
+}
+
+.uniform-card .card-body {
+  flex-grow: 1;
+}
+/* styles/AboutPage.css */
+
+/* Stile per l'immagine */
+/* Aggiunto nel tuo file CSS globale o specifico per la pagina */
+.h1-margin-top {
+  margin-top: 50px;
+  margin-bottom: -80px; /* Aumenta questo valore a seconda dell'altezza della tua navbar */
+}
+
+.about-img {
+  width: 100%; /* Assicura che l'immagine occupi l'intera larghezza del suo contenitore */
+  height: auto; /* Impedisce che l'immagine si deformi */
+  margin-top: 90px; /* Spazio sopra l'immagine */
+  margin-bottom: 20px; /* Spazio sotto l'immagine */
+}
+
+/* Stile per il contenuto */
+.about-content {
+  text-align: justify; /* Allinea il testo a giustificato per una migliore leggibilità */
+  margin-bottom: 20px; /* Spazio sotto il contenuto */
+}
+
+/* Stile per l'header */
+.about-content h1 {
+  color: #333; /* Colore del testo */
+  font-size: 24px; /* Dimensione del carattere */
+  margin-bottom: 10px; /* Spazio sotto l'header */
+}
+
+/* Stile per il paragrafo */
+.about-content p {
+  color: #666; /* Colore del testo */
+  font-size: 16px; /* Dimensione del carattere */
+}
+.blue-text {
+  color: blue;
+}
+
+.orange-text {
+  color: orange;
+}
+
+/* DoveSiamo.css */
+.dove-siamo-container {
+  padding: 70px;
+}
+
+.dove-siamo-mappa {
+  height: 500px;
+
+  width: 100%;
+  margin-top: 50px; /* Aumenta questo valore per spostare la mappa più in basso */
+}
+
+.dove-siamo-testo {
+  margin-top: 20px;
+}
+.gradient-button {
+  background: linear-gradient(to right, blue, rgb(255, 0, 0));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+@keyframes pulse-blue {
+  0%,
+  100% {
+    background-color: red;
+  }
+  50% {
+    background: blue; /* L'intero sfondo diventa blu */
+  }
+}
+
+.gradient-button {
+  animation: pulse-blue 3s infinite ease-in-out;
+  background: linear-gradient(to right, blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+@media (max-width: 600px) {
+  .dove-siamo-container {
+    padding: 15px;
+    margin-top: 25px;
+  }
+
+  .dove-siamo-mappa {
+    height: 250px;
+  }
+
+  .gradient-button {
+    padding: 8px 16px;
+  }
+
+  .dove-siamo-testo {
+    font-size: 13px; /* Riduci la dimensione del testo per i display più piccoli */
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  /* Modifica la classe blue-text per applicare il colore blu a tutti i testi */
+  /* CSS per dispositivi mobili */
+  @media (max-width: 767px) {
+    .flex-column .nav-link {
+      text-align: center;
+    }
+  }
+
+  /* CSS per schermi più grandi */
+  @media (min-width: 768px) {
+    .flex-column .nav-link {
+      text-align: left;
+    }
+  }
 }

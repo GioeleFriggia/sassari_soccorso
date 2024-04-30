@@ -1,0 +1,118 @@
+import React from "react";
+import { Card, Row, Col } from "react-bootstrap";
+
+const Formazione = () => {
+  // Array aggiornato di colori per le cards con i 10 colori pastello
+  const colors = [
+    "#AEC6CF", // Pastello Cielo
+    "#FDBCB4", // Pastello Melone
+    "#E3F6C3", // Pastello Lime
+    "#E6E6FA", // Pastello Lavanda Chiaro
+    "#F5F5DC", // Pastello Beige
+    "#FED8B1", // Pastello Arancio Chiaro
+    "#E0B0FF", // Pastello Malva
+    "#AFEEEE", // Pastello Turchese Chiaro
+    "#FFFACD", // Pastello Limone
+    "#FFD1DC", // Pastello Rosa (corretto da Marrone Chiaro)
+  ];
+
+  const courses = {
+    "Corsi Ambito Sanitario": [
+      {
+        title: "Corso di Primo Soccorso",
+        description: "Impara i principi generali del primo soccorso.",
+      },
+      {
+        title: "Corso sui Dispositivi di Protezione Individuali (DPI)",
+        description: "Conosci l'importanza e l'uso corretto dei DPI.",
+      },
+      {
+        title: "Corso sui Presidi Sanitari",
+        description: "Scopri come utilizzare i vari presidi sanitari.",
+      },
+      {
+        title: "Corso sul Vano Sanitario",
+        description: "Apprendi l'organizzazione e l'uso del vano sanitario.",
+      },
+      {
+        title: "Corso di Affiancamento",
+        description: "Un periodo di valutazione e integrazione di sei mesi.",
+      },
+      {
+        title: "Corso di guida sicura",
+        description:
+          "Impara a migliorare la propria sicurezza e qualità di guida.",
+      },
+    ],
+    "Corsi di Protezione Civile": [
+      {
+        title: "ANTICENDIO BOSCHIVO",
+        description:
+          "Corso A.I.B impara le tecniche e la sicurezza per il lavoro di anticendio boschivo.",
+      },
+      {
+        title: "OPERATIVITÀ SPECIALE",
+        description:
+          "Addetto logistica campi tendati; operatore di motosega; operatore motopompe; movimentazione terra; movimentazione mezzi speciali;",
+      },
+      {
+        title: "SOCIO SANITARIO E VETERINARIO",
+        description: "Operatore da campo; assistenza veterinaria;",
+      },
+      {
+        title: "RADIO AMATORIALE",
+        description:
+          "Operatore radio Protezione Civile, Operatore Radio avanzato.",
+      },
+    ],
+  };
+
+  return (
+    <div className="mt-5">
+      <h2 className="mt-4">FORMAZIONE</h2>
+      <img className="d-block w-100" src="/formazione.webp" alt="First slide" />
+      <p className="mt-4">
+        Sassari Soccorso da sempre ha riposto particolare attenzione alla
+        formazione dei suoi volontari...
+      </p>
+      <hr className="mt-5" />
+
+      {Object.entries(courses).map(([category, cards], idx) => (
+        <>
+          <h3 className="mt-4">{category}:</h3>
+          <Row xs={1} md={2} lg={3} className="g-4">
+            {cards.map((course, index) => (
+              <CustomCard
+                key={index}
+                style={{
+                  backgroundColor: colors[index % colors.length],
+                  borderColor: colors[index % colors.length],
+                }}
+                title={course.title}
+                description={course.description}
+              />
+            ))}
+          </Row>
+          <hr />
+        </>
+      ))}
+
+      <hr className="mt-5" />
+    </div>
+  );
+};
+
+const CustomCard = ({ style, title, description }) => {
+  return (
+    <Col>
+      <Card style={{ ...style, height: "100%" }}>
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{description}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+  );
+};
+
+export default Formazione;
