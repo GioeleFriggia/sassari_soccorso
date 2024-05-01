@@ -186,4 +186,46 @@
       text-align: left;
     }
   }
+  /* Formazione.css */
+  .center-text {
+    text-align: center;
+  }
+
+  /* circle icons navbar */
+
+  .profile-icon {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-icon .bi-person-circle {
+    background: blue;
+    color: rgb(34, 32, 30);
+    border-radius: 50%;
+    padding: 2px;
+  }
+
+  /* personIcon Navbar */
+  @media (max-width: 768px) {
+    .navbar-collapse {
+      justify-content: center;
+    }
+
+    .profile-icon {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .profile-icon .bi-person-circle {
+      background: orange;
+      color: blue;
+      border-radius: 50%;
+      padding: 2px;
+    }
+  }
 }

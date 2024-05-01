@@ -71,12 +71,16 @@ const Formazione = () => {
     <div className="mt-5">
       <h2 className="mt-4">FORMAZIONE</h2>
       <img className="d-block w-100" src="/formazione.webp" alt="First slide" />
-      <p className="mt-4">
+      <p className="mt-4 text-justify">
         Sassari Soccorso da sempre ha riposto particolare attenzione alla
-        formazione dei suoi volontari...
+        formazione dei suoi volontari i quali prima dell’inserimento effettivo,
+        partecipano ad un corso full immersion per l’acquisizione dei principi
+        generali del primo soccorso e la conoscenza dei DPI, dei presidi e del
+        vano sanitario. A questa prima formazione segue un periodo di
+        affiancamento di sei mesi atti alla valutazione e all’integrazione del
+        nuovo socio soccorritore.
       </p>
       <hr className="mt-5" />
-
       {Object.entries(courses).map(([category, cards], idx) => (
         <>
           <h3 className="mt-4">{category}:</h3>
@@ -93,7 +97,6 @@ const Formazione = () => {
               />
             ))}
           </Row>
-          <hr />
         </>
       ))}
 
@@ -105,7 +108,7 @@ const Formazione = () => {
 const CustomCard = ({ style, title, description }) => {
   return (
     <Col>
-      <Card style={{ ...style, height: "100%" }}>
+      <Card style={{ ...style, height: "100%", textAlign: "center" }}>
         <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>

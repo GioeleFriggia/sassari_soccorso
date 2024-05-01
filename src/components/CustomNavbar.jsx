@@ -8,12 +8,7 @@ const CustomNavbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
-  const handleNavbarToggle = (isOpen) => {
-    setIsDropdownOpen(isOpen);
-  };
-
-  const handleDropdownItemClick = (event) => {
-    event.stopPropagation();
+  const handleDropdownItemClick = () => {
     setIsDropdownOpen(false);
     setIsServicesDropdownOpen(false);
   };
@@ -25,7 +20,7 @@ const CustomNavbar = () => {
           <img src="/public/logo.jpeg" width="120" height="50" alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" onToggle={handleNavbarToggle}>
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Item className="my-1">
               <Link
@@ -33,7 +28,7 @@ const CustomNavbar = () => {
                 className="nav-link"
                 onClick={handleDropdownItemClick}
               >
-                <div>Home</div>
+                Home
               </Link>
             </Nav.Item>
             <Nav.Item className="my-1">
@@ -42,7 +37,7 @@ const CustomNavbar = () => {
                 className="nav-link"
                 onClick={handleDropdownItemClick}
               >
-                <div>Chi siamo</div>
+                Chi siamo
               </Link>
             </Nav.Item>
             <Nav.Item className="my-1">
@@ -51,7 +46,7 @@ const CustomNavbar = () => {
                 className="nav-link"
                 onClick={handleDropdownItemClick}
               >
-                <div>Dove siamo</div>
+                Dove siamo
               </Link>
             </Nav.Item>
             <Nav.Item className="my-1">
@@ -60,80 +55,91 @@ const CustomNavbar = () => {
                 className="nav-link"
                 onClick={handleDropdownItemClick}
               >
-                <div>Formazione</div>
+                Formazione
               </Link>
             </Nav.Item>
-            <Nav.Item className="my-2 ">
-              <Dropdown
-                align="end"
-                show={isServicesDropdownOpen}
-                onMouseEnter={() => setIsServicesDropdownOpen(true)}
-                onMouseLeave={() => setIsServicesDropdownOpen(false)}
-              >
-                <Dropdown.Toggle
-                  variant="transparent"
-                  style={{
-                    border: "none",
-                    background: "transparent",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
+            <Dropdown
+              show={isServicesDropdownOpen}
+              onMouseEnter={() => setIsServicesDropdownOpen(true)}
+              onMouseLeave={() => setIsServicesDropdownOpen(false)}
+              align="end"
+            >
+              <Dropdown.Toggle variant="transparent" className="nav-link my-1">
+                Servizi
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item
+                  as={Link}
+                  to="/servizi/soccorso"
+                  onClick={handleDropdownItemClick}
                 >
-                  <div>Servizi</div>
-                  <div style={{ marginLeft: "auto" }}>&nbsp;</div>
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    as={Link}
-                    to="/soccorso"
-                    onClick={handleDropdownItemClick}
-                  >
-                    Soccorso
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    as={Link}
-                    to="/protezione-civile"
-                    onClick={handleDropdownItemClick}
-                  >
-                    Protezione Civile
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    as={Link}
-                    to="servizio-civile"
-                    onClick={handleDropdownItemClick}
-                  >
-                    Servizio Civile
-                  </Dropdown.Item>
-                  <Dropdown.Item
-                    as={Link}
-                    to="/solidarietà"
-                    onClick={handleDropdownItemClick}
-                  >
-                    Solidarietà
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Nav.Item>
+                  Soccorso
+                </Dropdown.Item>
+                <Dropdown.Item
+                  as={Link}
+                  to="/servizi/protezione-civile"
+                  onClick={handleDropdownItemClick}
+                >
+                  Protezione Civile
+                </Dropdown.Item>
+                <Dropdown.Item
+                  as={Link}
+                  to="/servizi/servizio-civile"
+                  onClick={handleDropdownItemClick}
+                >
+                  Servizio Civile
+                </Dropdown.Item>
+                <Dropdown.Item
+                  as={Link}
+                  to="/servizi/solidarietà"
+                  onClick={handleDropdownItemClick}
+                >
+                  Solidarietà
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </Nav>
           <Nav className="justify-content-end">
             <Dropdown
-              align="end"
               show={isDropdownOpen}
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
+              align="end"
             >
               <Dropdown.Toggle
                 variant="transparent"
-                style={{
-                  border: "none",
-                  background: "transparent",
-                  cursor: "pointer",
-                }}
+                className="profile-icon"
+                style={{ display: "flex", alignItems: "center" }}
               >
-                <PersonCircle size={24} />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: "50%",
+                    backgroundColor: "orange",
+                    width: "35px",
+                    height: "35px",
+                  }}
+                >
+                  <PersonCircle size={30} style={{ color: "blue" }} />
+                </div>
               </Dropdown.Toggle>
               <Dropdown.Menu>
+                <Dropdown.Item
+                  as={Link}
+                  to="/login"
+                  onClick={handleDropdownItemClick}
+                >
+                  Login
+                </Dropdown.Item>
+                <Dropdown.Item
+                  as={Link}
+                  to="/sing-in"
+                  onClick={handleDropdownItemClick}
+                >
+                  Sing In
+                </Dropdown.Item>
                 <Dropdown.Item
                   as={Link}
                   to="/profile"
@@ -141,15 +147,12 @@ const CustomNavbar = () => {
                 >
                   Profilo
                 </Dropdown.Item>
-                <Dropdown.Divider />
                 <Dropdown.Item
-                  href="#settings"
+                  as={Link}
+                  to="privacy-policy"
                   onClick={handleDropdownItemClick}
                 >
-                  Impostazioni e privacy
-                </Dropdown.Item>
-                <Dropdown.Item href="#help" onClick={handleDropdownItemClick}>
-                  Guida
+                  Privacy and Policy
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

@@ -7,8 +7,8 @@ const HomePage = () => {
     <div>
       {/* Spazio vuoto sopra il carosello */}
       <div className="navbar-space"></div>
-      <Carousel interval={3000} wrap={true}>
-        <Carousel.Item className="mt-4 m-3">
+      <Carousel interval={1000} wrap={false}>
+        <Carousel.Item className="mt-5 m-3">
           <img
             className="d-block w-100"
             src="/foto1carosel.webp"
