@@ -12,23 +12,18 @@ const ProtezioneCivile = () => {
           alt="Immagine Protezione Civile"
         />
         <p>
-          Il soccorso sanitario si occupa delle emergenze in ambito ospedaliero
-          e non. In Sardegna è gestito da AREUS (Azienda Regionale Emergenza
-          Urgenza Sardegna) che come mission ha quella di garantire, gestire e
-          rendere omogeneo nel territorio della Sardegna il soccorso sanitario
-          di emergenza-urgenza territoriale. Dovrà gestire, oltre al 118 con
-          l'elisoccorso, anche il servizio di trasporto del sangue, i trasporti
-          secondari tempo dipendenti e coadiuvare le attività connesse con i
-          trapianti mettendo a disposizione la logistica. Sassari Soccorso ormai
-          da più di 30 anni si è inserita in questo ambito come associazione di
-          volontariato che tra i suoi servizi annota anche il soccorso
-          sanitario. Per poter garantire il soccorso sanitario ha nel suo parco
-          macchine diversi veicoli di base. Il servizio viene svolto da soci
-          volontari in possesso delle certificazioni PBLSD, BLSD E PTC. Durante
-          i servizi di soccorso, garantisce la presenza di un autista
-          soccorritore e di due soccorritori qualificati che affiancano un
-          quarto soccorritore, nuovo volontario, nell’apprendimento e nella
-          crescita.
+          La Protezione Civile racchiude in se tutte le attività di soccorso,
+          fuori dal campo sanitario, devolute alla tutela della popolazione e
+          del ripristino delle funzioni di base delle aree colpite da calamità
+          di varia natura. Essa è articolata in ambito Comunale, Regionale e
+          Nazionale. Sassari Soccorso, afferendo alla rete di coordinamento
+          ANPAS, ed essendo iscritta negli elenchi regionali della Protezione
+          Civile, concentra le proprie forze in tutti questi campi, lavorando
+          sinergicamente con altre associazioni nel campo dell’operatività
+          speciale e antincendio tutela l’integrità di tutti. Il volontario di
+          Protezione Civile racchiude in se tutte quelle competenze proprie di
+          un vero e proprio lavoro, mettendole a disposizione di tutti in caso
+          di necessità.
         </p>
       </div>
     </Container>

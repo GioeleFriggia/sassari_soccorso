@@ -1,21 +1,40 @@
 import React from "react";
 import { Carousel, Card, Row, Col } from "react-bootstrap";
-import "../App.css"; // Assicurati che il percorso del file CSS sia corretto
+import "../App.css";
 
 const HomePage = () => {
+  const cardsData = [
+    {
+      title: "Family Friendly Fest ",
+      description:
+        "Anche quest'anno Sassari Soccorso è presente al Family Fest. L'evento dedicato alle famiglie e al loro benessere.",
+      image: "/card1homepage.webp",
+    },
+    {
+      title: "ModEx 2023",
+      description:
+        "Esercitazione di protezione civile Europea. Simulazione di un area terremotata nelle Marche.",
+      image: "/card2homepahe.webp",
+    },
+    {
+      title: "Wrc Rally Italia Sardegna 2023",
+      description:
+        "I nostri volontari vanno in pista... In prima linea pronti a dare una mano.",
+      image: "/car3homepage.webp",
+    },
+  ];
+
   return (
-    <div>
-      {/* Spazio vuoto sopra il carosello */}
-      <div className="navbar-space"></div>
-      <Carousel interval={1000} wrap={false}>
-        <Carousel.Item className="mt-5 m-3">
+    <div className="page-container mt-5">
+      <Carousel interval={3000} wrap={true} className="fade-in mt-5 ">
+        {/* Enhanced carousel items */}
+        <Carousel.Item>
           <img
             className="d-block w-100"
             src="/foto1carosel.webp"
             alt="First slide"
           />
         </Carousel.Item>
-
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -31,51 +50,26 @@ const HomePage = () => {
           />
         </Carousel.Item>
       </Carousel>
-      <hr />
-      <h3>
-        <span class="blue-text">
+
+      <h3 className="text-center fade-in-up mt-2 mb-2">
+        <span className="blue-text">
           Solidarietà in azione: volontari al tuo fianco
         </span>
-        <span class="orange-text"> in ogni momento di bisogno.</span>
+        <span className="orange-text mx-1 "> in ogni momento di bisogno.</span>
       </h3>
 
       <Row className="mt-4 card-row">
-        <Col md={4}>
-          <Card className="uniform-card">
-            <Card.Img variant="top" src="/card1homepage.webp" />
-            <Card.Body>
-              <Card.Title>Family Friendly Fest</Card.Title>
-              <Card.Text>
-                Anche quest'anno Sassari Soccorso è presente al Family Friendly
-                Fest. L'evento dedicato alle famiglie e al loro benessere.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4}>
-          <Card className="uniform-card">
-            <Card.Img variant="top" src="/card2homepahe.webp" />
-            <Card.Body>
-              <Card.Title>ModEx 2023</Card.Title>
-              <Card.Text>
-                Esercitazione di protezione civile Europea. Simulazione di
-                un'area terremotata nelle Marche.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4}>
-          <Card className="uniform-card">
-            <Card.Img variant="top" src="/car3homepage.webp" />
-            <Card.Body>
-              <Card.Title>Wrc Rally Italia Sardegna 2023</Card.Title>
-              <Card.Text>
-                I nostri volontari vanno in pista... In prima linea pronti a
-                dare una mano.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+        {cardsData.map((card, idx) => (
+          <Col md={4} key={idx}>
+            <Card className="uniform-card fade-in-up">
+              <Card.Img variant="top" src={card.image} />
+              <Card.Body>
+                <Card.Title as="h4">{card.title}</Card.Title>
+                <Card.Text as="p">{card.description}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </div>
   );

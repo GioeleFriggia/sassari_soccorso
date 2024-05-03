@@ -1,12 +1,13 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import "../App.css"; // Ensure the CSS path is correct
 
 const CustomFooter = () => {
   return (
-    <footer className="bg-white text-dark text-center py-4 foot  ">
+    <footer className="text-center py-4 mt-5 foot">
       <Container>
         <Row className="mb-4">
-          <Col>
+          <Col xs={12} sm={4}>
             <i className="bi bi-facebook me-3 icon"></i>
             <i className="bi bi-twitter me-3 icon"></i>
             <i className="bi bi-instagram me-3 icon"></i>
@@ -14,41 +15,54 @@ const CustomFooter = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={12} sm={4}>
             <ul className="list-unstyled">
-              <li>Audio and Subtitles</li>
-              <li>Audio Description</li>
-              <li>Help Center</li>
-              <li>Gift Cards</li>
+              <li>Home</li>
+              <li>Chi siamo</li>
+              <li>Dove siamo</li>
+              <li>Formazione</li>
             </ul>
           </Col>
-          <Col>
-            <ul className="list-unstyled">
-              <li>Media Center</li>
-              <li>Investor Relations</li>
-              <li>Jobs</li>
-              <li>Terms of Use</li>
-            </ul>
-          </Col>
-          <Col>
+          <Col xs={12} sm={4}>
             <ul className="list-unstyled">
               <li>Privacy</li>
-              <li>Legal Notices</li>
-              <li>Cookie Preferences</li>
-              <li>Corporate Information</li>
+              <li>Telefono: 123456789</li>
+              <li>Email: gioelefriggia@hotmail.com</li>
             </ul>
           </Col>
-          <Col>
+          <Col xs={12} sm={4}>
             <ul className="list-unstyled">
-              <li>Contact Us</li>
+              <li>
+                <img
+                  src="/facebook.png"
+                  alt="Facebook"
+                  className="social-icon me-3"
+                  width="24"
+                  height="24"
+                />
+                <img
+                  src="/instagram.png"
+                  alt="Instagram"
+                  className="social-icon me-3"
+                  width="24"
+                  height="24"
+                />
+                <img
+                  src="/whatsapp.png"
+                  alt="Whatsapp"
+                  className="social-icon me-3"
+                  width="24"
+                  height="24"
+                />
+              </li>
             </ul>
           </Col>
         </Row>
         <hr className="my-4" />
         <Row>
-          <Col>
-            <p className="mb-2">Gioele Code</p>
-            <p>&copy; 1997-2019 Netflix, Inc.</p>
+          <Col xs={12}>
+            <p className="mb-2">Sassari Soccorso</p>
+            <p>&copy; Gioele Friggia</p>
           </Col>
         </Row>
       </Container>

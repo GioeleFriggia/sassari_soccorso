@@ -7,19 +7,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const CustomNavbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false); // Aggiunto per controllare l'espansione della navbar
 
+  // Aggiornata per gestire anche la chiusura della navbar
   const handleDropdownItemClick = () => {
     setIsDropdownOpen(false);
     setIsServicesDropdownOpen(false);
+    setIsExpanded(false); // Chiude la navbar quando un elemento viene cliccato
   };
 
   return (
-    <Navbar bg="light" expand="lg" className="shadow-sm fixed-top">
+    <Navbar
+      bg="light"
+      expand="lg"
+      className="shadow-sm fixed-top"
+      expanded={isExpanded} // Controllato dallo stato
+    >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" onClick={handleDropdownItemClick}>
           <img src="/public/logo.jpeg" width="120" height="50" alt="Logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => setIsExpanded(!isExpanded)}
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Item className="my-1">
@@ -135,10 +146,10 @@ const CustomNavbar = () => {
                 </Dropdown.Item>
                 <Dropdown.Item
                   as={Link}
-                  to="/sing-in"
+                  to="/sign-in"
                   onClick={handleDropdownItemClick}
                 >
-                  Sing In
+                  Sign In
                 </Dropdown.Item>
                 <Dropdown.Item
                   as={Link}
@@ -152,7 +163,7 @@ const CustomNavbar = () => {
                   to="privacy-policy"
                   onClick={handleDropdownItemClick}
                 >
-                  Privacy and Policy
+                  Privacy Policy
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

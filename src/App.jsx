@@ -11,11 +11,11 @@ import ServizioCivile from "./components/componentsServizi/ServizioCivile";
 import ProtezioneCivile from "./components/componentsServizi/ProtezioneCivile";
 import Soccorso from "./components/componentsServizi/Soccorso";
 import Solidarietà from "./components/componentsServizi/Solidarietà";
-import ProfileLogin from "./components/ProfileLogin";
-import LoginPage from "../src/components/componentsPofileLogin/LoginPage";
-import SignInPage from "../src/components/componentsPofileLogin/SingnInPage";
-import ProfilePage from "../src/components/componentsPofileLogin/ProfilePage";
-import PolicyPrivacy from "../src/components/componentsPofileLogin/PolicyPrivacy";
+import Login from "./components/componentsLogin/Login";
+import SignIn from "./components/componentsLogin/SingIn";
+import Profile from "./components/componentsLogin/Profile";
+import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy"; // Correzione del nome file se necessario
+import LoginProfile from "./components/LoginProfile";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
           <Route path="/chi-siamo" element={<AboutPage />} />
           <Route path="/dove-siamo" element={<DoveSiamo />} />
           <Route path="/formazione" element={<Formazione />} />
-          <Route path="/servizi" element={<Servizi />} />
+          <Route path="/servizi" element={<Soccorso />} />
           <Route
             path="/servizi/protezione-civile"
             element={<ProtezioneCivile />}
@@ -35,13 +35,15 @@ function App() {
           <Route path="/servizi/servizio-civile" element={<ServizioCivile />} />
           <Route path="/servizi/soccorso" element={<Soccorso />} />
           <Route path="/servizi/solidarietà" element={<Solidarietà />} />
-          <Route path="/profile-login" element={<ProfileLogin />}>
-            <Route path="login" element={<LoginPage />} />
-            <Route path="sign-in" element={<SignInPage />} />
-            <Route path="profile" element={<ProfilePage />} />
-            <Route path="privacy-policy" element={<PolicyPrivacy />} />
-          </Route>
+
+          {/* Nuove rotte per i componenti di login e profilo */}
+          <Route path="/loginprofile" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
+
         <CustomFooter />
       </div>
     </BrowserRouter>

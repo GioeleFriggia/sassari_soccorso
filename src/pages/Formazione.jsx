@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Row, Col } from "react-bootstrap";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Formazione = () => {
-  // Array aggiornato di colori per le cards con i 10 colori pastello
   const colors = [
-    "#AEC6CF", // Pastello Cielo
-    "#FDBCB4", // Pastello Melone
-    "#E3F6C3", // Pastello Lime
-    "#E6E6FA", // Pastello Lavanda Chiaro
-    "#F5F5DC", // Pastello Beige
-    "#FED8B1", // Pastello Arancio Chiaro
-    "#E0B0FF", // Pastello Malva
-    "#AFEEEE", // Pastello Turchese Chiaro
-    "#FFFACD", // Pastello Limone
-    "#FFD1DC", // Pastello Rosa (corretto da Marrone Chiaro)
+    "#AEC6CF",
+    "#FDBCB4",
+    "#E3F6C3",
+    "#E6E6FA",
+    "#F5F5DC",
+    "#FED8B1",
+    "#E0B0FF",
+    "#AFEEEE",
+    "#FFFACD",
+    "#FFD1DC",
   ];
 
   const courses = {
@@ -67,10 +68,27 @@ const Formazione = () => {
     ],
   };
 
+  const [ref, inView] = useInView({ threshold: 0.5 });
+  const [animationTriggered, setAnimationTriggered] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (inView && !animationTriggered) {
+        setAnimationTriggered(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [inView, animationTriggered]);
+
   return (
     <div className="mt-5">
       <h2 className="mt-4">FORMAZIONE</h2>
-      <img className="d-block w-100" src="/formazione.webp" alt="First slide" />
+      <img className="d-block w-100" src="/formazione.webp" alt="Formazione" />
       <p className="mt-4 text-justify">
         Sassari Soccorso da sempre ha riposto particolare attenzione alla
         formazione dei suoi volontari i quali prima dell’inserimento effettivo,
@@ -81,25 +99,36 @@ const Formazione = () => {
         nuovo socio soccorritore.
       </p>
       <hr className="mt-5" />
-      {Object.entries(courses).map(([category, cards], idx) => (
-        <>
-          <h3 className="mt-4">{category}:</h3>
-          <Row xs={1} md={2} lg={3} className="g-4">
-            {cards.map((course, index) => (
-              <CustomCard
-                key={index}
-                style={{
-                  backgroundColor: colors[index % colors.length],
-                  borderColor: colors[index % colors.length],
-                }}
-                title={course.title}
-                description={course.description}
-              />
-            ))}
-          </Row>
-        </>
-      ))}
-
+      <div ref={ref}>
+        <AnimatePresence>
+          {animationTriggered && (
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {Object.entries(courses).map(([category, cards], idx) => (
+                <React.Fragment key={idx}>
+                  <h3 className="mt-4">{category}:</h3>
+                  <Row xs={1} md={2} lg={3} className="g-4">
+                    {cards.map((course, index) => (
+                      <Col key={index}>
+                        <CustomCard
+                          style={{
+                            backgroundColor: colors[index % colors.length],
+                          }}
+                          title={course.title}
+                          description={course.description}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                </React.Fragment>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
       <hr className="mt-5" />
     </div>
   );
@@ -107,14 +136,12 @@ const Formazione = () => {
 
 const CustomCard = ({ style, title, description }) => {
   return (
-    <Col>
-      <Card style={{ ...style, height: "100%", textAlign: "center" }}>
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
+    <Card style={style} className="h-100">
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
