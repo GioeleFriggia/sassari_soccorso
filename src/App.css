@@ -1,3 +1,9 @@
+/* body {
+  background-image: url("/public/backgrond.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -424,4 +430,6 @@ h3 span {
       margin-bottom: 5px; /* Reduce bottom margin */
     }
   }
+
+  /* profile */
 }

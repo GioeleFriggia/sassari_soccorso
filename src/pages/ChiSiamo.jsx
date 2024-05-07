@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import "../App.css"; // Importa il file CSS per le personalizzazioni
+import "../App.css";
 
 const AboutPage = () => {
   return (
@@ -8,7 +8,7 @@ const AboutPage = () => {
       <h1 className="h1-margin-top">Chi Siamo</h1>
       <div className="about-content">
         <img
-          className="about-img mb-3" // Aggiungi le classi per lo spaziamento
+          className="about-img mb-3"
           src="./Chisiamo.jpeg"
           alt="Immagine Chi Siamo"
         />

@@ -54,6 +54,12 @@ function SignIn() {
           <input type="text" className="form-control" id="exampleInputCity" />
         </div>
         <div className="mb-3">
+          <label htmlFor="exampleInputCity" className="form-label">
+            Numero di tessera
+          </label>
+          <input type="text" className="form-control" id="exampleInputCity" />
+        </div>
+        <div className="mb-3">
           <label htmlFor="exampleInputEmail" className="form-label">
             Indirizzo Email
           </label>

@@ -1,21 +1,78 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Image, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faBirthdayCake,
+  faHome,
+  faCity,
+  faIdCard,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 function ProfilePage() {
   return (
     <Container className="mt-5">
       <Row>
-        <Col md={8} className="offset-md-2">
-          <Card>
+        <Col xs={12} md={10} lg={8} xl={6} className="mx-auto">
+          <Card className="shadow-lg p-3 p-md-5">
             <Card.Body>
-              <Card.Title>Informazioni Utente</Card.Title>
-              <Card.Text>
-                <strong>Nome:</strong> John Doe <br />
-                <strong>Email:</strong> john.doe@example.com <br />
-                <strong>Data di Nascita:</strong> 01/01/1990 <br />
-                <strong>Residenza:</strong> New York <br />
-                <strong>Città di Residenza:</strong> New York City <br />
+              <div className="text-center mb-3">
+                <Image
+                  src="/public/logo2.jpg"
+                  className="img-fluid"
+                  alt="logo"
+                  style={{ maxWidth: "50%", marginBottom: "20px" }}
+                />
+              </div>
+              <Card.Title
+                className="text-center"
+                style={{ fontSize: "1.5rem", marginBottom: "20px" }}
+              >
+                Informazioni Profilo
+              </Card.Title>
+              <Card.Text as="div">
+                {[
+                  { icon: faUser, label: "Nome", value: "John" },
+                  { icon: faUser, label: "Cognome", value: "Doe" },
+                  {
+                    icon: faBirthdayCake,
+                    label: "Data di Nascita",
+                    value: "01/01/1990",
+                  },
+                  { icon: faHome, label: "Residenza", value: "New York" },
+                  {
+                    icon: faCity,
+                    label: "Città di Residenza",
+                    value: "New York City",
+                  },
+                  {
+                    icon: faEnvelope,
+                    label: "Email",
+                    value: "john.doe@example.com",
+                  },
+                  {
+                    icon: faIdCard,
+                    label: "Numero di Tessera",
+                    value: "123456789",
+                  },
+                ].map((item, index) => (
+                  <div key={index} className="mb-3 d-flex align-items-center">
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      style={{ fontSize: "1rem", marginRight: "10px" }}
+                    />
+                    <span>
+                      <strong>{item.label}:</strong> {item.value}
+                    </span>
+                  </div>
+                ))}
               </Card.Text>
+              <div className="text-center mt-5">
+                <Button variant="primary" href="/volunteers">
+                  Vai alla Pagina dei Volontari
+                </Button>
+              </div>
             </Card.Body>
           </Card>
         </Col>
