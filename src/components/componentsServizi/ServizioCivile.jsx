@@ -3,8 +3,8 @@ import { Container } from "react-bootstrap";
 
 const ServizioCivile = () => {
   return (
-    <Container>
-      <h1 className="h1-margin-top">Servizio Civile Nazionale</h1>
+    <Container style={{ marginTop: "5rem" }}>
+      <h1>Servizio Civile Nazionale</h1>
       <div className="about-content">
         <img
           className="about-img mb-3"

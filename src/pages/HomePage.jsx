@@ -26,7 +26,8 @@ const HomePage = () => {
 
   return (
     <div className="page-container mt-5">
-      <Carousel interval={3000} wrap={true} className="fade-in mt-5 ">
+      {/* Aggiungi un margine superiore al carosello */}
+      <Carousel interval={3000} wrap={true} className="fade-in mt-5">
         {/* Enhanced carousel items */}
         <Carousel.Item>
           <img
@@ -50,14 +51,12 @@ const HomePage = () => {
           />
         </Carousel.Item>
       </Carousel>
-
       <h3 className="text-center fade-in-up mt-2 mb-2">
         <span className="blue-text">
           Solidarietà in azione: volontari al tuo fianco
         </span>
         <span className="orange-text mx-1 "> in ogni momento di bisogno.</span>
       </h3>
-
       <Row className="mt-4 card-row">
         {cardsData.map((card, idx) => (
           <Col md={4} key={idx}>

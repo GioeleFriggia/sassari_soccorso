@@ -1,9 +1,4 @@
-/* body {
-  background-image: url("/public/backgrond.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
+/* General Styles */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -14,12 +9,13 @@
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,35 +35,61 @@
   }
 }
 
-/* HomePage.css */
-
-/* General Page Styling */
+/* Aggiungilo qui */
 .page-container {
-  font-family: "Arial", sans-serif; /* Clean, modern font */
-  /* background: linear-gradient(
-    to right,
-    #faf8fc 0%,
-    #6697ebcd 100%
-  ); /* Vibrant gradient background */
-  /* color: #ffffff;
-  overflow-x: hidden; */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  height: 100vh; /* Altezza fissa a tutto schermo */
+  box-sizing: border-box; /* Considera il padding e il bordo nell'altezza totale */
+}
+
+/* Aggiungi questa regola se desideri mantenere l'header a una distanza costante dalla navbar */
+.page-container h1 {
+  margin-top: 60px; /* Aggiusta questa altezza in base all'altezza effettiva della navbar */
+}
+
+/* Aggiungi questa regola per uniformare la grandezza di tutti gli h1 */
+h1 {
+  color: #0056b3;
+  font-size: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+}
+
+/* HomePage.css */
+.page-container {
+  font-family: "Arial", sans-serif;
+  padding-top: 10px; /* Adjust this value based on the height of the navbar */
+  margin-top: 5rem;
 }
 
 .fade-in {
-  animation: fadeInAnimation ease 1s;
-  animation-fill-mode: forwards;
+  animation: fadeInAnimation ease 1s forwards;
 }
 
 @keyframes fadeInAnimation {
   0% {
-    opacity: 5;
+    opacity: 0;
   }
   100% {
-    opacity: 5;
+    opacity: 1;
   }
 }
 
-/* Carousel Enhancements */
+/* Carousel Improvements */
+.carousel-container {
+  margin-top: 100px;
+}
+
 .carousel-item img {
   transition: transform 0.5s ease;
 }
@@ -76,9 +98,9 @@
   transform: scale(1.05);
 }
 
-/* Card Enhancements */
+/* Card Improvements */
 .uniform-card {
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
   cursor: pointer;
 }
 
@@ -94,7 +116,7 @@
   flex-wrap: wrap;
 }
 
-/* Headline Styling */
+/* Title Style */
 h3 span {
   display: inline-block;
   animation: slideInText 0.5s forwards;
@@ -114,135 +136,100 @@ h3 span {
 
 .blue-text {
   animation-delay: 0.5s;
-}
-.orange-text {
-  animation-delay: 0.7s;
+  color: blue;
 }
 
-/* Custom styles for the dropdown menu */
+.orange-text {
+  animation-delay: 0.7s;
+  color: orange;
+}
+
+/* Custom Dropdown Menu Styles */
 .navbar-nav .nav-link {
   padding: 10px 15px;
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: #333; /* Change color as needed */
+  color: #2147ee;
 }
 
 .navbar-nav .nav-item:hover .nav-link {
-  color: #e10d0d; /* Change color on hover as needed */
+  color: #e10d0d;
 }
 
 .navbar-nav .nav-item.active .nav-link {
-  color: #006aff; /* Change color for active link as needed */
+  color: #006aff;
 }
 
-/* Custom styles for the dropdown menu items */
 .dropdown-menu {
-  background-color: #ffffff; /* Change background color as needed */
+  background-color: #ffffff;
   border: none;
   border-radius: 0;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-menu .dropdown-item {
   padding: 20px 20px;
 }
-/* Custom styles for the dropdown menu caret */
-@media (max-width: 992px) {
-  /* Bootstrap breakpoint per dispositivi 'lg' */
-  .navbar-nav .dropdown-toggle {
-    text-align: center;
-    width: 100%; /* Assicura che il toggle prenda tutto lo spazio disponibile */
-  }
-
-  .navbar-nav {
-    flex-direction: column; /* Organizza gli elementi della nav in colonna */
-  }
-}
 
 .dropdown-menu .dropdown-item:hover {
   background-color: #4699edfc;
-  color: #e10d0d; /* Change background color on hover as needed */
+  color: #e10d0d;
 }
 
-/* Custom styles for the dropdown menu caret */
-.dropdown-toggle::after {
-  display: none; /* Hide default caret */
+/* Navbar Spacing */
+.navbar-space {
+  height: 60px;
 }
 
-/* Custom styles for the dropdown menu caret */
-.dropdown-toggle::after {
-  content: "\25BC"; /* Usiamo il carattere unicode per la freccia verso il basso */
-  float: right; /* Posiziona la freccia a sinistra del testo */
-  margin-right: 5px; /* Aggiunge uno spazio tra la freccia e il testo */
-  transform: none; /* Rimuove la rotazione se precedentemente applicata */
-}
-
-.dropdown-toggle::before {
-  content: "\25be"; /* Custom caret icon */
-  margin-left: 5px;
-}
-*/ .navbar-space {
-  height: 60px; /* Altezza dello spazio vuoto sopra il carosello */
-}
-
+/* Responsive Card Row */
 .card-row .col {
   display: flex;
-  padding: 15px; /* Optional: adjust spacing between cards */
+  padding: 15px;
 }
 
 .uniform-card {
-  height: 100%; /* Assicura che tutte le card abbiano la stessa altezza */
+  height: 100%;
 }
 
 .uniform-card .card-img-top {
   object-fit: cover;
-  height: 500px; /* Altezza fissa per le immagini delle card */
+  height: 500px;
 }
 
 .uniform-card .card-body {
   flex-grow: 1;
 }
-/* styles/AboutPage.css */
 
-/* Stile per l'immagine */
-/* Aggiunto nel tuo file CSS globale o specifico per la pagina */
+/* AboutPage.css */
 .h1-margin-top {
-  margin-top: 50px;
-  margin-bottom: -80px; /* Aumenta questo valore a seconda dell'altezza della tua navbar */
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #0056b3;
 }
 
 .about-img {
-  width: 100%; /* Assicura che l'immagine occupi l'intera larghezza del suo contenitore */
-  height: auto; /* Impedisce che l'immagine si deformi */
-  margin-top: 90px; /* Spazio sopra l'immagine */
-  margin-bottom: 20px; /* Spazio sotto l'immagine */
+  width: 100%;
+  height: auto;
+  margin-top: 90px;
+  margin-bottom: 20px;
 }
 
-/* Stile per il contenuto */
 .about-content {
-  text-align: justify; /* Allinea il testo a giustificato per una migliore leggibilità */
-  margin-bottom: 20px; /* Spazio sotto il contenuto */
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
-/* Stile per l'header */
 .about-content h1 {
-  color: #333; /* Colore del testo */
-  font-size: 24px; /* Dimensione del carattere */
-  margin-bottom: 10px; /* Spazio sotto l'header */
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-/* Stile per il paragrafo */
 .about-content p {
-  color: #666; /* Colore del testo */
-  font-size: 16px; /* Dimensione del carattere */
-}
-.blue-text {
-  color: blue;
-}
-
-.orange-text {
-  color: orange;
+  color: #666;
+  font-size: 16px;
 }
 
 /* DoveSiamo.css */
@@ -252,14 +239,14 @@ h3 span {
 
 .dove-siamo-mappa {
   height: 700px;
-
   width: 100%;
-  margin-top: 50px; /* Aumenta questo valore per spostare la mappa più in basso */
+  margin-top: 50px;
 }
 
 .dove-siamo-testo {
   margin-top: 20px;
 }
+
 .gradient-button {
   background: linear-gradient(to right, blue, rgb(255, 0, 0));
   color: white;
@@ -269,13 +256,14 @@ h3 span {
   cursor: pointer;
   margin-left: 10px;
 }
+
 @keyframes pulse-blue {
   0%,
   100% {
     background-color: red;
   }
   50% {
-    background: blue; /* L'intero sfondo diventa blu */
+    background: blue;
   }
 }
 
@@ -289,6 +277,7 @@ h3 span {
   cursor: pointer;
   margin-left: 10px;
 }
+
 @media (max-width: 600px) {
   .dove-siamo-container {
     padding: 15px;
@@ -304,132 +293,203 @@ h3 span {
   }
 
   .dove-siamo-testo {
-    font-size: 13px; /* Riduci la dimensione del testo per i display più piccoli */
+    font-size: 13px;
   }
+
   .card-row .col {
     display: flex;
-    justify-content: center; /* Centra le card nel loro contenitore di colonna */
-    padding: 15px; /* Distanza tra le card */
+    justify-content: center;
+    padding: 15px;
   }
 
   .uniform-card {
     display: flex;
-    flex-direction: column; /* Organizza i contenuti della card verticalmente */
-    justify-content: space-between; /* Distribuisce lo spazio internamente */
-    height: 100%; /* Assicura che tutte le card siano alte uguali nel loro contenitore flex */
-    margin-bottom: 20px; /* Spazio aggiuntivo sotto ogni card se necessario */
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 20px;
   }
 
   .uniform-card .card-img-top {
-    width: 100%; /* Assicura che l'immagine copra tutta la larghezza della card */
-    height: 250px; /* Altezza fissa per tutte le immagini delle card */
-    object-fit: cover; /* Assicura che l'immagine copra l'area senza essere distorta */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
   }
 
   .uniform-card .card-body {
-    flex: 1; /* Permette al corpo della card di riempire lo spazio restante */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Organizza il testo e i titoli adeguatamente */
+    justify-content: space-between;
   }
+}
 
-  /* Modifica la classe blue-text per applicare il colore blu a tutti i testi */
-  /* CSS per dispositivi mobili */
-  @media (max-width: 767px) {
-    .flex-column .nav-link {
-      text-align: center;
-    }
-  }
-
-  /* CSS per schermi più grandi */
-  @media (min-width: 768px) {
-    .flex-column .nav-link {
-      text-align: left;
-    }
-  }
-  /* Formazione.css */
-  .center-text {
+@media (max-width: 767px) {
+  .flex-column .nav-link {
     text-align: center;
   }
 
-  /* circle icons navbar */
-
-  .profile-icon {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  .navbar-collapse {
     justify-content: center;
   }
 
+  .icona-profilo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   .profile-icon .bi-person-circle {
-    background: blue;
-    color: rgb(34, 32, 30);
+    background: orange;
+    color: blue;
     border-radius: 50%;
     padding: 2px;
   }
+}
 
-  /* personIcon Navbar */
-  @media (max-width: 768px) {
-    .navbar-collapse {
-      justify-content: center;
-    }
+@media (min-width: 768px) {
+  .flex-column .nav-link {
+    text-align: left;
+  }
+}
 
-    .profile-icon {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
+/* Footer Styles */
+.foot {
+  background-color: #ffffff;
+  color: #333;
+  border-top: 1px solid #eeeded;
+  box-shadow: 0 -2px 5px rgba(111, 111, 111, 0.1);
+  padding: 20px 0;
+}
+.page-container {
+  height: auto; /* Change from 100vh to auto */
+}
+.foot .icon {
+  font-size: 24px;
+  color: #007bff;
+}
 
-    .profile-icon .bi-person-circle {
-      background: orange;
-      color: blue;
-      border-radius: 50%;
-      padding: 2px;
-    }
+.foot ul {
+  padding: 0;
+}
 
-    /* footer */
-    .foot {
-      background-color: #ffffff; /* White background */
-      color: #333; /* Dark text color for better contrast */
-      border-top: 1px solid #eeeded; /* Light gray border on top */
-      box-shadow: 0 -2px 5px rgba(111, 111, 111, 0.1); /* Subtle shadow for depth */
-      padding: 20px 0; /* Vertical padding */
-    }
+.foot li {
+  padding: 5px 0;
+}
 
-    .foot .icon {
-      font-size: 24px; /* Increase icon size */
-      color: #007bff; /* Bootstrap primary blue for icons */
-    }
+.foot img.social-icon {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
 
-    .foot ul {
-      padding: 0;
-    }
+.foot img.social-icon:hover {
+  filter: grayscale(0);
+}
 
-    .foot li {
-      padding: 5px 0; /* Padding between items */
-    }
+.foot hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-color: #e0e0e0;
+}
 
-    .foot img.social-icon {
-      filter: grayscale(100%); /* Make images grayscale */
-      transition: filter 0.3s ease; /* Smooth transition for hover effect */
-    }
+.foot p {
+  margin-bottom: 5px;
+}
 
-    .foot img.social-icon:hover {
-      filter: grayscale(0); /* Full color on hover */
-    }
+/* Profile Page Styles */
+.profile-page-container {
+  padding-top: 100px;
+}
 
-    .foot hr {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      border-color: #e0e0e0; /* Light gray horizontal rule */
-    }
+@media (max-width: 767px) {
+  .profile-page-container {
+    padding-top: 50px;
+  }
+}
 
-    .foot p {
-      margin-bottom: 5px; /* Reduce bottom margin */
-    }
+/* Chi Siamo */
+.container {
+  padding-top: 10px;
+}
+
+.h1-margin-top {
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #0056b3;
+}
+
+.about-content {
+  padding: 20px;
+  text-align: justify;
+}
+
+.about-img {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
   }
 
-  /* profile */
+  .h1-margin-top {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Soccorso */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.h1-soccorso {
+  margin-top: 100px;
+}
+
+.about-content {
+  text-align: justify;
+  padding: 15px;
+}
+
+.about-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+@media (max-width: 575px) {
+  p {
+    font-size: 1rem;
+  }
 }

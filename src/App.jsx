@@ -12,7 +12,7 @@ import ProtezioneCivile from "./components/componentsServizi/ProtezioneCivile";
 import Soccorso from "./components/componentsServizi/Soccorso";
 import Solidarietà from "./components/componentsServizi/Solidarietà";
 import Login from "./components/componentsLogin/Login";
-import SignIn from "./components/componentsLogin/SingIn";
+import SignIn from "./components/componentsLogin/SignIn";
 import Profile from "./components/componentsLogin/Profile";
 import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy"; // Correzione del nome file se necessario
 import LoginProfile from "./components/LoginProfile";

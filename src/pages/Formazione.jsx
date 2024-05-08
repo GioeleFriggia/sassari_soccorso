@@ -70,6 +70,7 @@ const Formazione = () => {
 
   const [ref, inView] = useInView({ threshold: 0.5 });
   const [animationTriggered, setAnimationTriggered] = useState(false);
+  const [navbarHeight, setNavbarHeight] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,9 +86,16 @@ const Formazione = () => {
     };
   }, [inView, animationTriggered]);
 
+  useEffect(() => {
+    const navbar = document.querySelector(".navbar");
+    if (navbar) {
+      setNavbarHeight(navbar.offsetHeight);
+    }
+  }, []);
+
   return (
-    <div className="mt-5">
-      <h2 className="mt-4">FORMAZIONE</h2>
+    <div className="mt-2" style={{ paddingTop: `${navbarHeight}px` }}>
+      <h1 style={{ marginTop: "1rem" }}>Formazione </h1>
       <img className="d-block w-100" src="/formazione.webp" alt="Formazione" />
       <p className="mt-4 text-justify">
         Sassari Soccorso da sempre ha riposto particolare attenzione alla
@@ -109,7 +117,7 @@ const Formazione = () => {
             >
               {Object.entries(courses).map(([category, cards], idx) => (
                 <React.Fragment key={idx}>
-                  <h3 className="mt-4">{category}:</h3>
+                  <h3>{category}:</h3>
                   <Row xs={1} md={2} lg={3} className="g-4">
                     {cards.map((course, index) => (
                       <Col key={index}>

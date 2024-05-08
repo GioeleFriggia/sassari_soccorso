@@ -1,17 +1,20 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import "../../App.css"; // Importa il file CSS per le personalizzazioni
 
 const ProtezioneCivile = () => {
+  const navbarHeight = 60; // Altezza della navbar, sostituisci con il valore effettivo
+
   return (
-    <Container>
-      <h1 className="h1-margin-top">Protezione Civile</h1>
+    <Container style={{ paddingTop: `${navbarHeight + 30}px` }}>
+      <h1 className="mt-auto h2">Protezione civile </h1>
       <div className="about-content">
         <img
-          className="about-img mb-3"
+          className="about-img mb-3 mt-1"
           src="/protezionecivile.png"
           alt="Immagine Protezione Civile"
         />
-        <p>
+        <p className="lead">
           La Protezione Civile racchiude in se tutte le attività di soccorso,
           fuori dal campo sanitario, devolute alla tutela della popolazione e
           del ripristino delle funzioni di base delle aree colpite da calamità

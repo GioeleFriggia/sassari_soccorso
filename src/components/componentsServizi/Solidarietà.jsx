@@ -1,11 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-// import '../App.css'; // Importa il file CSS per le personalizzazioni
 
 const ServizioCivile = () => {
   return (
-    <Container>
-      <h1 className="h1-margin-top">Solidarietà</h1>
+    <Container style={{ marginTop: "5rem" }}>
+      <h1>Solidarietà</h1>
       <div className="about-content">
         <img
           className="about-img mb-3"

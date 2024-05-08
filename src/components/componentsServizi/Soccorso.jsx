@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 const Soccorso = () => {
   return (
     <Container>
-      <h1 className="h1-margin-top">Soccorso</h1>
+      <h1 className="h1-soccorso">Soccorso</h1>
       <div className="about-content">
         <img
           className="about-img mb-3"

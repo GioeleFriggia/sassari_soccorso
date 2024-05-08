@@ -12,17 +12,21 @@ import {
 
 function ProfilePage() {
   return (
-    <Container className="mt-5">
+    <Container className="profile-page-container" style={{ marginTop: "5rem" }}>
       <Row>
-        <Col xs={12} md={10} lg={8} xl={6} className="mx-auto">
-          <Card className="shadow-lg p-3 p-md-5">
+        <Col xs={12} className="mx-auto">
+          <Card className="shadow p-3">
             <Card.Body>
               <div className="text-center mb-3">
                 <Image
                   src="/public/logo2.jpg"
                   className="img-fluid"
                   alt="logo"
-                  style={{ maxWidth: "50%", marginBottom: "20px" }}
+                  style={{
+                    maxWidth: "20%",
+                    height: "auto",
+                    marginBottom: "20px",
+                  }}
                 />
               </div>
               <Card.Title
@@ -68,7 +72,7 @@ function ProfilePage() {
                   </div>
                 ))}
               </Card.Text>
-              <div className="text-center mt-5">
+              <div className="text-center mt-3">
                 <Button variant="primary" href="/volunteers">
                   Vai alla Pagina dei Volontari
                 </Button>

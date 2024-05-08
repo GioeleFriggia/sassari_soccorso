@@ -22,10 +22,16 @@ const CustomNavbar = () => {
       expand="lg"
       className="shadow-sm fixed-top"
       expanded={isExpanded} // Controllato dallo stato
+      style={{ padding: "1px 20px" }} // Imposta il padding verticale
     >
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleDropdownItemClick}>
-          <img src="/public/logo2.jpg" width="140" height="110" alt="Logo" />
+          <img
+            src="/public/logo2.jpg"
+            width="90"
+            height="90"
+            alt="Logo" // Ridimensiona il logo
+          />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"

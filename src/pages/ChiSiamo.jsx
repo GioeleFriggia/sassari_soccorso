@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import "../App.css";
 
 const AboutPage = () => {
+  const [navbarHeight, setNavbarHeight] = useState(0);
+
+  useEffect(() => {
+    const navbar = document.querySelector(".navbar");
+    if (navbar) {
+      setNavbarHeight(navbar.offsetHeight);
+    }
+  }, []);
+
   return (
-    <Container>
-      <h1 className="h1-margin-top">Chi Siamo</h1>
+    <Container style={{ paddingTop: `calc(${navbarHeight}px + 20px)` }}>
+      <h1 className="mt-auto">Chi Siamo</h1>
       <div className="about-content">
         <img
           className="about-img mb-3"
