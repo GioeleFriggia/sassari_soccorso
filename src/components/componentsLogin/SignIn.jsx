@@ -1,104 +1,110 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../redux/actions/index";
 
-function SignIn() {
+const SignIn = () => {
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    password: "",
+    avatarURL: "",
+    birthdate: "",
+    residence: "",
+    city: "",
+    membershipNumber: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    if (!formData.email.includes("@")) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    if (!formData.name || !formData.surname || !formData.password) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+    dispatch(registerUser(formData));
+  };
+
   return (
-    <div className="container mt-5">
-      <h2>Registati</h2>
-      <form>
-        <div className="mb-3">
-          <label htmlFor="exampleInputFirstName" className="form-label">
-            Nome
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="exampleInputFirstName"
-            aria-describedby="firstNameHelp"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputLastName" className="form-label">
-            Cognome
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="exampleInputLastName"
-            aria-describedby="lastNameHelp"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputDateOfBirth" className="form-label">
-            Data di Nascita
-          </label>
-          <input
-            type="date"
-            className="form-control"
-            id="exampleInputDateOfBirth"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputResidence" className="form-label">
-            Residenza
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="exampleInputResidence"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputCity" className="form-label">
-            Città di Residenza
-          </label>
-          <input type="text" className="form-control" id="exampleInputCity" />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputCity" className="form-label">
-            Numero di tessera
-          </label>
-          <input type="text" className="form-control" id="exampleInputCity" />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail" className="form-label">
-            Indirizzo Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="exampleInputPassword"
-          />
-        </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" htmlFor="exampleCheck1">
-            Check me out
-          </label>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Register
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleRegister}>
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        placeholder="Name"
+        required
+      />
+      <input
+        type="text"
+        name="surname"
+        value={formData.surname}
+        onChange={handleChange}
+        placeholder="Surname"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        placeholder="Password"
+        required
+      />
+      <input
+        type="text"
+        name="avatarURL"
+        value={formData.avatarURL}
+        onChange={handleChange}
+        placeholder="Avatar URL"
+      />
+      <input
+        type="date"
+        name="birthdate"
+        value={formData.birthdate}
+        onChange={handleChange}
+        placeholder="Birthdate"
+      />
+      <input
+        type="text"
+        name="residence"
+        value={formData.residence}
+        onChange={handleChange}
+        placeholder="Residence"
+      />
+      <input
+        type="text"
+        name="city"
+        value={formData.city}
+        onChange={handleChange}
+        placeholder="City"
+      />
+      <input
+        type="text"
+        name="membershipNumber"
+        value={formData.membershipNumber}
+        onChange={handleChange}
+        placeholder="Membership Number"
+      />
+      <button type="submit">Register</button>
+    </form>
   );
-}
+};
 
 export default SignIn;

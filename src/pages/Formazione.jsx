@@ -68,23 +68,8 @@ const Formazione = () => {
     ],
   };
 
-  const [ref, inView] = useInView({ threshold: 0.5 });
-  const [animationTriggered, setAnimationTriggered] = useState(false);
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [navbarHeight, setNavbarHeight] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (inView && !animationTriggered) {
-        setAnimationTriggered(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [inView, animationTriggered]);
 
   useEffect(() => {
     const navbar = document.querySelector(".navbar");
@@ -94,8 +79,13 @@ const Formazione = () => {
   }, []);
 
   return (
-    <div className="mt-2" style={{ paddingTop: `${navbarHeight}px` }}>
-      <h1 style={{ marginTop: "1rem" }}>Formazione </h1>
+    <div
+      className="formazione-page-container"
+      style={{ paddingTop: `${navbarHeight}px` }}
+    >
+      <h1 className="h1-blue" style={{ marginTop: "1rem" }}>
+        Formazione
+      </h1>
       <img className="d-block w-100" src="/formazione.webp" alt="Formazione" />
       <p className="mt-4 text-justify">
         Sassari Soccorso da sempre ha riposto particolare attenzione alla
@@ -109,10 +99,10 @@ const Formazione = () => {
       <hr className="mt-5" />
       <div ref={ref}>
         <AnimatePresence>
-          {animationTriggered && (
+          {inView && (
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               {Object.entries(courses).map(([category, cards], idx) => (

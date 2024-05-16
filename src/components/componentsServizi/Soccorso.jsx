@@ -1,11 +1,11 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-// import '../App.css';// Importa il file CSS per le personalizzazioni
+// import '../App.css'; // Importa il file CSS per le personalizzazioni
 
 const Soccorso = () => {
   return (
-    <Container>
-      <h1 className="h1-soccorso">Soccorso</h1>
+    <Container className="soccorso-page-container">
+      <h1 className="h1-blue h1-soccorso">Soccorso</h1>
       <div className="about-content">
         <img
           className="about-img mb-3"

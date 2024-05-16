@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Container, Navbar, Nav, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PersonCircle } from "react-bootstrap-icons";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { UserContext } from "../../src/context/userContext";
+import { useSelector } from "react-redux";
 
 const CustomNavbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false); // Aggiunto per controllare l'espansione della navbar
+  const [isExpanded, setIsExpanded] = useState(false);
+  const { user } = useSelector((state) => state.auth || { user: null });
 
-  // Aggiornata per gestire anche la chiusura della navbar
   const handleDropdownItemClick = () => {
     setIsDropdownOpen(false);
     setIsServicesDropdownOpen(false);
-    setIsExpanded(false); // Chiude la navbar quando un elemento viene cliccato
+    setIsExpanded(false);
   };
 
   return (
@@ -21,17 +22,11 @@ const CustomNavbar = () => {
       bg="light"
       expand="lg"
       className="shadow-sm fixed-top"
-      expanded={isExpanded} // Controllato dallo stato
-      style={{ padding: "1px 20px" }} // Imposta il padding verticale
+      expanded={isExpanded}
     >
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleDropdownItemClick}>
-          <img
-            src="/public/logo2.jpg"
-            width="90"
-            height="90"
-            alt="Logo" // Ridimensiona il logo
-          />
+          <img src="/logo2.jpg" width="90" height="90" alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
@@ -87,17 +82,17 @@ const CustomNavbar = () => {
               <Dropdown.Menu>
                 <Dropdown.Item
                   as={Link}
-                  to="/servizi/soccorso"
-                  onClick={handleDropdownItemClick}
-                >
-                  Soccorso
-                </Dropdown.Item>
-                <Dropdown.Item
-                  as={Link}
                   to="/servizi/protezione-civile"
                   onClick={handleDropdownItemClick}
                 >
                   Protezione Civile
+                </Dropdown.Item>
+                <Dropdown.Item
+                  as={Link}
+                  to="/servizi/soccorso"
+                  onClick={handleDropdownItemClick}
+                >
+                  Soccorso
                 </Dropdown.Item>
                 <Dropdown.Item
                   as={Link}
@@ -108,7 +103,7 @@ const CustomNavbar = () => {
                 </Dropdown.Item>
                 <Dropdown.Item
                   as={Link}
-                  to="/servizi/solidarietà"
+                  to="/servizi/solidarieta"
                   onClick={handleDropdownItemClick}
                 >
                   Solidarietà
@@ -117,62 +112,73 @@ const CustomNavbar = () => {
             </Dropdown>
           </Nav>
           <Nav className="justify-content-end">
-            <Dropdown
-              show={isDropdownOpen}
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
-              align="end"
-            >
-              <Dropdown.Toggle
-                variant="transparent"
-                className="profile-icon"
-                style={{ display: "flex", alignItems: "center" }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "50%",
-                    backgroundColor: "orange",
-                    width: "35px",
-                    height: "35px",
-                  }}
+            {user ? (
+              <>
+                <Dropdown
+                  show={isDropdownOpen}
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  align="end"
                 >
-                  <PersonCircle size={30} style={{ color: "blue" }} />
-                </div>
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item
-                  as={Link}
-                  to="/login"
-                  onClick={handleDropdownItemClick}
-                >
-                  Login
-                </Dropdown.Item>
-                <Dropdown.Item
-                  as={Link}
-                  to="/sign-in"
-                  onClick={handleDropdownItemClick}
-                >
-                  Sign In
-                </Dropdown.Item>
-                <Dropdown.Item
-                  as={Link}
-                  to="/profile"
-                  onClick={handleDropdownItemClick}
-                >
-                  Profilo
-                </Dropdown.Item>
-                <Dropdown.Item
-                  as={Link}
-                  to="privacy-policy"
-                  onClick={handleDropdownItemClick}
-                >
-                  Privacy Policy
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+                  <Dropdown.Toggle
+                    variant="transparent"
+                    className="profile-icon"
+                    style={{ display: "flex", alignItems: "center" }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderRadius: "50%",
+                        backgroundColor: "orange",
+                        width: "35px",
+                        height: "35px",
+                      }}
+                    >
+                      <PersonCircle size={30} style={{ color: "blue" }} />
+                    </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item
+                      as={Link}
+                      to="/profile"
+                      onClick={handleDropdownItemClick}
+                    >
+                      Profilo
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                      as={Link}
+                      to="/privacy-policy"
+                      onClick={handleDropdownItemClick}
+                    >
+                      Privacy Policy
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </>
+            ) : (
+              <>
+                <Nav.Item className="my-1">
+                  <Link
+                    to="/login"
+                    className="nav-link"
+                    onClick={handleDropdownItemClick}
+                  >
+                    Accedi
+                  </Link>
+                </Nav.Item>
+                <Nav.Item className="my-1">
+                  <Link
+                    to="/sign-in"
+                    className="nav-link"
+                    onClick={handleDropdownItemClick}
+                  >
+                    Registrati
+                  </Link>
+                </Nav.Item>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

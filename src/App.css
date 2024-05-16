@@ -1,14 +1,46 @@
 /* General Styles */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Ensure navbar is fixed and visible at the top */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* High z-index to keep it on top */
+}
+
+/* Add a padding top to body to ensure space for fixed navbar */
+body {
+  padding-top: 80px; /* Adjust according to the height of your navbar */
+}
+
+/* Set the color for all heading elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0000ff; /* Set the desired blue color */
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem; /* Responsive padding */
   text-align: center;
 }
 
 .logo {
   height: 6em;
-  padding: 1.5em;
+  padding: 1em;
   transition: filter 300ms;
 }
 
@@ -18,6 +50,48 @@
 
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.profile-container {
+  max-width: 700px;
+  margin: 100px auto 0; /* Ensure space below the fixed navbar */
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.profile-field strong {
+  font-weight: bold;
+}
+
+.profile-update-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.profile-update-button:hover {
+  background-color: #0056b3;
 }
 
 @keyframes logo-spin {
@@ -30,466 +104,291 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-/* Aggiungilo qui */
-.page-container {
+/* Custom Layouts for Each Page */
+.home-page-container {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 1700px auto 0 auto; /* Adjusted top margin for home page */
+  padding: 0 2rem;
   text-align: center;
-  height: 100vh; /* Altezza fissa a tutto schermo */
-  box-sizing: border-box; /* Considera il padding e il bordo nell'altezza totale */
+  box-sizing: border-box;
 }
 
-/* Aggiungi questa regola se desideri mantenere l'header a una distanza costante dalla navbar */
-.page-container h1 {
-  margin-top: 60px; /* Aggiusta questa altezza in base all'altezza effettiva della navbar */
+.about-page-container {
+  max-width: 1280px;
+  margin: 920px auto 0 auto; /* Adjusted top margin for about page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-/* Aggiungi questa regola per uniformare la grandezza di tutti gli h1 */
-h1 {
-  color: #0056b3;
-  font-size: 2rem;
-  font-family: Arial, sans-serif;
+.dove-siamo-page-container {
+  max-width: 1280px;
+  margin: 720px auto 0 auto; /* Adjusted top margin for dove siamo page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 3rem;
+.formazione-page-container {
+  max-width: 1280px;
+  margin: 1500px auto 0 auto; /* Adjusted top margin for formazione page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-/* HomePage.css */
-.page-container {
-  font-family: "Arial", sans-serif;
-  padding-top: 10px; /* Adjust this value based on the height of the navbar */
-  margin-top: 5rem;
+.servizi-page-container {
+  max-width: 1280px;
+  margin: 120px auto 0 auto; /* Adjusted top margin for servizi page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.fade-in {
-  animation: fadeInAnimation ease 1s forwards;
+.protezione-civile-page-container {
+  max-width: 1280px;
+  margin: 730px auto 0 auto; /* Adjusted top margin for protezione civile page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Custom color for h1 */
+.h1-blue {
+  color: #0c0cecd9;
 }
 
-/* Carousel Improvements */
+.servizio-civile-page-container {
+  max-width: 1280px;
+  margin: 1580px auto 0 auto; /* Adjusted top margin for servizio civile page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.solidarieta-page-container {
+  max-width: 1280px;
+  margin: 760px auto 0 auto; /* Adjusted top margin for solidarietà page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sign-in-page-container {
+  max-width: 1280px;
+  margin: 780px auto 0 auto; /* Adjusted top margin for sign-in page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Make form wider */
+.sign-in-form .form-control {
+  width: 100%;
+  max-width: 900px; /* Maximum width for the form fields */
+  margin: 0 auto; /* Center align the form fields */
+}
+
+.soccorso-page-container {
+  max-width: 1280px;
+  margin: 800px auto 0 auto; /* Adjusted top margin for soccorso page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .carousel-container {
-  margin-top: 100px;
+  margin-top: 2rem;
 }
 
 .carousel-item img {
-  transition: transform 0.5s ease;
+  max-width: 100%;
+  height: auto; /* Ensures images fit well and are responsive */
 }
 
-.carousel-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Card Improvements */
-.uniform-card {
-  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
-  cursor: pointer;
-}
-
-.uniform-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Grid Improvements */
+/* Card Layout */
 .card-row {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-
-/* Title Style */
-h3 span {
-  display: inline-block;
-  animation: slideInText 0.5s forwards;
-  opacity: 0;
-}
-
-@keyframes slideInText {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.blue-text {
-  animation-delay: 0.5s;
-  color: blue;
-}
-
-.orange-text {
-  animation-delay: 0.7s;
-  color: orange;
-}
-
-/* Custom Dropdown Menu Styles */
-.navbar-nav .nav-link {
-  padding: 10px 15px;
-}
-
-.navbar-nav .nav-item .nav-link {
-  color: #2147ee;
-}
-
-.navbar-nav .nav-item:hover .nav-link {
-  color: #e10d0d;
-}
-
-.navbar-nav .nav-item.active .nav-link {
-  color: #006aff;
-}
-
-.dropdown-menu {
-  background-color: #ffffff;
-  border: none;
-  border-radius: 0;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-menu .dropdown-item {
-  padding: 20px 20px;
-}
-
-.dropdown-menu .dropdown-item:hover {
-  background-color: #4699edfc;
-  color: #e10d0d;
-}
-
-/* Navbar Spacing */
-.navbar-space {
-  height: 60px;
-}
-
-/* Responsive Card Row */
-.card-row .col {
-  display: flex;
-  padding: 15px;
+  margin-top: 2rem; /* Additional margin for spacing between carousel and cards */
 }
 
 .uniform-card {
-  height: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  margin-bottom: 2rem; /* Space below each card */
 }
 
-.uniform-card .card-img-top {
-  object-fit: cover;
-  height: 500px;
+.uniform-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.uniform-card .card-body {
-  flex-grow: 1;
-}
-
-/* AboutPage.css */
-.h1-margin-top {
-  margin-top: 1rem;
-  font-size: 2rem;
-  text-align: center;
-  color: #0056b3;
-}
-
-.about-img {
+.uniform-card img {
   width: 100%;
   height: auto;
-  margin-top: 90px;
-  margin-bottom: 20px;
 }
 
-.about-content {
-  text-align: justify;
-  margin-bottom: 20px;
-}
-
-.about-content h1 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.about-content p {
-  color: #666;
-  font-size: 16px;
-}
-
-/* DoveSiamo.css */
-.dove-siamo-container {
-  padding: 70px;
-}
-
-.dove-siamo-mappa {
-  height: 700px;
-  width: 100%;
-  margin-top: 50px;
-}
-
-.dove-siamo-testo {
-  margin-top: 20px;
-}
-
-.gradient-button {
-  background: linear-gradient(to right, blue, rgb(255, 0, 0));
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-@keyframes pulse-blue {
-  0%,
-  100% {
-    background-color: red;
-  }
-  50% {
-    background: blue;
-  }
-}
-
-.gradient-button {
-  animation: pulse-blue 3s infinite ease-in-out;
-  background: linear-gradient(to right, blue);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-@media (max-width: 600px) {
-  .dove-siamo-container {
-    padding: 15px;
-    margin-top: 25px;
-  }
-
-  .dove-siamo-mappa {
-    height: 250px;
-  }
-
-  .gradient-button {
-    padding: 8px 16px;
-  }
-
-  .dove-siamo-testo {
-    font-size: 13px;
+/* Responsive Design */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width: 600px) {
+  .page-container {
+    margin-top: 8rem; /* Increased top margin for mobile to ensure visibility below the navbar */
   }
 
   .card-row .col {
-    display: flex;
-    justify-content: center;
-    padding: 15px;
+    flex: 1 0 100%;
+    max-width: 100%;
   }
 
-  .uniform-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    margin-bottom: 20px;
+  .uniform-card img {
+    height: 200px; /* Fixed height for consistency on mobile */
   }
 
-  .uniform-card .card-img-top {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+  .home-page-container {
+    margin-top: 109rem; /* Specific top margin for home page */
+    padding: 0 1rem;
   }
 
-  .uniform-card .card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 767px) {
-  .flex-column .nav-link {
-    text-align: center;
+  .about-page-container {
+    margin-top: 89rem; /* Specific top margin for about page */
+    padding: 0 1rem;
   }
 
-  .navbar-collapse {
-    justify-content: center;
+  .dove-siamo-page-container {
+    margin-top: 30rem; /* Specific top margin for dove siamo page */
+    padding: 0 1rem;
   }
 
-  .icona-profilo {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  .formazione-page-container {
+    margin-top: 150rem; /* Specific top margin for formazione page */
+    padding: 0 1rem;
   }
 
-  .profile-icon .bi-person-circle {
-    background: orange;
-    color: blue;
-    border-radius: 50%;
-    padding: 2px;
+  .servizi-page-container {
+    margin-top: 10rem; /* Specific top margin for servizi page */
+    padding: 0 1rem;
   }
-}
 
-@media (min-width: 768px) {
-  .flex-column .nav-link {
-    text-align: left;
+  .protezione-civile-page-container {
+    margin-top: 45rem; /* Specific top margin for protezione civile page */
+    padding: 0 1rem;
   }
-}
 
-/* Footer Styles */
-.foot {
-  background-color: #ffffff;
-  color: #333;
-  border-top: 1px solid #eeeded;
-  box-shadow: 0 -2px 5px rgba(111, 111, 111, 0.1);
-  padding: 20px 0;
-}
-.page-container {
-  height: auto; /* Change from 100vh to auto */
-}
-.foot .icon {
-  font-size: 24px;
-  color: #007bff;
-}
+  .servizio-civile-page-container {
+    margin-top: 120rem; /* Specific top margin for servizio civile page */
+    padding: 0 1rem;
+  }
 
-.foot ul {
-  padding: 0;
-}
+  .solidarieta-page-container {
+    margin-top: 10rem; /* Specific top margin per solidarietà page */
+    padding: 0 1rem;
+  }
 
-.foot li {
-  padding: 5px 0;
-}
+  .sign-in-page-container {
+    margin-top: 10rem; /* Specific top margin per sign-in page */
+    padding: 0 1rem;
+  }
 
-.foot img.social-icon {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
+  .soccorso-page-container {
+    margin-top: 60rem; /* Specific top margin per soccorso page */
+    padding: 0 1rem;
+  }
 
-.foot img.social-icon:hover {
-  filter: grayscale(0);
-}
+  .sign-in-form .form-control {
+    max-width: 100%;
+  }
 
-.foot hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-color: #e0e0e0;
-}
+  .foot {
+    padding: 0.5rem 0; /* Reduce padding for footer */
+  }
 
-.foot p {
-  margin-bottom: 5px;
-}
-
-/* Profile Page Styles */
-.profile-page-container {
-  padding-top: 100px;
-}
-
-@media (max-width: 767px) {
-  .profile-page-container {
-    padding-top: 50px;
+  .foot li {
+    padding: 0.25rem;
   }
 }
 
-/* Chi Siamo */
-.container {
-  padding-top: 10px;
-}
-
-.h1-margin-top {
-  margin-top: 1rem;
-  font-size: 2rem;
-  text-align: center;
-  color: #0056b3;
-}
-
-.about-content {
-  padding: 20px;
-  text-align: justify;
-}
-
-.about-img {
-  width: 100%;
-  height: auto;
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1rem;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .page-container {
+    margin-top: 8rem; /* Slight top margin per tablets */
   }
 
-  .h1-margin-top {
-    font-size: 1.75rem;
+  .card-row .col {
+    flex: 1 0 48%;
+    max-width: 48%;
   }
-}
 
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
+  .uniform-card img {
+    height: 250px; /* Adjusted height for consistency on tablets */
   }
-}
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
+  .home-page-container {
+    margin-top: 70rem; /* Specific top margin per home page */
+    padding: 0 1.5rem;
   }
-}
 
-/* Soccorso */
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
+  .about-page-container {
+    margin-top: 20rem; /* Specific top margin per about page */
+    padding: 0 1.5rem;
+  }
 
-.h1-soccorso {
-  margin-top: 100px;
-}
+  .dove-siamo-page-container {
+    margin-top: 30rem; /* Specific top margin per dove siamo page */
+    padding: 0 1.5rem;
+  }
 
-.about-content {
-  text-align: justify;
-  padding: 15px;
-}
+  .formazione-page-container {
+    margin-top: 75rem; /* Specific top margin per formazione page */
+    padding: 0 1.5rem;
+  }
 
-.about-img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  margin-top: 50px;
-}
+  .servizi-page-container {
+    margin-top: 8rem; /* Specific top margin per servizi page */
+    padding: 0 1.5rem;
+  }
 
-@media (max-width: 575px) {
-  p {
-    font-size: 1rem;
+  .protezione-civile-page-container {
+    margin-top: 20rem; /* Specific top margin per protezione civile page */
+    padding: 0 1.5rem;
+  }
+
+  .servizio-civile-page-container {
+    margin-top: 70rem; /* Specific top margin per servizio civile page */
+    padding: 0 1.5rem;
+  }
+
+  .solidarieta-page-container {
+    margin-top: 20rem; /* Specific top margin per solidarietà page */
+    padding: 0 1.5rem;
+  }
+
+  .sign-in-page-container {
+    margin-top: 35rem; /* Specific top margin per sign-in page */
+    padding: 0 1.5rem;
+  }
+
+  .soccorso-page-container {
+    margin-top: 22rem; /* Specific top margin per soccorso page */
+    padding: 0 1.5rem;
+  }
+
+  .sign-in-form .form-control {
+    max-width: 90%; /* Adjust form width per tablets */
+  }
+
+  .foot {
+    padding: 1rem 0; /* Adjust padding per footer */
+  }
+
+  .foot li {
+    padding: 0.5rem;
   }
 }

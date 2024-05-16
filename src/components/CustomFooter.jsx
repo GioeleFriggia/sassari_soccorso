@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "../App.css"; // Ensure the CSS path is correct
 
 const CustomFooter = () => {
   return (

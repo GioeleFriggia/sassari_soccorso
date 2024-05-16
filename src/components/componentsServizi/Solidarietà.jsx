@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 
-const ServizioCivile = () => {
+const Solidarietà = () => {
   return (
-    <Container style={{ marginTop: "5rem" }}>
-      <h1>Solidarietà</h1>
+    <Container className="solidarieta-page-container">
+      <h1 className="h1-blue">Solidarietà</h1>
       <div className="about-content">
         <img
           className="about-img mb-3"
@@ -27,4 +27,4 @@ const ServizioCivile = () => {
   );
 };
 
-export default ServizioCivile;
+export default Solidarietà;

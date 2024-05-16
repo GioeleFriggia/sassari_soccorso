@@ -13,8 +13,11 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <Container style={{ paddingTop: `calc(${navbarHeight}px + 20px)` }}>
-      <h1 className="mt-auto">Chi Siamo</h1>
+    <Container
+      className="about-page-container"
+      style={{ paddingTop: `calc(${navbarHeight}px + 20px)` }}
+    >
+      <h1 className="h1-blue mt-auto">Chi Siamo</h1>
       <div className="about-content">
         <img
           className="about-img mb-3"

@@ -3,11 +3,9 @@ import { Container } from "react-bootstrap";
 import "../../App.css"; // Importa il file CSS per le personalizzazioni
 
 const ProtezioneCivile = () => {
-  const navbarHeight = 60; // Altezza della navbar, sostituisci con il valore effettivo
-
   return (
-    <Container style={{ paddingTop: `${navbarHeight + 30}px` }}>
-      <h1 className="mt-auto h2">Protezione civile </h1>
+    <Container className="protezione-civile-page-container">
+      <h1 className="h1-blue mt-auto">Protezione civile</h1>
       <div className="about-content">
         <img
           className="about-img mb-3 mt-1"

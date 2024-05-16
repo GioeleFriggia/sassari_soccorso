@@ -14,8 +14,10 @@ function DoveSiamo() {
   };
 
   return (
-    <div className="dove-siamo-container">
-      <h1 style={{ marginTop: "1rem" }}>Dove siamo </h1>
+    <div className="dove-siamo-page-container">
+      <h1 className="h1-blue" style={{ marginTop: "1rem" }}>
+        Dove siamo
+      </h1>
       <p>
         Ci trovi a Sassari Via Bottego, 37 - 07100 Sassari (SS) Per trovarci
         clicca qui

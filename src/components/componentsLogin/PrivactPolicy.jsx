@@ -1,13 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "../../App.css"; // Importa il file CSS per le personalizzazioni
 
 const PrivacyPolicyPage = () => {
   const navbarHeight = 60; // Altezza della navbar, sostituisci con il valore effettivo
 
   return (
     <Container style={{ paddingTop: `${navbarHeight + 35}px` }}>
-      <h1 className="mt-auto h2 h1-margin-top">Policy Privacy</h1>
+      <h1 className="h1-blue mt-auto h2 h1-margin-top">Policy Privacy</h1>
       <Row>
         <Col>
           <h4>Gentile utente,</h4>
