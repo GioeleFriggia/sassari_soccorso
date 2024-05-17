@@ -4,14 +4,19 @@ import { fetchUserData } from "../../redux/actions";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth.user);
-  const token = useSelector((state) => state.auth.token);
+  const auth = useSelector((state) => state.auth);
+  const user = auth?.user;
+  const token = auth?.token;
 
   useEffect(() => {
     if (!user && token) {
       dispatch(fetchUserData(token));
     }
   }, [dispatch, token, user]);
+
+  if (!auth) {
+    return <div>Loading...</div>;
+  }
 
   if (!user) {
     return <div>Loading...</div>;

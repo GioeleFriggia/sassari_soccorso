@@ -38,15 +38,14 @@ export const registerUser = (userData) => async (dispatch) => {
 export const loginUser = (credentials, navigate) => async (dispatch) => {
   try {
     const response = await axios.post(`${apiUrl}/login`, credentials);
-    const { token } = response.data;
-
-    if (token) {
-      localStorage.setItem("token", token);
-      dispatch({ type: LOGIN_USER_SUCCESS, payload: token });
+    if (response.status === 200) {
+      const { token, user } = response.data;
+      console.log("Login riuscito, token ricevuto:", token);
 
       // Fetch user data after successful login
       dispatch(fetchUserData(token));
-
+      localStorage.setItem("user", user);
+      localStorage.setItem("token", token);
       navigate("/profile");
     } else {
       throw new Error("No token received");
@@ -60,6 +59,7 @@ export const loginUser = (credentials, navigate) => async (dispatch) => {
   }
 };
 
+// Fetch User Data
 // Fetch User Data
 export const fetchUserData = (token) => async (dispatch) => {
   try {

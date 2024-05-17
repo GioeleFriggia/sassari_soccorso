@@ -1,12 +1,12 @@
 import {
-  REGISTER_USER_SUCCESS,
-  REGISTER_USER_FAILURE,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
   FETCH_USER_SUCCESS,
   FETCH_USER_FAILURE,
+  REGISTER_USER_SUCCESS,
+  REGISTER_USER_FAILURE,
   LOGOUT_USER,
-} from "../../redux/actions/index.js";
+} from "../actions";
 
 const initialState = {
   user: null,
@@ -17,7 +17,12 @@ const initialState = {
 function userReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN_USER_SUCCESS:
-      return { ...state, token: action.payload, errors: null };
+      return {
+        ...state,
+        token: action.payload.token,
+        user: action.payload.user,
+        errors: null,
+      };
     case FETCH_USER_SUCCESS:
       return { ...state, user: action.payload, errors: null };
     case LOGIN_USER_FAILURE:
