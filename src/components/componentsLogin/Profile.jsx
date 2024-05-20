@@ -1,18 +1,24 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserData } from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
+import { fetchUserData, logoutUser } from "../../redux/actions";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
-  const user = auth?.user;
-  const token = auth?.token;
+  const { user, token } = auth;
 
   useEffect(() => {
-    if (!user && token) {
+    if (token && !user) {
       dispatch(fetchUserData(token));
     }
   }, [dispatch, token, user]);
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/login"); // Redirect to login page after logout
+  };
 
   if (!auth) {
     return <div>Loading...</div>;
@@ -53,10 +59,9 @@ const ProfilePage = () => {
         <strong>Membership Number:</strong>{" "}
         <span>{user.membershipNumber || "Not provided"}</span>
       </div>
-      <div className="profile-field">
-        <strong>Phone:</strong> <span>{user.phone || "Not provided"}</span>
-      </div>
-      <button className="profile-update-button">Update Profile</button>
+      <button onClick={handleLogout} className="profile-logout-button">
+        Logout
+      </button>
     </div>
   );
 };

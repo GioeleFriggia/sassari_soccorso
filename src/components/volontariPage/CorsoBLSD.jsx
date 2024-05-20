@@ -1,30 +1,26 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "../../App.css"; // Assicurati di importare il file CSS
 
-const CorsoBLSD = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+const BLSD = () => {
+  const googleSlidesUrl =
+    "https://docs.google.com/presentation/d/e/2PACX-1vRfgL16o_mHs3KXI_CJEJhXdOoVaZkUM33W0SS-38umOcmLcwTXRf79kcWf9h5pDw/embed?start=false&loop=false&delayms=60000";
 
   return (
-    <div style={{ width: "80%", margin: "0 auto" }}>
-      <Slider {...settings}>
-        <div>
-          <img src="/path/to/your/image1.jpg" alt="Slide 1" />
-        </div>
-        <div>
-          <img src="/path/to/your/image2.jpg" alt="Slide 2" />
-        </div>
-        // Add more slides as needed
-      </Slider>
+    <div className="blsd-container">
+      <h1>Manuale Basic Life Support and Defibrillation (BLSD)</h1>
+      <div className="responsive-iframe-container">
+        <iframe
+          src={googleSlidesUrl}
+          frameBorder="0"
+          allowFullScreen
+          mozAllowFullScreen
+          webkitAllowFullScreen
+          title="Manuale BLSD"
+          className="responsive-iframe"
+        ></iframe>
+      </div>
     </div>
   );
 };
 
-export default CorsoBLSD;
+export default BLSD;

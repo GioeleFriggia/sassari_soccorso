@@ -9,13 +9,16 @@ import Formazione from "./pages/Formazione";
 import ProtezioneCivile from "./components/componentsServizi/ProtezioneCivile";
 import Soccorso from "./components/componentsServizi/Soccorso";
 import Solidarietà from "./components/componentsServizi/Solidarietà";
-import Login from "../src/components/componentsLogin/Login";
+import Login from "./components/componentsLogin/Login";
 import SignIn from "./components/componentsLogin/SignIn";
 import Profile from "./components/componentsLogin/Profile";
-import PrivacyPolicyPage from "../src/components/componentsLogin/PrivactPolicy";
-import VolunteersPage from "../src/components/volontariPage/VolunteersPage";
+import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy";
 import ServizioCivile from "./components/componentsServizi/ServizioCivile";
 import AppInitializer from "./components/AppInitializer";
+import CorsoBLSD from "../src/components/volontariPage/CorsoBLSD";
+import CorsoPBLSD from "../src/components/volontariPage/CorsoPBLSD";
+import CorsoPTC from "../src/components/volontariPage/CorsoPTC/";
+import AreaEmergenza from "./components/AreaEmergenza";
 
 function App() {
   return (
@@ -38,7 +41,10 @@ function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/volunteers" element={<VolunteersPage />} />
+          <Route path="/emergenza/blsd" element={<CorsoBLSD />} />
+          <Route path="/emergenza/pblsd" element={<CorsoPBLSD />} />
+          <Route path="/emergenza/ptc" element={<CorsoPTC />} />
+          <Route path="/emergenza" element={<AreaEmergenza />} />
         </Routes>
         <CustomFooter />
       </AppInitializer>

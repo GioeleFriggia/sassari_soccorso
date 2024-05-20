@@ -93,7 +93,186 @@ h6 {
 .profile-update-button:hover {
   background-color: #0056b3;
 }
+.blsd-container {
+  margin-top: 80px; /* General top margin for all sizes. */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fafbfb; /* Light background color */
+  min-height: 100vh; /* Use min-height to accommodate content size */
+}
 
+.blsd-container h1 {
+  color: rgb(56, 5, 223); /* Dark blue color for visibility */
+  margin-bottom: 20px; /* Space below the title */
+  position: relative; /* Required for z-index to take effect */
+  z-index: 10; /* Ensures h1 is above other positioned elements */
+}
+
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.25%; /* 16:9 Aspect ratio for non-mobile views */
+  height: 0;
+  margin-top: 20px; /* Ensures space between h1 and iframe */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white; /* Background color */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+  .blsd-container {
+    margin-top: 800px; /* Reduced margin top to better align with the navbar */
+  }
+  .responsive-iframe-container {
+    position: relative;
+    width: 100%; /* Maintain full width without extending beyond the viewport */
+    padding-top: 80px;
+    padding-bottom: 65%; /* Adjust padding-bottom to increase height slightly */
+    overflow: visible; /* Continue to hide any overflow */
+  }
+  .responsive-iframe {
+    transform: scale(1.1); /* Slightly reduce the scale for a better fit */
+    transform-origin: top center; /* Adjust the origin of transformation to top center */
+    width: 125%; /* Increase width slightly to enhance zoom while maintaining context */
+    left: -5%; /* Adjust left to properly center the content within the viewport */
+  }
+}
+
+@media (min-width: 768px) {
+  .blsd-container {
+    margin-top: 800px; /* Larger margin for tablets to ensure visibility below the navbar */
+  }
+}
+
+@media (min-width: 1024px) {
+  .blsd-container {
+    margin-top: 700px; /* Adjusted top margin for larger screens */
+  }
+}
+/* pblsd */
+/* pblsd */
+.pblsd-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fafbfb; /* Light background color */
+  min-height: 100vh; /* Use min-height to accommodate content size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pblsd-container h1 {
+  color: rgb(56, 5, 223); /* Dark blue color for visibility */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.pblsd-start-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #0069d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pblsd-start-btn:hover {
+  background-color: #0056b3;
+}
+
+.pblsd-responsive-iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  margin-bottom: 20px; /* Add space below the iframe */
+}
+
+.pblsd-responsive-iframe-container iframe,
+.pblsd-responsive-iframe-container object,
+.pblsd-responsive-iframe-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pblsd-quiz-container {
+  max-width: 800px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pblsd-progress-bar-container {
+  width: 100%;
+  background-color: #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 20px 0;
+  height: 30px;
+  position: relative;
+}
+
+.pblsd-progress-bar {
+  height: 100%;
+  border-radius: 25px;
+  transition: width 1s linear, background-color 1s linear;
+  display: flex;
+  align-items: center;
+}
+
+.pblsd-ambulance {
+  height: 30px;
+  transition: transform 1s linear;
+}
+
+.pblsd-question-container {
+  margin-top: 20px;
+}
+
+.pblsd-question {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.pblsd-option-btn {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 10px 20px;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #0069d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pblsd-option-btn:hover {
+  background-color: #0056b3;
+}
+
+.pblsd-score {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* pblsd */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
