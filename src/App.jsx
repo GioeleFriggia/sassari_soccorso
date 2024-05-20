@@ -15,10 +15,12 @@ import Profile from "./components/componentsLogin/Profile";
 import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy";
 import ServizioCivile from "./components/componentsServizi/ServizioCivile";
 import AppInitializer from "./components/AppInitializer";
-import CorsoBLSD from "../src/components/volontariPage/CorsoBLSD";
-import CorsoPBLSD from "../src/components/volontariPage/CorsoPBLSD";
-import CorsoPTC from "../src/components/volontariPage/CorsoPTC/";
-import AreaEmergenza from "./components/AreaEmergenza";
+
+import CorsoBLSD from "../src/components/volontariPage/CorsoBlsd/";
+import CorsoPBLSD from "./components/volontariPage/CorsoPblsd";
+import CorsoPTC from "./components/volontariPage/CorsoPtc/";
+
+import AreaEmergenza from "../src/components/AreaEmergenza";
 
 function App() {
   return (

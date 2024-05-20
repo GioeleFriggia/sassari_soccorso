@@ -102,10 +102,10 @@ const CustomNavbar = () => {
                   <Dropdown.Menu>
                     <Dropdown.Item
                       as={Link}
-                      to="/protezione-civile/segnaletica"
+                      to="/protezione-civile/piano-di-emergenza"
                       onClick={handleDropdownItemClick}
                     >
-                      Segnaletica
+                      Piano di Emergenza Comunale
                     </Dropdown.Item>
                     <Dropdown.Item
                       as={Link}

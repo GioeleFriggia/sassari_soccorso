@@ -1,7 +1,7 @@
 import React from "react";
-import CorsoBLSD from "../components/volontariPage/CorsoBLSD";
-import CorsoPBLSD from "../components/volontariPage/CorsoPBLSD";
-import CorsoPTC from "../components/volontariPage/CorsoPTC/";
+import CorsoBLSD from "../components/volontariPage/CorsoBlsd/";
+import CorsoPBLSD from "../components/volontariPage/CorsoPblsd";
+import CorsoPTC from "../components/volontariPage/CorsoPtc";
 
 const AreaEmergenza = () => {
   return (

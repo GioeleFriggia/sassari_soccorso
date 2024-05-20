@@ -43,7 +43,7 @@ const HomePage = () => {
                 console.error("Errore nel caricamento dell'immagine 1", e);
               }}
             />
-            <Carousel.Caption>Slide 1</Carousel.Caption>
+            <Carousel.Caption></Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -54,7 +54,7 @@ const HomePage = () => {
                 console.error("Errore nel caricamento dell'immagine 2", e);
               }}
             />
-            <Carousel.Caption>Slide 2</Carousel.Caption>
+            <Carousel.Caption></Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -65,7 +65,7 @@ const HomePage = () => {
                 console.error("Errore nel caricamento dell'immagine 3", e);
               }}
             />
-            <Carousel.Caption>Slide 3</Carousel.Caption>
+            <Carousel.Caption></Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </div>
