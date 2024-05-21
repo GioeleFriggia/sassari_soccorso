@@ -102,17 +102,17 @@ const CustomNavbar = () => {
                   <Dropdown.Menu>
                     <Dropdown.Item
                       as={Link}
-                      to="/protezione-civile/piano-di-emergenza"
+                      to="/area-protezione-civile/piano-di-emergenza"
                       onClick={handleDropdownItemClick}
                     >
                       Piano di Emergenza Comunale
                     </Dropdown.Item>
                     <Dropdown.Item
                       as={Link}
-                      to="/protezione-civile/formazione"
+                      to="/area-protezione-civile/comunicazioni-radio"
                       onClick={handleDropdownItemClick}
                     >
-                      Formazione
+                      Comunicazioni Radio
                     </Dropdown.Item>
                     <Dropdown.Item
                       as={Link}
@@ -133,12 +133,12 @@ const CustomNavbar = () => {
                     variant="transparent"
                     className="nav-link my-1"
                   >
-                    Checklist
+                    Checklist Mezzo
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item
                       as={Link}
-                      to="/checklist/controllo"
+                      to="/checklist/check-list-mezzo"
                       onClick={handleDropdownItemClick}
                     >
                       Controllo

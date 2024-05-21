@@ -21,6 +21,11 @@ import CorsoPBLSD from "./components/volontariPage/CorsoPblsd";
 import CorsoPTC from "./components/volontariPage/CorsoPtc/";
 
 import AreaEmergenza from "../src/components/AreaEmergenza";
+import AreaProtezioneCivile from "./components/AreaProtezioneCivile";
+import PianoEmComunale from "./components/volontariPage/PianoEmComunale";
+import ComunicazioneRadio from "./components/volontariPage/ComunicazioniRadio";
+import CheckListMezzo from "./components/volontariPage/CeckListMezzo";
+import CeckList from "./components/CheckList"; // Adjust the path as necessary
 
 function App() {
   return (
@@ -47,6 +52,24 @@ function App() {
           <Route path="/emergenza/pblsd" element={<CorsoPBLSD />} />
           <Route path="/emergenza/ptc" element={<CorsoPTC />} />
           <Route path="/emergenza" element={<AreaEmergenza />} />
+          <Route
+            path="/area-protezione-civile/piano-di-emergenza"
+            element={<PianoEmComunale />}
+          />
+          <Route
+            path="/area-protezione-civile/comunicazioni-radio"
+            element={<ComunicazioneRadio />}
+          />
+          <Route
+            path="/area-protezione-civile"
+            element={<AreaProtezioneCivile />}
+          />
+          <Route
+            path="/checklist/check-list-mezzo"
+            element={<CheckListMezzo />}
+          />
+
+          <Route path="/check-list" element={<CeckList />} />
         </Routes>
         <CustomFooter />
       </AppInitializer>

@@ -79,182 +79,182 @@ const CorsoPBLSD = () => {
       ],
       answer: "Mantenendo il capo in posizione neutra",
     },
-    {
-      question:
-        "Qual è il punto di repere più indicato per valutare il polso centrale in un lattante di 2 mesi?",
-      options: [
-        "Arteria radiale",
-        "Arteria brachiale",
-        "Arteria pedidia",
-        "Arteria carotide",
-        "Arteria femorale",
-      ],
-      answer: "Arteria brachiale",
-    },
-    {
-      question:
-        "Il corretto rapporto tra compressioni toraciche e ventilazioni nella sequenza BLS pediatrica a 1 soccorritore è:",
-      options: ["15:1", "10:2", "5:1", "30:2", "15:2"],
-      answer: "15:2",
-    },
-    {
-      question:
-        "Qual è la modalità migliore di ventilazione di base senza presidi in un lattante di 2 mesi?",
-      options: [
-        "Bocca - bocca",
-        "Bocca – naso/bocca",
-        "Bocca -naso",
-        "Bocca – bocca chiudendo il naso",
-        "Nessuna delle precedenti",
-      ],
-      answer: "Bocca – naso/bocca",
-    },
-    {
-      question:
-        "Se durante le prime 2 insufflazioni di soccorso non si osserva l’espansione del torace occorre effettuare le seguenti azioni:",
-      options: [
-        "proseguire la sequenza e valutare la presenza di polso e segni di circolo",
-        "iniziare le compressioni toraciche esterne",
-        "riposizionare il capo prima delle successive ventilazioni",
-        "iniziare le manovre di disostruzione delle vie aeree da corpo estraneo",
-        "chiamare il soccorso avanzato",
-      ],
-      answer: "riposizionare il capo prima delle successive ventilazioni",
-    },
-    {
-      question: "La posizione laterale di sicurezza deve essere utilizzata:",
-      options: [
-        "in un bambino incosciente che non respira, in assenza trauma",
-        "in un bambino cosciente",
-        "in un lattante incosciente che non respira",
-        "in un lattante o bambino incosciente che respira, in assenza di trauma",
-        "In un lattante o bambino incosciente",
-      ],
-      answer:
-        "in un lattante o bambino incosciente che respira, in assenza di trauma",
-    },
-    {
-      question:
-        "Quali sono tra i seguenti i cosiddetti “segni vitali” da valutare nel lattante e bambino?",
-      options: [
-        "incoscienza, movimenti spontanei, respiro",
-        "tosse, colorito, movimenti",
-        "respiro, colorito, movimenti",
-        "incoscienza, colorito, polso centrale",
-        "movimenti, tosse, respiro",
-      ],
-      answer: "movimenti, tosse, respiro",
-    },
-    {
-      question:
-        "La frequenza delle compressioni toraciche nel lattante/bambino deve essere:",
-      options: [
-        "60 al minuto",
-        "100 al minuto",
-        "80 al minuto",
-        "130 al minuto",
-        "90 al minuto",
-      ],
-      answer: "100 al minuto",
-    },
-    {
-      question:
-        "La prima valutazione della presenza o assenza di circolazione nel bambino prevede che il soccorritore sanitario esegua:",
-      options: [
-        "controllo dei segni vitali e del polso brachiale",
-        "analisi del ritmo con il defibrillatore semiautomatico",
-        "esclusivo controllo del polso",
-        "controllo dei segni vitali e del polso carotideo",
-        "nessuna delle precedenti",
-      ],
-      answer: "controllo dei segni vitali e del polso carotideo",
-    },
-    {
-      question:
-        "Nel BLS pediatrico le compressioni toraciche esterne devono essere iniziate:",
-      options: [
-        "quando il paziente non presenta attività respiratoria",
-        "quando il paziente non ha coscienza",
-        "quando non sono presenti segni vitali e il polso centrale è dubbio o con FC < 60/min",
-        "solo quando il polso centrale è assente",
-        "nessuna delle precedenti",
-      ],
-      answer:
-        "quando non sono presenti segni vitali e il polso centrale è dubbio o con FC < 60/min",
-    },
-    {
-      question: "Il DAE deve essere utilizzato soprattutto:",
-      options: [
-        "quando il polso centrale è assente",
-        "nel bambino con collasso improvviso",
-        "nel lattante",
-        "in ambiente ospedaliero",
-        "prima delle manovre di RCP",
-      ],
-      answer: "nel bambino con collasso improvviso",
-    },
-    {
-      question:
-        "Quali tra le seguenti sono le manovre di disostruzione delle vie aeree indicate nel lattante cosciente?",
-      options: [
-        "Sollevare il lattante con i piedi in alto e dare colpi sulla schiena",
-        "Colpi dorsali e compressioni addominali",
-        "Manovra di Heimlich e colpi dorsali",
-        "Compressioni toraciche e addominali",
-        "Colpi dorsali e compressioni toraciche",
-      ],
-      answer: "Colpi dorsali e compressioni toraciche",
-    },
-    {
-      question:
-        "Quali sono le manovre da effettuare in sequenza in un bambino di 3 anni che ha inalato un corpo estraneo ed è diventato incosciente?",
-      options: [
-        "5 pacche dorsali, 5 compressioni toraciche, controllo in bocca, apertura vie aeree, ventilazione",
-        "15 compressioni toraciche seguite da 2 ventilazioni",
-        "apertura della vie aeree, 5 pacche dorsali, 5 compressioni toraciche, controllo in bocca, ventilazione",
-        "apertura delle vie aeree, controllo in bocca, 5 ventilazioni, 15 compressioni toraciche alternate a 2 ventilazioni",
-        "controllo del polso per 10 secondi, 15 compressioni toraciche seguite da 2 ventilazioni",
-      ],
-      answer:
-        "apertura delle vie aeree, controllo in bocca, 5 ventilazioni, 15 compressioni toraciche alternate a 2 ventilazioni",
-    },
-    {
-      question:
-        "Dopo aver erogato una scarica su indicazione del DAE è necessario:",
-      options: [
-        "riavviare l’analisi del ritmo",
-        "controllare la presenza di polso e segni di circolo",
-        "erogare un'altra scarica",
-        "riprendere immediatamente l’RCP",
-        "attendere nuove indicazioni del DAE allontanando i presenti",
-      ],
-      answer: "riprendere immediatamente l’RCP",
-    },
-    {
-      question:
-        "Se un bambino inala un corpo estraneo ha rumore respiratorio e tossisce violentemente occorre:",
-      options: [
-        "eseguire la manovra di Heimlich",
-        "cercare di rimuovere dalla bocca il corpo estraneo",
-        "eseguire solo i colpi dorsali",
-        "alternare pacche interscapolari e compressioni toraciche",
-        "incoraggiare il bambino a tossire, sorvegliarlo e, se possibile, somministrare ossigeno",
-      ],
-      answer:
-        "incoraggiare il bambino a tossire, sorvegliarlo e, se possibile, somministrare ossigeno",
-    },
-    {
-      question:
-        "Le tecniche disponibili per ottenere la disostruzione delle vie aeree nel BLS pediatrico hanno il seguente obiettivo:",
-      options: [
-        "provocare una tosse artificiale",
-        "aumentare la pressione intratoracica",
-        "rimuovere il corpo estraneo dalle vie aeree",
-        "tutte le precedenti",
-        "nessuna delle precedenti",
-      ],
-      answer: "tutte le precedenti",
-    },
+    // {
+    //   question:
+    //     "Qual è il punto di repere più indicato per valutare il polso centrale in un lattante di 2 mesi?",
+    //   options: [
+    //     "Arteria radiale",
+    //     "Arteria brachiale",
+    //     "Arteria pedidia",
+    //     "Arteria carotide",
+    //     "Arteria femorale",
+    //   ],
+    //   answer: "Arteria brachiale",
+    // },
+    // {
+    //   question:
+    //     "Il corretto rapporto tra compressioni toraciche e ventilazioni nella sequenza BLS pediatrica a 1 soccorritore è:",
+    //   options: ["15:1", "10:2", "5:1", "30:2", "15:2"],
+    //   answer: "15:2",
+    // },
+    // {
+    //   question:
+    //     "Qual è la modalità migliore di ventilazione di base senza presidi in un lattante di 2 mesi?",
+    //   options: [
+    //     "Bocca - bocca",
+    //     "Bocca – naso/bocca",
+    //     "Bocca -naso",
+    //     "Bocca – bocca chiudendo il naso",
+    //     "Nessuna delle precedenti",
+    //   ],
+    //   answer: "Bocca – naso/bocca",
+    // },
+    // {
+    //   question:
+    //     "Se durante le prime 2 insufflazioni di soccorso non si osserva l’espansione del torace occorre effettuare le seguenti azioni:",
+    //   options: [
+    //     "proseguire la sequenza e valutare la presenza di polso e segni di circolo",
+    //     "iniziare le compressioni toraciche esterne",
+    //     "riposizionare il capo prima delle successive ventilazioni",
+    //     "iniziare le manovre di disostruzione delle vie aeree da corpo estraneo",
+    //     "chiamare il soccorso avanzato",
+    //   ],
+    //   answer: "riposizionare il capo prima delle successive ventilazioni",
+    // },
+    // {
+    //   question: "La posizione laterale di sicurezza deve essere utilizzata:",
+    //   options: [
+    //     "in un bambino incosciente che non respira, in assenza trauma",
+    //     "in un bambino cosciente",
+    //     "in un lattante incosciente che non respira",
+    //     "in un lattante o bambino incosciente che respira, in assenza di trauma",
+    //     "In un lattante o bambino incosciente",
+    //   ],
+    //   answer:
+    //     "in un lattante o bambino incosciente che respira, in assenza di trauma",
+    // },
+    // {
+    //   question:
+    //     "Quali sono tra i seguenti i cosiddetti “segni vitali” da valutare nel lattante e bambino?",
+    //   options: [
+    //     "incoscienza, movimenti spontanei, respiro",
+    //     "tosse, colorito, movimenti",
+    //     "respiro, colorito, movimenti",
+    //     "incoscienza, colorito, polso centrale",
+    //     "movimenti, tosse, respiro",
+    //   ],
+    //   answer: "movimenti, tosse, respiro",
+    // },
+    // {
+    //   question:
+    //     "La frequenza delle compressioni toraciche nel lattante/bambino deve essere:",
+    //   options: [
+    //     "60 al minuto",
+    //     "100 al minuto",
+    //     "80 al minuto",
+    //     "130 al minuto",
+    //     "90 al minuto",
+    //   ],
+    //   answer: "100 al minuto",
+    // },
+    // {
+    //   question:
+    //     "La prima valutazione della presenza o assenza di circolazione nel bambino prevede che il soccorritore sanitario esegua:",
+    //   options: [
+    //     "controllo dei segni vitali e del polso brachiale",
+    //     "analisi del ritmo con il defibrillatore semiautomatico",
+    //     "esclusivo controllo del polso",
+    //     "controllo dei segni vitali e del polso carotideo",
+    //     "nessuna delle precedenti",
+    //   ],
+    //   answer: "controllo dei segni vitali e del polso carotideo",
+    // },
+    // {
+    //   question:
+    //     "Nel BLS pediatrico le compressioni toraciche esterne devono essere iniziate:",
+    //   options: [
+    //     "quando il paziente non presenta attività respiratoria",
+    //     "quando il paziente non ha coscienza",
+    //     "quando non sono presenti segni vitali e il polso centrale è dubbio o con FC < 60/min",
+    //     "solo quando il polso centrale è assente",
+    //     "nessuna delle precedenti",
+    //   ],
+    //   answer:
+    //     "quando non sono presenti segni vitali e il polso centrale è dubbio o con FC < 60/min",
+    // },
+    // {
+    //   question: "Il DAE deve essere utilizzato soprattutto:",
+    //   options: [
+    //     "quando il polso centrale è assente",
+    //     "nel bambino con collasso improvviso",
+    //     "nel lattante",
+    //     "in ambiente ospedaliero",
+    //     "prima delle manovre di RCP",
+    //   ],
+    //   answer: "nel bambino con collasso improvviso",
+    // },
+    // {
+    //   question:
+    //     "Quali tra le seguenti sono le manovre di disostruzione delle vie aeree indicate nel lattante cosciente?",
+    //   options: [
+    //     "Sollevare il lattante con i piedi in alto e dare colpi sulla schiena",
+    //     "Colpi dorsali e compressioni addominali",
+    //     "Manovra di Heimlich e colpi dorsali",
+    //     "Compressioni toraciche e addominali",
+    //     "Colpi dorsali e compressioni toraciche",
+    //   ],
+    //   answer: "Colpi dorsali e compressioni toraciche",
+    // },
+    // {
+    //   question:
+    //     "Quali sono le manovre da effettuare in sequenza in un bambino di 3 anni che ha inalato un corpo estraneo ed è diventato incosciente?",
+    //   options: [
+    //     "5 pacche dorsali, 5 compressioni toraciche, controllo in bocca, apertura vie aeree, ventilazione",
+    //     "15 compressioni toraciche seguite da 2 ventilazioni",
+    //     "apertura della vie aeree, 5 pacche dorsali, 5 compressioni toraciche, controllo in bocca, ventilazione",
+    //     "apertura delle vie aeree, controllo in bocca, 5 ventilazioni, 15 compressioni toraciche alternate a 2 ventilazioni",
+    //     "controllo del polso per 10 secondi, 15 compressioni toraciche seguite da 2 ventilazioni",
+    //   ],
+    //   answer:
+    //     "apertura delle vie aeree, controllo in bocca, 5 ventilazioni, 15 compressioni toraciche alternate a 2 ventilazioni",
+    // },
+    // {
+    //   question:
+    //     "Dopo aver erogato una scarica su indicazione del DAE è necessario:",
+    //   options: [
+    //     "riavviare l’analisi del ritmo",
+    //     "controllare la presenza di polso e segni di circolo",
+    //     "erogare un'altra scarica",
+    //     "riprendere immediatamente l’RCP",
+    //     "attendere nuove indicazioni del DAE allontanando i presenti",
+    //   ],
+    //   answer: "riprendere immediatamente l’RCP",
+    // },
+    // {
+    //   question:
+    //     "Se un bambino inala un corpo estraneo ha rumore respiratorio e tossisce violentemente occorre:",
+    //   options: [
+    //     "eseguire la manovra di Heimlich",
+    //     "cercare di rimuovere dalla bocca il corpo estraneo",
+    //     "eseguire solo i colpi dorsali",
+    //     "alternare pacche interscapolari e compressioni toraciche",
+    //     "incoraggiare il bambino a tossire, sorvegliarlo e, se possibile, somministrare ossigeno",
+    //   ],
+    //   answer:
+    //     "incoraggiare il bambino a tossire, sorvegliarlo e, se possibile, somministrare ossigeno",
+    // },
+    // {
+    //   question:
+    //     "Le tecniche disponibili per ottenere la disostruzione delle vie aeree nel BLS pediatrico hanno il seguente obiettivo:",
+    //   options: [
+    //     "provocare una tosse artificiale",
+    //     "aumentare la pressione intratoracica",
+    //     "rimuovere il corpo estraneo dalle vie aeree",
+    //     "tutte le precedenti",
+    //     "nessuna delle precedenti",
+    //   ],
+    //   answer: "tutte le precedenti",
+    // },
   ];
 
   useEffect(() => {
@@ -381,7 +381,7 @@ const CorsoPBLSD = () => {
       )}
       {showResults && (
         <div className="pblsd-results-container">
-          <div className="pblsd-results">
+          <div className="pblsd-results-2 ">
             <h2>Risultati Finali</h2>
             <p>
               Il tuo punteggio è {score} su {questions.length}
@@ -403,7 +403,7 @@ const CorsoPBLSD = () => {
             )}
             {incorrectAnswers.length > 0 && (
               <>
-                <h3 className="pblsd-incorrect-questions-title">
+                <h3 className="pblsd-incorrect-questions-title ">
                   Domande sbagliate:
                 </h3>
                 <ul className="pblsd-incorrect-questions-list">
