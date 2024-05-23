@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchUserData } from "../redux/actions"; // Assicurati che il percorso sia corretto
+import { fetchUserData } from "../redux/actions";
 
 const AppInitializer = ({ children }) => {
   const dispatch = useDispatch();

@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../redux/actions"; // Assicurati che il percorso sia corretto
+import { useSelector } from "react-redux";
 
 export const UserContext = createContext(null);
 

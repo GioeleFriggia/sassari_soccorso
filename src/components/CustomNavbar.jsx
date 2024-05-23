@@ -152,6 +152,28 @@ const CustomNavbar = () => {
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
+                {user.role === "ADMIN" && (
+                  <>
+                    <Nav.Item className="my-1">
+                      <Link
+                        to="/users"
+                        className="nav-link"
+                        onClick={handleDropdownItemClick}
+                      >
+                        Lista User
+                      </Link>
+                    </Nav.Item>
+                    <Nav.Item className="my-1">
+                      <Link
+                        to="/checklists"
+                        className="nav-link"
+                        onClick={handleDropdownItemClick}
+                      >
+                        Lista Checklist
+                      </Link>
+                    </Nav.Item>
+                  </>
+                )}
               </>
             ) : (
               <>

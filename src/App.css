@@ -12,6 +12,162 @@ body {
   padding-top: 80px; /* Adjust according to the height of your navbar */
   font-family: Arial, sans-serif; /* Choose a readable font */
 }
+.checklist-container {
+  width: 80%;
+  margin: 40px auto;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.4em;
+  margin-bottom: 20px;
+}
+
+.checklist-container {
+  width: 80%;
+  margin: 860px auto -10px; /* Added top margin to account for the navbar */
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 2.4em;
+  margin-bottom: 20px;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #4caf50;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  transition: background-color 0.3s;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #4caf50;
+}
+
+.error {
+  color: red;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.error {
+  color: red;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  background-color: rgb(248, 249, 250);
+  color: #0909f3; /* Default text color */
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #f70404; /* Text color on hover/focus */
+}
+
+.navbar-light .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+  border: #ddd;
+  box-shadow: none; /* Remove shadow */
+}
+
+/* Dropdown Item Styles */
+.dropdown-item {
+  background-color: rgb(248, 249, 250);
+  color: #0606f4; /* Default text color */
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #f8f9fa; /* Light background on hover/focus */
+  color: #0056b3; /* Text color on hover/focus */
+}
+
+/* Profile Icon Styles */
+.profile-icon {
+  color: #fdf9f9; /* Default icon color */
+  background-color: transparent; /* Remove black background */
+}
+
+.profile-icon:hover,
+.profile-icon:focus {
+  color: #0056b3; /* Icon color on hover/focus */
+}
+
+/* Custom margin for login and register links */
+.nav-link-right {
+  margin-left: 40px; /* Distanza specifica a sinistra per spostare gli elementi verso destra */
+}
+
+.nav-link-separator {
+  padding-right: 15px;
+  margin-left: auto; /* Use auto margin to push the links to the far right */
+}
+
+/* Center items in mobile view */
+@media (max-width: 768px) {
+  .navbar-nav {
+    border-color: #0000ff;
+    text-align: center;
+    width: 100%;
+  }
+  .navbar-nav .nav-item {
+    display: inline-block;
+    float: none;
+  }
+  .navbar-nav .nav-link,
+  .navbar-nav .dropdown-toggle {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-link-right {
+    margin-left: 0; /* Reset the left margin for mobile */
+  }
+  .nav-link-separator {
+    margin-left: 0; /* Reset the left margin for mobile */
+  }
+}
 
 /* Set the color for all heading elements */
 h1,
@@ -929,4 +1085,69 @@ button[type="submit"]:hover {
   .convert-button {
     width: 100%;
   }
+}
+.profile-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.profile-header {
+  margin-top: 600px;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profile-field {
+  margin-bottom: 10px;
+}
+
+.profile-avatar {
+  display: block;
+  margin-top: 10px;
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+.profile-upload-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-upload-input {
+  margin-bottom: 10px;
+}
+
+.profile-upload-button,
+.profile-logout-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-logout-button {
+  background-color: #dc3545;
+}
+
+.profile-upload-button:hover,
+.profile-logout-button:hover {
+  background-color: #0056b3;
+}
+
+.profile-logout-button:hover {
+  background-color: #c82333;
 }

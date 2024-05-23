@@ -27,6 +27,9 @@ import ComunicazioneRadio from "./components/volontariPage/ComunicazioniRadio";
 import CheckListMezzo from "./components/volontariPage/CeckListMezzo";
 import CeckList from "./components/CheckList"; // Adjust the path as necessary
 
+import UserList from "../src/components/admin/UserList";
+import ChecklistList from "../src/components/admin/ChecklistList";
+
 function App() {
   return (
     <Router>
@@ -68,8 +71,9 @@ function App() {
             path="/checklist/check-list-mezzo"
             element={<CheckListMezzo />}
           />
-
           <Route path="/check-list" element={<CeckList />} />
+          <Route path="/users" element={<UserList />} />
+          <Route path="/checklists" element={<ChecklistList />} />
         </Routes>
         <CustomFooter />
       </AppInitializer>

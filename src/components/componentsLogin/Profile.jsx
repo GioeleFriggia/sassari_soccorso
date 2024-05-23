@@ -1,13 +1,21 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchUserData, logoutUser } from "../../redux/actions";
+import { createSelector } from "reselect";
+import { logoutUser } from "../../redux/actions/index";
+
+const mySelector = (state) => state.someData;
+
+// Utilizza createSelector per creare un selettore memorizzato
+const memoizedSelector = createSelector(mySelector, (data) =>
+  data.filter((item) => item.someCondition)
+);
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const auth = useSelector((state) => state.auth);
-  const { user, token } = auth;
+  const { user, token } = auth || {};
 
   useEffect(() => {
     if (token && !user) {

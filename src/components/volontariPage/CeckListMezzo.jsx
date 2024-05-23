@@ -14,10 +14,10 @@ function ChecklistMezzo() {
     steeringFluidLevel: 0,
     electricalSystem: false,
     warningLights: false,
-    frontLights: "",
-    rearLights: "",
-    rightSideLights: "",
-    leftSideLights: "",
+    frontLights: false,
+    rearLights: false,
+    rightSideLights: false,
+    leftSideLights: false,
     cabinFeatures: "",
   });
 
@@ -203,36 +203,36 @@ function ChecklistMezzo() {
       <label>
         Luci anteriori:
         <input
-          type="text"
+          type="checkbox"
           name="frontLights"
-          value={formData.frontLights}
+          checked={formData.frontLights}
           onChange={handleChange}
         />
       </label>
       <label>
         Luci posteriori:
         <input
-          type="text"
+          type="checkbox"
           name="rearLights"
-          value={formData.rearLights}
+          checked={formData.rearLights}
           onChange={handleChange}
         />
       </label>
       <label>
         Luci laterali destre:
         <input
-          type="text"
+          type="checkbox"
           name="rightSideLights"
-          value={formData.rightSideLights}
+          checked={formData.rightSideLights}
           onChange={handleChange}
         />
       </label>
       <label>
         Luci laterali sinistre:
         <input
-          type="text"
+          type="checkbox"
           name="leftSideLights"
-          value={formData.leftSideLights}
+          checked={formData.leftSideLights}
           onChange={handleChange}
         />
       </label>
