@@ -81,12 +81,12 @@ const ChecklistList = () => {
           {checklists.length > 0 ? (
             checklists.map((checklist) => (
               <tr key={checklist.id}>
-                <td>{checklist.date}</td>
-                <td>{checklist.time}</td>
-                <td>{checklist.ambulance}</td>
-                <td>{checklist.plate}</td>
-                <td>{checklist.initialKm}</td>
-                <td>{checklist.fuelLevel}</td>
+                <td data-label="Data">{checklist.date}</td>
+                <td data-label="Ora">{checklist.time}</td>
+                <td data-label="Ambulanza">{checklist.ambulance}</td>
+                <td data-label="Targa">{checklist.plate}</td>
+                <td data-label="Km iniziali">{checklist.initialKm}</td>
+                <td data-label="Livello carburante">{checklist.fuelLevel}</td>
               </tr>
             ))
           ) : (

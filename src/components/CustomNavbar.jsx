@@ -133,7 +133,7 @@ const CustomNavbar = () => {
                     variant="transparent"
                     className="nav-link my-1"
                   >
-                    Checklist Mezzo
+                    Checklist
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item
@@ -141,14 +141,14 @@ const CustomNavbar = () => {
                       to="/checklist/check-list-mezzo"
                       onClick={handleDropdownItemClick}
                     >
-                      Controllo
+                      Checklist Mezzo
                     </Dropdown.Item>
                     <Dropdown.Item
                       as={Link}
                       to="/checklist/manutenzione"
                       onClick={handleDropdownItemClick}
                     >
-                      Manutenzione
+                      Checklist Vanosanitario
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>

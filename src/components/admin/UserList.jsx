@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../../App.css";
+import "../../App.css"; // Import the CSS file for styling
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -86,7 +86,7 @@ const UserList = () => {
   return (
     <div className="user-list-container">
       <h1>Lista degli Utenti</h1>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       {users.length === 0 ? (
         <p>Nessun utente trovato</p>
       ) : (
