@@ -1584,3 +1584,182 @@ h1 {
     border-bottom: 2px solid #343a40;
   }
 }
+/* checklist mezzo  */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.sanitary-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  margin-top: 560px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: orange;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="range"] {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  background-color: #eaeaea;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  transform: scale(0.8);
+  accent-color: red;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+  .sanitary-wrapper {
+    margin-top: 1100px;
+  }
+}
+/* lista checklist vano sanitario per ADMIN  */
+.checklist-vanosanitario-container {
+  margin: 20px;
+}
+
+.styled-table-vanosanitario {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.styled-table-vanosanitario thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table-vanosanitario th,
+.styled-table-vanosanitario td {
+  padding: 12px 15px;
+}
+
+.styled-table-vanosanitario tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table-vanosanitario tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table-vanosanitario tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

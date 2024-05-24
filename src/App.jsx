@@ -25,10 +25,10 @@ import AreaProtezioneCivile from "./components/AreaProtezioneCivile";
 import PianoEmComunale from "./components/volontariPage/PianoEmComunale";
 import ComunicazioneRadio from "./components/volontariPage/ComunicazioniRadio";
 import CheckListMezzo from "./components/volontariPage/CeckListMezzo";
-import CeckList from "./components/CheckList"; // Adjust the path as necessary
-
+import CeckList from "./components/CheckList";
 import UserList from "../src/components/admin/UserList";
 import ChecklistList from "../src/components/admin/ChecklistList";
+import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSanitario";
 
 function App() {
   return (
@@ -70,6 +70,10 @@ function App() {
           <Route
             path="/checklist/check-list-mezzo"
             element={<CheckListMezzo />}
+          />
+          <Route
+            path="/checklist/check-list-vano-sanitario"
+            element={<ChecklistVanoSanitario />}
           />
           <Route path="/check-list" element={<CeckList />} />
           <Route path="/users" element={<UserList />} />

@@ -145,7 +145,7 @@ const CustomNavbar = () => {
                     </Dropdown.Item>
                     <Dropdown.Item
                       as={Link}
-                      to="/checklist/manutenzione"
+                      to="/checklist/check-list-vano-sanitario"
                       onClick={handleDropdownItemClick}
                     >
                       Checklist Vanosanitario
