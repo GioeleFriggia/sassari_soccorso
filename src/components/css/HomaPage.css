@@ -1,0 +1,65 @@
+.home-page-container {
+  max-width: 1280px;
+  margin: 1700px auto 0 auto; /* Adjusted top margin for home page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+.home-page-container {
+  margin-top: 70rem; /* Specific top margin per home page */
+  padding: 0 1.5rem;
+}
+
+.home-page-container {
+  margin-top: 109rem; /* Specific top margin for home page */
+  padding: 0 1rem;
+}
+
+.carousel-container {
+  margin-top: 2rem;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto; /* Ensures images fit well and are responsive */
+}
+/* Card Layout */
+.card-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem; /* Additional margin for spacing between carousel and cards */
+}
+
+.uniform-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  margin-bottom: 2rem; /* Space below each card */
+}
+
+.uniform-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.uniform-card img {
+  width: 100%;
+  height: auto;
+}
+/* Responsive Design */
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width: 600px) {
+  .page-container {
+    margin-top: 8rem; /* Increased top margin for mobile to ensure visibility below the navbar */
+  }
+
+  .card-row .col {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+
+  .uniform-card img {
+    height: 200px; /* Fixed height for consistency on mobile */
+  }
+}

@@ -3,6 +3,7 @@ import { Container, Navbar, Nav, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PersonCircle } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
+import "../components/css/NavBar.css";
 
 const CustomNavbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -10,6 +11,8 @@ const CustomNavbar = () => {
   const [isProtezioneCivileDropdownOpen, setIsProtezioneCivileDropdownOpen] =
     useState(false);
   const [isChecklistDropdownOpen, setIsChecklistDropdownOpen] = useState(false);
+  const [isAdminChecklistDropdownOpen, setIsAdminChecklistDropdownOpen] =
+    useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const { user } = useSelector((state) => state.auth || { user: null });
@@ -19,6 +22,7 @@ const CustomNavbar = () => {
     setIsEmergenzaDropdownOpen(false);
     setIsProtezioneCivileDropdownOpen(false);
     setIsChecklistDropdownOpen(false);
+    setIsAdminChecklistDropdownOpen(false);
     setIsServicesDropdownOpen(false);
     setIsExpanded(false);
   };
@@ -148,7 +152,7 @@ const CustomNavbar = () => {
                       to="/checklist/check-list-vano-sanitario"
                       onClick={handleDropdownItemClick}
                     >
-                      Checklist Vanosanitario
+                      Checklist Vano Sanitario
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -163,15 +167,37 @@ const CustomNavbar = () => {
                         Lista User
                       </Link>
                     </Nav.Item>
-                    <Nav.Item className="my-1">
-                      <Link
-                        to="/checklists"
-                        className="nav-link"
-                        onClick={handleDropdownItemClick}
+                    <Dropdown
+                      show={isAdminChecklistDropdownOpen}
+                      onMouseEnter={() => setIsAdminChecklistDropdownOpen(true)}
+                      onMouseLeave={() =>
+                        setIsAdminChecklistDropdownOpen(false)
+                      }
+                      align="end"
+                    >
+                      <Dropdown.Toggle
+                        variant="transparent"
+                        className="nav-link my-1"
                       >
-                        Lista Checklist
-                      </Link>
-                    </Nav.Item>
+                        Liste Checklist
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu>
+                        <Dropdown.Item
+                          as={Link}
+                          to="/checklists/lista-checklist-mezzo"
+                          onClick={handleDropdownItemClick}
+                        >
+                          Lista Checklist Mezzi
+                        </Dropdown.Item>
+                        <Dropdown.Item
+                          as={Link}
+                          to="/checklists/lista-checklist-vano-sanitario"
+                          onClick={handleDropdownItemClick}
+                        >
+                          Lista Checklist Vano Sanitario
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </>
                 )}
               </>

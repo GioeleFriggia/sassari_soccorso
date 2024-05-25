@@ -1,0 +1,63 @@
+/* lista checklist vano sanitario per ADMIN  */
+.checklist-vanosanitario-container {
+  margin: 20px;
+}
+
+.styled-table-vanosanitario {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.styled-table-vanosanitario thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table-vanosanitario th,
+.styled-table-vanosanitario td {
+  padding: 12px 15px;
+}
+
+.styled-table-vanosanitario tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table-vanosanitario tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table-vanosanitario tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+/* login page  */
+
+/* Custom styling for the register link */
+.register-link {
+  color: #007bff; /* Blue color */
+  cursor: default; /* Default cursor */
+}
+.sign-in-page-container {
+  max-width: 1280px;
+  margin: 100px auto 0 auto; /* Adjusted top margin for sign-in page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Make form wider */
+.sign-in-form .form-control {
+  width: 100%;
+  max-width: 900px; /* Maximum width for the form fields */
+  margin: 0 auto; /* Center align the form fields */
+}

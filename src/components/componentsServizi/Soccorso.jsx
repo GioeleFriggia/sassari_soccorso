@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-// import '../App.css'; // Importa il file CSS per le personalizzazioni
-
+import "../css/Soccorso.css";
 const Soccorso = () => {
   return (
     <Container className="soccorso-page-container">

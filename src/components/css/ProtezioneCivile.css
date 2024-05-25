@@ -1,0 +1,15 @@
+.protezione-civile-page-container {
+  max-width: 1280px;
+  margin: 730px auto 0 auto; /* Adjusted top margin for protezione civile page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+.protezione-civile-page-container {
+  margin-top: 45rem; /* Specific top margin for protezione civile page */
+  padding: 0 1rem;
+}
+.protezione-civile-page-container {
+  margin-top: 20rem; /* Specific top margin per protezione civile page */
+  padding: 0 1.5rem;
+}

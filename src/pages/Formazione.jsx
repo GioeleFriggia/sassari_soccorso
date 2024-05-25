@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import "../components/css/FormazionePage.css";
 
 const Formazione = () => {
   const colors = [

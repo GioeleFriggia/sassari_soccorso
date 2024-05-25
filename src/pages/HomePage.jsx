@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel, Card, Row, Col } from "react-bootstrap";
-import "../App.css";
+import "../components/css/HomaPage.css";
 
 const HomePage = () => {
   const cardsData = [

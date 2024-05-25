@@ -1,5 +1,5 @@
 import React from "react";
-import "../../App.css"; // Assicurati che il file CSS sia importato
+import "../css/PianoProt.Comune.css"; // Assicurati che il file CSS sia importato
 import logo from "../../../public/logo-pt-comune.png"; // Importa il logo
 import pianoPDF from "../../../public/Piano_comunale_PC_modello_intervento_28.05.2023.pdf"; // Importa il file PDF
 

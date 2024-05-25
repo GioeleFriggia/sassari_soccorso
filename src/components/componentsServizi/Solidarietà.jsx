@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-
+import "../css/Solidarietà.css";
 const Solidarietà = () => {
   return (
     <Container className="solidarieta-page-container">

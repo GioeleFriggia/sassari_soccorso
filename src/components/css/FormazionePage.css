@@ -1,0 +1,31 @@
+.formazione-page-container {
+  max-width: 1280px;
+  margin: 1500px auto 0 auto; /* Adjusted top margin for formazione page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.formazione-page-container {
+  margin-top: 150rem; /* Specific top margin for formazione page */
+  padding: 0 1rem;
+}
+.formazione-page-container {
+  margin-top: 75rem; /* Specific top margin per formazione page */
+  padding: 0 1.5rem;
+}
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .page-container {
+    margin-top: 8rem; /* Slight top margin per tablets */
+  }
+
+  .card-row .col {
+    flex: 1 0 48%;
+    max-width: 48%;
+  }
+
+  .uniform-card img {
+    height: 250px; /* Adjusted height for consistency on tablets */
+  }
+}

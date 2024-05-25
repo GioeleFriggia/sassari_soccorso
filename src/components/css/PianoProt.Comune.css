@@ -1,0 +1,174 @@
+.piano-di-emergenza {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem; /* Responsive padding */
+  text-align: center;
+}
+
+.piano-header {
+  background-color: #fafbfb; /* Light background color */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-content {
+  margin-top: 2200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensure full width for alignment purposes */
+}
+
+.logo-pt-comune {
+  max-width: 100px; /* Adjust the logo size */
+  margin-bottom: 20px;
+}
+
+.download-button {
+  margin-top: 100px;
+  position: absolute;
+  top: 90px; /* Adjust this value based on your navbar height */
+  right: -1000px; /* Align it to the left side */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.download-button button {
+  padding: 10px 20px;
+  font-size: 16px;
+
+  background-color: #0069d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-button button:hover {
+  background-color: #0056b3;
+}
+
+.piano-content {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.piano-content section {
+  margin-bottom: 20px;
+}
+
+.piano-content h2 {
+  color: rgb(56, 5, 223); /* Dark blue color for visibility */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.piano-content p {
+  margin-bottom: 10px;
+  line-height: 1.6; /* Improve readability */
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 767px) {
+  .piano-header {
+    text-align: center;
+    margin-top: 2400px;
+    padding: 15px;
+  }
+
+  .logo-pt-comune {
+    max-width: 80px; /* Smaller logo for mobile */
+  }
+
+  .download-button {
+    position: static; /* Make it inline for mobile */
+    order: 2; /* Ensure it appears after the logo */
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .download-button button {
+    font-size: 14px; /* Smaller button text for mobile */
+  }
+
+  .piano-content {
+    padding: 0 10px; /* Less padding for mobile */
+  }
+
+  .piano-content h2 {
+    font-size: 18px; /* Smaller headings for mobile */
+  }
+
+  .piano-content p {
+    font-size: 14px; /* Smaller text for mobile */
+  }
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .piano-header {
+    padding: 25px;
+    flex-direction: column;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-pt-comune {
+    max-width: 120px; /* Larger logo for tablets and desktops */
+    margin-bottom: 20px;
+  }
+
+  .download-button {
+    position: fixed;
+    top: 90px;
+    left: 20px;
+  }
+
+  .download-button button {
+    font-size: 18px; /* Larger button text for tablets and desktops */
+  }
+
+  .piano-content {
+    padding: 0 20px; /* More padding for tablets and desktops */
+  }
+
+  .piano-content h2 {
+    font-size: 22px; /* Larger headings for tablets and desktops */
+  }
+
+  .piano-content p {
+    font-size: 16px; /* Larger text for tablets and desktops */
+  }
+}
+
+@media (min-width: 1024px) {
+  .piano-header {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .logo-pt-comune {
+    max-width: 150px; /* Even larger logo for desktops */
+  }
+
+  .download-button button {
+    font-size: 20px; /* Even larger button text for desktops */
+  }
+
+  .piano-content {
+    padding: 0 30px; /* Even more padding for desktops */
+  }
+
+  .piano-content h2 {
+    font-size: 24px; /* Even larger headings for desktops */
+  }
+
+  .piano-content p {
+    font-size: 18px; /* Even larger text for desktops */
+  }
+}

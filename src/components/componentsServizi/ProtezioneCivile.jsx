@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import "../../App.css"; // Importa il file CSS per le personalizzazioni
+import "../css/ProtezioneCivile.css"; // Importa il file CSS per le personalizzazioni
 
 const ProtezioneCivile = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import "../App.css";
+import "../components/css/AboutPage.css";
 
 const AboutPage = () => {
   const [navbarHeight, setNavbarHeight] = useState(0);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../App.css";
+import "../css/Pblsd.css";
 import Confetti from "react-confetti";
 
 const CorsoPBLSD = () => {

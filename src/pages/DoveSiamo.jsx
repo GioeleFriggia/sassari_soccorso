@@ -1,7 +1,7 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "../App.css"; // Assicurati che il percorso sia corretto
+import "../components/css/DoveSiamo.css"; // Assicurati che il percorso sia corretto
 
 function DoveSiamo() {
   const position = [40.74606, 8.55395]; // Coordinate di Bottego, Sassari

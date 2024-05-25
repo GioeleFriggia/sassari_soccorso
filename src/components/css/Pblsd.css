@@ -1,0 +1,230 @@
+.pblsd-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fafbfb; /* Light background color */
+  min-height: 100vh; /* Use min-height to accommodate content size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pblsd-container h1 {
+  color: rgb(56, 5, 223); /* Dark blue color for visibility */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.pblsd-start-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #0069d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pblsd-start-btn:hover {
+  background-color: #0056b3;
+}
+
+.pblsd-responsive-iframe-container {
+  position: relative;
+  padding-bottom: 150%; /* Adjusted for better readability on mobile */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  background: #000;
+  margin-bottom: 20px; /* Add space below the iframe */
+}
+
+.pblsd-responsive-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pblsd-quiz-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pblsd-progress-bar {
+  width: 100%;
+  background-color: #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 20px 0;
+  height: 30px;
+  position: relative;
+}
+
+.pblsd-progress {
+  height: 100%;
+  border-radius: 25px;
+  transition: width 1s linear, background-color 1s linear;
+  display: flex;
+  align-items: center;
+}
+
+.pblsd-question {
+  font-size: 16px; /* Slightly smaller for better mobile display */
+  margin-bottom: 20px;
+}
+
+.pblsd-option-btn {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 10px 20px;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #0069d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pblsd-option-btn:hover {
+  background-color: #0056b3;
+}
+
+.pblsd-option-correct {
+  background-color: green;
+}
+
+.pblsd-option-incorrect {
+  background-color: red;
+}
+
+.pblsd-results-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.pblsd-results {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pblsd-pass-message {
+  color: green;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pblsd-fail-message {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sad-face {
+  font-size: 2rem;
+}
+
+.pblsd-incorrect-questions-title {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.pblsd-incorrect-questions-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.pblsd-question-text {
+  font-weight: bold;
+}
+
+.pblsd-incorrect-answer {
+  color: red;
+}
+
+.pblsd-correct-answer {
+  color: green;
+}
+
+.pblsd-retry-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #0069d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.pblsd-retry-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 767px) {
+  .pblsd-container {
+    margin-top: 800px; /* Increased margin for mobile view */
+  }
+
+  .pblsd-question {
+    font-size: 14px; /* Smaller font size for better readability on mobile */
+  }
+
+  .pblsd-results {
+    width: 90%;
+    padding: 10px;
+    margin-top: 100px; /* Increased margin top for mobile view */
+  }
+
+  .pblsd-incorrect-questions-list {
+    font-size: 14px;
+  }
+
+  .pblsd-responsive-iframe-container {
+    padding-bottom: 100%; /* Make iframe larger for better readability on mobile */
+  }
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .pblsd-container {
+    margin-top: 390px;
+  }
+
+  .pblsd-container h1 {
+    margin-top: 100px; /* Adjust for larger screens */
+  }
+
+  .pblsd-question {
+    font-size: 18px; /* Increase font size for larger screens */
+  }
+
+  .pblsd-responsive-iframe-container {
+    padding-bottom: 66.25%; /* Standard 16:9 aspect ratio */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pblsd-container h1 {
+    margin-top: 150px; /* Adjust for even larger screens */
+  }
+
+  .pblsd-quiz-container {
+    max-width: 800px;
+  }
+
+  .pblsd-results {
+    max-width: 800px;
+  }
+
+  .pblsd-incorrect-questions-list {
+    font-size: 16px;
+  }
+}

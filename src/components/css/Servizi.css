@@ -1,0 +1,16 @@
+.servizi-page-container {
+  margin-top: 8rem; /* Specific top margin per servizi page */
+  padding: 0 1.5rem;
+}
+
+.servizi-page-container {
+  margin-top: 10rem; /* Specific top margin for servizi page */
+  padding: 0 1rem;
+}
+.servizi-page-container {
+  max-width: 1280px;
+  margin: 120px auto 0 auto; /* Adjusted top margin for servizi page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}

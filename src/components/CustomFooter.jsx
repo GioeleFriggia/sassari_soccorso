@@ -1,21 +1,21 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
+import "../../src/components/css/CustomFooter.css";
 const CustomFooter = () => {
   return (
-    <footer className="text-center py-4 mt-5 foot">
+    <footer className="custom-footer text-center py-4 mt-5">
       <Container>
-        <Row className="mb-4">
+        <Row className="custom-footer-row mb-4">
           <Col xs={12} sm={4}>
-            <i className="bi bi-facebook me-3 icon"></i>
-            <i className="bi bi-twitter me-3 icon"></i>
-            <i className="bi bi-instagram me-3 icon"></i>
-            <i className="bi bi-youtube icon"></i>
+            <i className="bi bi-facebook me-3 custom-footer-icon"></i>
+            <i className="bi bi-twitter me-3 custom-footer-icon"></i>
+            <i className="bi bi-instagram me-3 custom-footer-icon"></i>
+            <i className="bi bi-youtube custom-footer-icon"></i>
           </Col>
         </Row>
-        <Row>
+        <Row className="custom-footer-row">
           <Col xs={12} sm={4}>
-            <ul className="list-unstyled">
+            <ul className="custom-footer-list list-unstyled">
               <li>Home</li>
               <li>Chi siamo</li>
               <li>Dove siamo</li>
@@ -23,33 +23,33 @@ const CustomFooter = () => {
             </ul>
           </Col>
           <Col xs={12} sm={4}>
-            <ul className="list-unstyled">
+            <ul className="custom-footer-list list-unstyled">
               <li>Privacy</li>
               <li>Telefono: 123456789</li>
               <li>Email: gioelefriggia@hotmail.com</li>
             </ul>
           </Col>
           <Col xs={12} sm={4}>
-            <ul className="list-unstyled">
+            <ul className="custom-footer-list list-unstyled">
               <li>
                 <img
                   src="/facebook.png"
                   alt="Facebook"
-                  className="social-icon me-3"
+                  className="custom-footer-social-icon me-3"
                   width="24"
                   height="24"
                 />
                 <img
                   src="/instagram.png"
                   alt="Instagram"
-                  className="social-icon me-3"
+                  className="custom-footer-social-icon me-3"
                   width="24"
                   height="24"
                 />
                 <img
                   src="/whatsapp.png"
                   alt="Whatsapp"
-                  className="social-icon me-3"
+                  className="custom-footer-social-icon me-3"
                   width="24"
                   height="24"
                 />
@@ -57,11 +57,11 @@ const CustomFooter = () => {
             </ul>
           </Col>
         </Row>
-        <hr className="my-4" />
-        <Row>
+        <hr className="custom-footer-divider my-4" />
+        <Row className="custom-footer-row">
           <Col xs={12}>
-            <p className="mb-2">Sassari Soccorso</p>
-            <p>&copy; Gioele Friggia</p>
+            <p className="custom-footer-text mb-2">Sassari Soccorso</p>
+            <p className="custom-footer-text">&copy; Gioele Friggia</p>
           </Col>
         </Row>
       </Container>

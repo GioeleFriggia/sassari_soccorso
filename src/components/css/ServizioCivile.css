@@ -1,0 +1,19 @@
+.servizio-civile-page-container {
+  margin-top: 120rem; /* Specific top margin per servizio civile page */
+  padding: 0 1rem;
+}
+.servizio-civile-page-container {
+  margin-top: 70rem; /* Specific top margin per servizio civile page */
+  padding: 0 1.5rem;
+}
+.h1-blue {
+  color: #0c0cecd9;
+}
+
+.servizio-civile-page-container {
+  max-width: 1280px;
+  margin: 1580px auto 0 auto; /* Adjusted top margin for servizio civile page */
+  padding: 0 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}

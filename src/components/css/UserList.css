@@ -1,0 +1,311 @@
+/* lista users */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.user-list-container {
+  padding: 20px;
+  margin-top: 150px; /* Imposta un grande margine superiore */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; /* Centra il contenitore */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #eb8f05;
+  font-size: 36px; /* Dimensione del font aumentata */
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(35, 13, 228, 0.1);
+}
+
+thead {
+  background-color: #166ae0;
+  color: #ffffff; /* Parole in bianco */
+  text-align: left;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 12px 15px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+  border-bottom: 2px solid #343a40;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+.confirm-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.confirm-dialog p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.confirm-dialog button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.confirm-dialog button:first-of-type {
+  background-color: green;
+  color: white;
+}
+
+.confirm-dialog button:last-of-type {
+  background-color: red;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .user-list-container {
+    margin-top: 400px; /* Aumenta il margine superiore per la vista mobile */
+    padding: 10px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin: 2rem 0 1rem 0; /* Aumenta il margine superiore */
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px; /* Bordi arrotondati per le righe della tabella */
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    white-space: pre-wrap; /* Permette la divisione delle parole lunghe */
+    word-wrap: break-word;
+  }
+
+  td:before {
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    width: calc(50% - 20px);
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    background-color: #f9f9f9;
+  }
+
+  td:nth-of-type(1):before {
+    content: "Nome";
+  }
+  td:nth-of-type(2):before {
+    content: "Cognome";
+  }
+  td:nth-of-type(3):before {
+    content: "Email";
+  }
+  td:nth-of-type(4):before {
+    content: "Città";
+  }
+  td:nth-of-type(5):before {
+    content: "Residenza";
+  }
+  td:nth-of-type(6):before {
+    content: "Data di nascita";
+  }
+  td:nth-of-type(7):before {
+    content: "Azioni";
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.checklist-container {
+  padding: 20px;
+  margin-top: 400px; /* Ensure the content starts below the navbar */
+  max-width: 1200px;
+  margin: 100px auto; /* Center the container */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f77706;
+  font-size: 36px; /* Increased font size */
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 18px;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(35, 13, 228, 0.1);
+}
+
+.styled-table thead {
+  background-color: #166ae0;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #343a40;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 600px) {
+  .checklist-container {
+    margin-top: 150px; /* Increase the top margin for mobile view */
+    padding: 10px;
+  }
+
+  .styled-table thead {
+    margin-top: 500px;
+    display: none;
+  }
+
+  .styled-table,
+  .styled-table tbody,
+  .styled-table tr,
+  .styled-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .styled-table tr {
+    margin-bottom: 15px;
+  }
+
+  .styled-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .styled-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .styled-table td:last-child {
+    border-bottom: 2px solid #343a40;
+  }
+}

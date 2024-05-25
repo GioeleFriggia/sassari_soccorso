@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../App.css"; // Import the CSS file for styling
+import "../css/ChecklistMezzo.css"; // Import the CSS file for styling
 
 function ChecklistMezzo() {
   const [formData, setFormData] = useState({
@@ -20,6 +20,8 @@ function ChecklistMezzo() {
     rightSideLights: false,
     leftSideLights: false,
     cabinFeatures: "",
+    firstName: "", // New field
+    lastName: "", // New field
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -90,6 +92,8 @@ function ChecklistMezzo() {
         rightSideLights: false,
         leftSideLights: false,
         cabinFeatures: "",
+        firstName: "", // Reset field
+        lastName: "", // Reset field
       });
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
@@ -282,6 +286,24 @@ function ChecklistMezzo() {
             type="text"
             name="cabinFeatures"
             value={formData.cabinFeatures}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Nome:
+          <input
+            type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Cognome:
+          <input
+            type="text"
+            name="lastName"
+            value={formData.lastName}
             onChange={handleChange}
           />
         </label>

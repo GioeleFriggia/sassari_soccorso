@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createSelector } from "reselect";
 import { logoutUser } from "../../redux/actions/index";
+import "../css/ProfilePage.css";
 
 const mySelector = (state) => state.someData;
 
