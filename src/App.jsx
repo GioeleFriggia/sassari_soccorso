@@ -94,7 +94,9 @@ function App() {
               <Route path="/checklists" element={<ChecklistList />} />
             </Routes>
           </main>
-          <CustomFooter />
+          <div>
+            <CustomFooter />
+          </div>
         </AppInitializer>
       </div>
     </Router>

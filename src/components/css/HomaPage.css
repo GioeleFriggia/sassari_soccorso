@@ -1,65 +1,147 @@
+/* Impostazioni base della pagina */
 .home-page-container {
-  max-width: 1280px;
-  margin: 1700px auto 0 auto; /* Adjusted top margin for home page */
-  padding: 0 2rem;
+  max-width: 1380px;
+  margin: 70px auto;
+  padding: 20px; /* Uniforma il padding per un aspetto coerente */
   text-align: center;
   box-sizing: border-box;
 }
-.home-page-container {
-  margin-top: 70rem; /* Specific top margin per home page */
-  padding: 0 1.5rem;
+
+/* Stili per il banner */
+.banner {
+  background-color: #bde4f756; /* Sfondo del banner in un blu chiaro */
+  color: #1087d6; /* Corretto il colore del testo */
+  padding: 40px 20px; /* Padding aumentato per un aspetto più prominente */
+  margin-top: 70rem; /* Margine superiore ridotto */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInBanner 1.5s ease-out forwards;
 }
 
-.home-page-container {
-  margin-top: 109rem; /* Specific top margin for home page */
-  padding: 0 1rem;
+@keyframes fadeInBanner {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Stili del carousel */
 .carousel-container {
   margin-top: 2rem;
 }
 
 .carousel-item img {
   max-width: 100%;
-  height: auto; /* Ensures images fit well and are responsive */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
 }
-/* Card Layout */
+
+.carousel-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Rimuovere le scritte "Previous" e "Next" */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Sfondo scuro per le frecce */
+  border-radius: 50%; /* Cerchio attorno alle frecce */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Riduce la larghezza dell'area cliccabile per mostrare solo le frecce */
+}
+
+.carousel-control-prev span,
+.carousel-control-next span {
+  display: none; /* Nasconde il testo "Previous" e "Next" */
+}
+
+/* Stili delle card */
 .card-row {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 2rem; /* Additional margin for spacing between carousel and cards */
+  margin-top: 2rem; /* Assicura spazio sufficiente tra il carousel e le card */
 }
 
 .uniform-card {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  margin-bottom: 2rem; /* Space below each card */
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+/* Effetti di hover specifici per ogni card */
+.uniform-card.card-red:hover {
+  background-color: #ac57f228; /* Rosso chiaro per la prima card */
+}
+
+.uniform-card.card-green:hover {
+  background-color: #cfedd196; /* Verde chiaro per la seconda card */
+}
+
+.uniform-card.card-orange:hover {
+  background-color: #f3e9ad; /* Arancione chiaro per la terza card */
 }
 
 .uniform-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.uniform-card img {
-  width: 100%;
-  height: auto;
+/* Stili del testo e della tipografia */
+h1,
+h2,
+h3 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #205375;
 }
-/* Responsive Design */
-/* Smartphones (portrait and landscape) ----------- */
+
+.blue-text,
+.orange-text {
+  font-weight: bold;
+  text-shadow: 1px 1px 0px #fff;
+}
+
+/* Media Queries per la responsività */
 @media only screen and (max-width: 600px) {
-  .page-container {
-    margin-top: 8rem; /* Increased top margin for mobile to ensure visibility below the navbar */
+  .home-page-container {
+    margin-top: 100rem;
+    padding: 0 15px;
   }
 
-  .card-row .col {
-    flex: 1 0 100%;
-    max-width: 100%;
+  .banner {
+    padding: 15px 8px;
+    margin-top: 1rem; /* Adjusted for mobile view */
+    font-size: 18px; /* Larger font for better readability */
   }
 
-  .uniform-card img {
-    height: 200px; /* Fixed height for consistency on mobile */
+  .carousel-container {
+    margin-top: 1rem;
+    padding: 0 10px; /* Riduci il padding laterale per massimizzare la larghezza del carousel */
+  }
+
+  .carousel-item img {
+    height: 300px; /* Aumenta l'altezza delle immagini del carousel per schermi più piccoli */
+    object-fit: cover; /* Assicura che l'immagine si adatti bene */
+  }
+
+  .card-row {
+    display: block; /* Le card si impilano verticalmente su schermi più piccoli */
+  }
+
+  .uniform-card {
+    margin-bottom: 15px; /* More space between cards for easier navigation */
   }
 }

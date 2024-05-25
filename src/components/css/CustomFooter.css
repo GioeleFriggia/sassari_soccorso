@@ -1,6 +1,5 @@
-/* Footer styles */
-.custom-footer {
-  background-color: #525455; /* Assicurati che il colore di sfondo sia consistente */
+Footer styles .custom-footer {
+  background-color: #00a3e0; /* Assicurati che il colore di sfondo sia consistente */
   color: white;
   width: 100%;
   position: fixed;
