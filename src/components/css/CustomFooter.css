@@ -1,73 +1,107 @@
-Footer styles .custom-footer {
-  background-color: #00a3e0; /* Assicurati che il colore di sfondo sia consistente */
-  color: white;
+.custom-footer {
+  background-color: rgba(226, 239, 248, 0.719); /* Sfondo leggermente azzurro */
+  color: #dae4ef; /* Testo blu */
   width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 100px; /* Altezza fissa per il footer */
+  padding: 30px 50px; /* Più padding per una sensazione di spazio */
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Allinea gli elementi all'inizio delle colonne */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra delicata per sollevamento visivo */
+  border-top: 2px solid #97c3e4bc; /* Bordo superiore blu più spesso */
+  border-radius: 10px; /* Bordi arrotondati */
+  font-family: Arial, sans-serif; /* Font più moderno */
+  margin: 20px 0; /* Spazio sopra e sotto il footer */
+}
+
+/* Gestione delle colonne */
+.custom-footer .column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Allineamento a sinistra */
+}
+
+/* Stili per titoli, paragrafi e link */
+.custom-footer h5 {
+  margin-bottom: 15px; /* Più spazio sotto il titolo */
+  font-weight: bold;
+}
+
+.custom-footer p,
+.custom-footer a {
+  margin: 8px 0; /* Uniformità degli spazi */
+  color: #007bff; /* Testo blu */
+  text-decoration: none; /* Nessuna sottolineatura */
+}
+
+/* Stili per i link per migliorare l'interattività */
+.custom-footer a:hover {
+  color: #0056b3; /* Colore al passaggio del mouse */
+  text-decoration: underline; /* Sottolineatura al hover per maggior enfasi */
+}
+
+/* Stili per le icone sociali */
+.social-links {
+  display: flex;
+  gap: 10px; /* Spazio tra le icone */
+}
+
+.social-links a {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 40px; /* Larghezza fissa per le icone */
+  height: 40px; /* Altezza fissa per le icone */
+  border-radius: 50%; /* Rende le icone circolari */
+  background-color: #fff; /* Background color for visibility */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
-.custom-footer-row {
-  width: 100%;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
+.social-links a i {
+  font-size: 20px; /* Uniform size for all icons */
+  color: #fff; /* Icon color */
 }
 
-.custom-footer-icon {
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
+.social-links a.facebook {
+  background-color: #3b5998; /* Facebook blue */
 }
 
-.custom-footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.social-links a.instagram {
+  background-color: #e1306c; /* Instagram gradient */
 }
 
-.custom-footer-list li {
-  margin-bottom: 0.5rem;
+.social-links a.whatsapp {
+  background-color: #25d366; /* WhatsApp green */
 }
 
-.custom-footer-social-icon {
-  width: 24px;
-  height: 24px;
+.social-links a.linkedin {
+  background-color: #0077b5; /* LinkedIn blue */
 }
 
-.custom-footer-divider {
-  border-top: 1px solid #ffffff;
+.social-links a.github {
+  background-color: #333; /* GitHub black */
 }
 
-.custom-footer-text {
-  margin-bottom: 0.5rem;
+.social-links a:hover {
+  transform: scale(1.1); /* Effetto ingrandimento al passaggio del mouse */
 }
 
-/* Responsive Styles */
-@media (max-width: 576px) {
-  .custom-footer ul {
-    padding-left: 0;
-  }
-  .custom-footer-row {
+/* Responsive adjustments per dispositivi mobili */
+@media (max-width: 768px) {
+  .custom-footer {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    padding: 20px;
   }
-  .custom-footer-col {
-    margin-bottom: 1rem;
-  }
-}
 
-@media (min-width: 576px) {
-  .custom-footer ul {
-    padding-left: 0;
+  .custom-footer .column {
+    align-items: center; /* Centra gli elementi nelle colonne */
+    width: 100%; /* Larghezza completa per una migliore leggibilità */
+    padding: 10px 0; /* Spazio verticale per separare le colonne */
   }
-  .custom-footer-row {
-    justify-content: space-between;
-  }
-  .custom-footer-col {
-    text-align: left;
+
+  .social-links {
+    gap: 10px;
+    margin-top: 20px; /* Spazio sopra le icone social */
+    justify-content: center; /* Centra le icone social */
   }
 }

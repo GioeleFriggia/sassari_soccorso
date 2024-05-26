@@ -1,62 +1,61 @@
-* Sign-in  */
-/* General Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f4f7; /* Light gray background */
 }
 
-.sign-in-wrapper {
-  margin-top: 300px;
+.register-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f0f4f7; /* Light gray background */
+  padding: 2rem 0; /* Add some padding to avoid footer overlap */
 }
 
-.sign-in-container {
+.register-container {
   padding: 2rem;
   background-color: #ffffff; /* White background */
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgb(24, 48, 234);
   text-align: center;
   width: 100%;
-  max-width: 350px; /* Adjust width as necessary */
+  max-width: 450px; /* Adjust width as necessary */
 }
 
-.sign-in-logo img {
-  width: 80px; /* Adjust size as needed */
-  margin-bottom: 20px;
+.register-logo img {
+  margin-top: 50px;
+  width: 90px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+  margin-bottom: -20px;
 }
 
-h2 {
+.register-container h2 {
   color: #007bff; /* Blue color for heading */
   margin-bottom: 20px;
 }
 
-.sign-in-form {
+.register-form {
   display: flex;
   flex-direction: column;
 }
 
-.sign-in-form label {
-  text-align: left;
-  color: #007bff;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.sign-in-form input {
+.register-form input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #007bff; /* Blue border */
   border-radius: 8px;
   box-sizing: border-box;
+  background-color: #f0f4f7; /* Light gray background */
+  color: #000000; /* Black text color */
 }
 
-.sign-in-form button {
+.register-form input::placeholder {
+  color: #6c757d; /* Placeholder text color */
+}
+
+.register-button {
   width: 100%;
   padding: 12px;
   background-color: #007bff; /* Button color */
@@ -67,102 +66,32 @@ h2 {
   transition: background-color 0.2s;
 }
 
-.sign-in-form button:hover {
+.register-button:hover {
   background-color: #0056b3;
 }
 
-.sign-in-page-container {
-  margin-top: 10rem; /* Specific top margin per sign-in page */
-  padding: 0 1rem;
+a {
+  color: #007bff; /* Link color */
 }
 
-.sign-in-form .form-control {
-  max-width: 100%;
+a:hover {
+  text-decoration: underline;
 }
 
-.sign-in-page-container {
-  margin-top: 35rem; /* Specific top margin per sign-in page */
-  padding: 0 1.5rem;
-}
-
-.sign-in-form .form-control {
-  max-width: 90%; /* Adjust form width per tablets */
-}
-.sign-in-page-container {
-  margin-top: 10rem; /* Specific top margin per sign-in page */
-  padding: 0 1rem;
-}
-
-.sign-in-form .form-control {
-  max-width: 100%;
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f7; /* Light gray background */
-}
-
-.sign-in-wrapper {
-  margin-top: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f4f7; /* Light gray background */
-}
-
-.sign-in-container {
-  padding: 2rem;
-  background-color: #ffffff; /* White background */
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 100%;
-  max-width: 350px; /* Adjust width as necessary */
-}
-
-.sign-in-logo img {
-  width: 80px; /* Adjust size as needed */
-  margin-bottom: 20px;
-}
-
-h2 {
-  color: #007bff; /* Blue color for heading */
-  margin-bottom: 20px;
-}
-
-.sign-in-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.sign-in-form label {
-  text-align: left;
-  color: #007bff;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.sign-in-form input {
-  width: 100%;
+/* Error modal styling */
+.error-modal {
+  color: #ff0000;
+  background-color: #ffe6e6;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #007bff; /* Blue border */
+  margin-bottom: 10px;
+  border: 1px solid #ff0000;
   border-radius: 8px;
-  box-sizing: border-box;
 }
 
-.sign-in-form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff; /* Button color */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.sign-in-form button:hover {
-  background-color: #0056b3;
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .register-wrapper {
+    margin-top: 10px; /* Adjust this value to place the register container below the navbar */
+    padding: 1rem; /* Add some padding for mobile devices */
+  }
 }

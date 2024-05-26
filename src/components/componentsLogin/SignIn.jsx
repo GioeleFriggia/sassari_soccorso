@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../redux/actions/index";
+import { useNavigate } from "react-router-dom";
+import "../css/SignIn.css"; // Import the CSS file
 
-const SignIn = () => {
+const Register = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
     email: "",
     password: "",
-    avatarURL: "",
     birthdate: "",
     residence: "",
     city: "",
@@ -20,7 +22,7 @@ const SignIn = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     if (!formData.email.includes("@")) {
       alert("Please enter a valid email address.");
@@ -30,19 +32,38 @@ const SignIn = () => {
       alert("Please fill out all required fields.");
       return;
     }
-    dispatch(registerUser(formData));
+    try {
+      const response = await dispatch(registerUser(formData));
+      if (response.success) {
+        setFormData({
+          name: "",
+          surname: "",
+          email: "",
+          password: "",
+          birthdate: "",
+          residence: "",
+          city: "",
+          membershipNumber: "",
+        });
+        navigate("/");
+      } else {
+        alert("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (
-    <div className="sign-in-wrapper">
-      <div className="sign-in-container">
-        <div className="sign-in-logo">
-          <img src="logo2.jpg" alt="Logo" />
+    <div className="register-wrapper">
+      <div className="register-container">
+        <div className="register-logo">
+          <img src="/public/logo2.png" alt="Logo" />
         </div>
         <h2>Registrazione</h2>
-        <form onSubmit={handleRegister} className="sign-in-form">
-          <label>Nome</label>
+        <form onSubmit={handleRegister} className="register-form">
           <input
+            className="register-input"
             type="text"
             name="name"
             value={formData.name}
@@ -50,8 +71,8 @@ const SignIn = () => {
             placeholder="Inserisci il tuo nome..."
             required
           />
-          <label>Cognome</label>
           <input
+            className="register-input"
             type="text"
             name="surname"
             value={formData.surname}
@@ -59,8 +80,8 @@ const SignIn = () => {
             placeholder="Inserisci il tuo cognome..."
             required
           />
-          <label>Email</label>
           <input
+            className="register-input"
             type="email"
             name="email"
             value={formData.email}
@@ -68,8 +89,8 @@ const SignIn = () => {
             placeholder="Inserisci la tua email..."
             required
           />
-          <label>Password</label>
           <input
+            className="register-input"
             type="password"
             name="password"
             value={formData.password}
@@ -77,51 +98,45 @@ const SignIn = () => {
             placeholder="Inserisci la tua password..."
             required
           />
-          <label>Avatar URL</label>
           <input
-            type="text"
-            name="avatarURL"
-            value={formData.avatarURL}
-            onChange={handleChange}
-            placeholder="Avatar URL"
-          />
-          <label>Data di Nascita</label>
-          <input
+            className="register-input"
             type="date"
             name="birthdate"
             value={formData.birthdate}
             onChange={handleChange}
             placeholder="gg/mm/aaaa"
           />
-          <label>Residenza</label>
           <input
+            className="register-input"
             type="text"
             name="residence"
             value={formData.residence}
             onChange={handleChange}
             placeholder="Residenza"
           />
-          <label>Città</label>
           <input
+            className="register-input"
             type="text"
             name="city"
             value={formData.city}
             onChange={handleChange}
             placeholder="Città"
           />
-          <label>Numero di Iscrizione</label>
           <input
+            className="register-input"
             type="text"
             name="membershipNumber"
             value={formData.membershipNumber}
             onChange={handleChange}
             placeholder="Numero di Iscrizione"
           />
-          <button type="submit">Iscriviti</button>
+          <button className="register-button" type="submit">
+            Iscriviti
+          </button>
         </form>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default Register;

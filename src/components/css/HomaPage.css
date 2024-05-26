@@ -12,7 +12,7 @@
   background-color: #bde4f756; /* Sfondo del banner in un blu chiaro */
   color: #1087d6; /* Corretto il colore del testo */
   padding: 40px 20px; /* Padding aumentato per un aspetto più prominente */
-  margin-top: 70rem; /* Margine superiore ridotto */
+  margin-top: 1rem; /* Margine superiore ridotto */
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -117,7 +117,7 @@ h3 {
 /* Media Queries per la responsività */
 @media only screen and (max-width: 600px) {
   .home-page-container {
-    margin-top: 100rem;
+    margin-top: 4rem;
     padding: 0 15px;
   }
 

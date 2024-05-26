@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import jsPDF from "jspdf";
 import { FaFilePdf } from "react-icons/fa";
@@ -7,6 +8,10 @@ import "../css/CheckListList.css"; // Import the CSS file for styling
 const ChecklistList = () => {
   const [checklists, setChecklists] = useState([]);
   const [error, setError] = useState(null);
+
+  // Estrai le informazioni dell'utente autenticato
+  const auth = useSelector((state) => state.auth);
+  const { user } = auth || {};
 
   const fetchChecklists = async () => {
     try {
@@ -68,7 +73,7 @@ const ChecklistList = () => {
     const doc = new jsPDF();
 
     // Caricamento del logo
-    const logoUrl = "/public/logo2.jpg";
+    const logoUrl = "/public/logo2.png";
     const logo = await loadImage(logoUrl);
 
     if (logo) {
@@ -120,11 +125,7 @@ const ChecklistList = () => {
     );
     doc.text(`Componenti equipaggio: ${checklist.cabinFeatures}`, 10, 210);
     doc.setTextColor(255, 0, 0); // Imposta il colore del testo in rosso
-    doc.text(
-      `Compilato da: ${checklist.firstName} ${checklist.lastName}`,
-      10,
-      220
-    );
+    doc.text(`Compilato da: ${user.name} ${user.surname}`, 10, 220);
 
     doc.save(`checklist_${checklist.id}.pdf`);
   };
@@ -204,11 +205,7 @@ const ChecklistList = () => {
       );
       doc.text(`Componenti equipaggio: ${checklist.cabinFeatures}`, 10, 210);
       doc.setTextColor(255, 0, 0); // Imposta il colore del testo in rosso
-      doc.text(
-        `Compilato da: ${checklist.firstName} ${checklist.lastName}`,
-        10,
-        220
-      );
+      doc.text(`Compilato da: ${user.name} ${user.surname}`, 10, 220);
     }
 
     doc.save("all_checklists.pdf");

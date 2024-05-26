@@ -29,6 +29,7 @@ import ChecklistList from "./components/admin/ChecklistList";
 import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSanitario";
 import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "./components/admin/ChecklistList";
+import "./components/css/CustomFooter.css";
 
 function App() {
   return (
@@ -94,9 +95,7 @@ function App() {
               <Route path="/checklists" element={<ChecklistList />} />
             </Routes>
           </main>
-          <div>
-            <CustomFooter />
-          </div>
+          <CustomFooter />
         </AppInitializer>
       </div>
     </Router>

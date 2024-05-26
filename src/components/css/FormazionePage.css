@@ -1,31 +1,71 @@
-.formazione-page-container {
-  max-width: 1280px;
-  margin: 1500px auto 0 auto; /* Adjusted top margin for formazione page */
-  padding: 0 2rem;
+.formazione-container {
+  padding: 1rem;
+}
+
+.formazione-title {
+  color: #007bff;
   text-align: center;
-  box-sizing: border-box;
 }
 
-.formazione-page-container {
-  margin-top: 150rem; /* Specific top margin for formazione page */
-  padding: 0 1rem;
+.formazione-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
 }
-.formazione-page-container {
-  margin-top: 75rem; /* Specific top margin per formazione page */
-  padding: 0 1.5rem;
+
+.formazione-col {
+  flex: 1 1 100%;
 }
-/* Tablets (portrait and landscape) ----------- */
-@media only screen and (min-width: 601px) and (max-width: 768px) {
-  .page-container {
-    margin-top: 8rem; /* Slight top margin per tablets */
+
+.formazione-custom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 100px; /* Ensures all cards have a minimum height */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  padding: 2rem;
+}
+
+.formazione-custom-card:hover {
+  transform: scale(1.05);
+}
+
+.formazione-card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.formazione-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.formazione-card-text {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  text-align: left; /* Align text to the left */
+}
+
+@media (min-width: 576px) {
+  .formazione-col {
+    flex: 1 1 calc(50% - 1rem);
   }
+}
 
-  .card-row .col {
-    flex: 1 0 48%;
-    max-width: 48%;
+@media (min-width: 768px) {
+  .formazione-col {
+    flex: 1 1 calc(33.333% - 1rem);
   }
+}
 
-  .uniform-card img {
-    height: 250px; /* Adjusted height for consistency on tablets */
+@media (min-width: 992px) {
+  .formazione-col {
+    flex: 1 1 calc(25% - 1rem);
   }
 }

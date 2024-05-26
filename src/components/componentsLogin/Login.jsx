@@ -39,8 +39,7 @@ const LoginPage = () => {
     <div className="login-wrapper">
       <div className="login-container" style={{ marginTop: "60px" }}>
         <div className="login-logo">
-          <img src="logo2.jpg" alt="Logo" />{" "}
-          {/* Update with your logo's path */}
+          <img src="/public/logo2.png" alt="Logo" />{" "}
         </div>
         <h2>Accedi</h2>
         <p>Benvenuto! Per continuare, effettua l'accesso al tuo account.</p>

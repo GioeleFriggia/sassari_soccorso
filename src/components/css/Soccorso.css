@@ -1,6 +1,6 @@
 .soccorso-page-container {
   max-width: 1280px;
-  margin: 800px auto 0 auto; /* Adjusted top margin for soccorso page */
+  margin: 600px auto 0 auto; /* Adjusted top margin for soccorso page */
   padding: 0 2rem;
   text-align: center;
   box-sizing: border-box;
@@ -11,6 +11,6 @@
   padding: 0 1rem;
 }
 .soccorso-page-container {
-  margin-top: 22rem; /* Specific top margin per soccorso page */
+  margin-top: 3rem; /* Specific top margin per soccorso page */
   padding: 0 1.5rem;
 }

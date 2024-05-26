@@ -27,14 +27,14 @@ a {
 a:hover {
   color: #535bf2;
 }
-
+/* 
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 h1 {
   font-size: 3.2em;
@@ -135,8 +135,7 @@ button:focus-visible {
   }
 }
 
-/* Aggiungilo qui */
-.page-container {
+Aggiungilo qui .page-container {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -453,51 +452,6 @@ h3 span {
   }
 }
 
-/* Footer Styles */
-.foot {
-  background-color: #ffffff;
-  color: #333;
-  border-top: 1px solid #eeeded;
-  box-shadow: 0 -2px 5px rgba(111, 111, 111, 0.1);
-  padding: 20px 0;
-}
-
-.page-container {
-  height: auto; /* Change from 100vh to auto */
-}
-
-.foot .icon {
-  font-size: 24px;
-  color: #007bff;
-}
-
-.foot ul {
-  padding: 0;
-}
-
-.foot li {
-  padding: 5px 0;
-}
-
-.foot img.social-icon {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.foot img.social-icon:hover {
-  filter: grayscale(0);
-}
-
-.foot hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-color: #e0e0e0;
-}
-
-.foot p {
-  margin-bottom: 5px;
-}
-
 /* Profile Page Styles */
 .profile-page-container {
   padding-top: 100px;
@@ -594,4 +548,9 @@ p {
   p {
     font-size: 1rem;
   }
+}
+.main-content {
+  min-height: 100vh; /* Altezza minima per spingere il footer in fondo */
+  display: flex;
+  flex-direction: column;
 }

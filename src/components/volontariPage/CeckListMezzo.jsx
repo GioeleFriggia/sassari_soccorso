@@ -20,8 +20,7 @@ function ChecklistMezzo() {
     rightSideLights: false,
     leftSideLights: false,
     cabinFeatures: "",
-    firstName: "", // New field
-    lastName: "", // New field
+    notes: "", // New field for notes
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -92,8 +91,7 @@ function ChecklistMezzo() {
         rightSideLights: false,
         leftSideLights: false,
         cabinFeatures: "",
-        firstName: "", // Reset field
-        lastName: "", // Reset field
+        notes: "", // Reset notes field
       });
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
@@ -290,22 +288,12 @@ function ChecklistMezzo() {
           />
         </label>
         <label>
-          Nome:
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
+          Note:
+          <textarea
+            name="notes"
+            value={formData.notes}
             onChange={handleChange}
-          />
-        </label>
-        <label>
-          Cognome:
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-          />
+          ></textarea>
         </label>
         <button type="submit">Invia</button>
       </form>

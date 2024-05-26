@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Row, Col } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../components/css/FormazionePage.css";
@@ -63,8 +63,7 @@ const Formazione = () => {
       },
       {
         title: "RADIO AMATORIALE",
-        description:
-          "Operatore radio Protezione Civile, Operatore Radio avanzato.",
+        description: "Operatore radio PC, Operatore Radio avanzato.",
       },
     ],
   };
@@ -81,10 +80,10 @@ const Formazione = () => {
 
   return (
     <div
-      className="formazione-page-container"
+      className="formazione-container"
       style={{ paddingTop: `${navbarHeight}px` }}
     >
-      <h1 className="h1-blue" style={{ marginTop: "1rem" }}>
+      <h1 className="formazione-title" style={{ marginTop: "1rem" }}>
         Formazione
       </h1>
       <img className="d-block w-100" src="/formazione.webp" alt="Formazione" />
@@ -109,9 +108,15 @@ const Formazione = () => {
               {Object.entries(courses).map(([category, cards], idx) => (
                 <React.Fragment key={idx}>
                   <h3>{category}:</h3>
-                  <Row xs={1} md={2} lg={3} className="g-4">
+                  <div
+                    className={`formazione-card-row ${
+                      category === "Corsi Ambito Sanitario"
+                        ? "formazione-corsi-ambito-sanitario"
+                        : "formazione-corsi-protezione-civile"
+                    }`}
+                  >
                     {cards.map((course, index) => (
-                      <Col key={index}>
+                      <div className="formazione-col" key={index}>
                         <CustomCard
                           style={{
                             backgroundColor: colors[index % colors.length],
@@ -119,9 +124,9 @@ const Formazione = () => {
                           title={course.title}
                           description={course.description}
                         />
-                      </Col>
+                      </div>
                     ))}
-                  </Row>
+                  </div>
                 </React.Fragment>
               ))}
             </motion.div>
@@ -135,10 +140,10 @@ const Formazione = () => {
 
 const CustomCard = ({ style, title, description }) => {
   return (
-    <Card style={style} className="h-100">
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{description}</Card.Text>
+    <Card style={style} className="h-100 formazione-custom-card">
+      <Card.Body className="formazione-card-body">
+        <Card.Title className="formazione-card-title">{title}</Card.Title>
+        <Card.Text className="formazione-card-text">{description}</Card.Text>
       </Card.Body>
     </Card>
   );
