@@ -5,6 +5,7 @@ body {
 }
 
 .profile-wrapper {
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,13 +15,13 @@ body {
 }
 
 .profile-container {
-  padding: 2rem;
+  padding: 2rem 1rem; /* Adjusted padding for better mobile view */
   background-color: #ffffff; /* White background */
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%;
-  max-width: 450px; /* Adjust width as necessary */
+  max-width: 550px; /* Adjust width as necessary */
   position: relative;
 }
 
@@ -154,7 +155,24 @@ a:hover {
 /* Media query for mobile devices */
 @media (max-width: 767px) {
   .profile-wrapper {
-    margin-top: 10px; /* Adjust this value to place the profile container below the navbar */
+    margin-top: 40px; /* Adjust this value to place the profile container below the navbar */
     padding: 1rem; /* Add some padding for mobile devices */
+  }
+  .profile-container {
+    padding: 1rem; /* Reduce padding for mobile devices */
+  }
+  .profile-avatar {
+    width: 80px; /* Adjust avatar size for mobile */
+    height: 80px; /* Adjust avatar size for mobile */
+  }
+  .profile-field {
+    padding: 5px; /* Reduce padding for mobile */
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+  .profile-header {
+    font-size: 24px; /* Adjust font size for mobile */
+  }
+  .profile-avatar-text {
+    font-size: 14px; /* Adjust font size for mobile */
   }
 }

@@ -1,0 +1,175 @@
+/* Styles for RadioCommunication component */
+
+.radio-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #fafbfb;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  margin-top: 60px; /* Reduced margin-top */
+}
+
+.radio-wrapper h1 {
+  color: #0069d9;
+}
+
+.radio-wrapper h2 {
+  color: #003366;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.radio-wrapper p,
+.radio-wrapper ul,
+.radio-wrapper li {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: justify;
+  font-size: 0.9rem;
+}
+
+.radio-wrapper ul {
+  margin: 10px 0 20px 20px;
+  list-style-type: disc;
+}
+
+.radio-wrapper li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.radio-wrapper .radio-input-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Center align the content vertically */
+  align-items: center; /* Center align the content horizontally */
+}
+
+.radio-wrapper .radio-input-field {
+  padding: 10px;
+  font-size: 14px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.radio-wrapper .radio-result-container {
+  margin-top: 20px;
+  text-align: left; /* Align to the left */
+}
+
+.radio-wrapper .radio-result-text {
+  font-size: 1rem;
+  color: #003366;
+}
+
+.radio-wrapper .radio-icao-table-container {
+  overflow-x: auto; /* Add horizontal scrolling if needed */
+  margin-top: 20px;
+}
+
+.radio-wrapper .radio-icao-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.radio-wrapper .radio-icao-table th,
+.radio-wrapper .radio-icao-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.radio-wrapper .radio-icao-table th {
+  background-color: #0069d9;
+  color: white;
+}
+
+.radio-wrapper .radio-icao-table td {
+  background-color: #f9f9f9;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 767px) {
+  .radio-wrapper {
+    padding: 1rem;
+    margin-top: 90px; /* Reduced margin-top for smartphones */
+  }
+
+  .radio-wrapper h1,
+  .radio-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .radio-wrapper p,
+  .radio-wrapper li {
+    font-size: 0.8rem;
+  }
+
+  .radio-wrapper .radio-input-field {
+    width: 100%;
+  }
+
+  .radio-wrapper .radio-result-text {
+    font-size: 1rem;
+  }
+
+  .radio-wrapper .radio-icao-table th,
+  .radio-wrapper .radio-icao-table td {
+    padding: 5px; /* Reduce padding for smaller screens */
+    font-size: 0.8rem; /* Adjust font size */
+  }
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .radio-wrapper {
+    padding: 2rem;
+  }
+
+  .radio-wrapper h1,
+  .radio-wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .radio-wrapper p,
+  .radio-wrapper li {
+    font-size: 0.9rem;
+  }
+
+  .radio-wrapper .radio-input-field {
+    width: 400px;
+  }
+
+  .radio-wrapper .radio-result-text {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .radio-wrapper {
+    padding: 3rem;
+  }
+
+  .radio-wrapper h1,
+  .radio-wrapper h2 {
+    font-size: 2rem;
+  }
+
+  .radio-wrapper p,
+  .radio-wrapper li {
+    font-size: 1rem;
+  }
+
+  .radio-wrapper .radio-input-field {
+    width: 500px;
+  }
+
+  .radio-wrapper .radio-result-text {
+    font-size: 1.2rem;
+  }
+}

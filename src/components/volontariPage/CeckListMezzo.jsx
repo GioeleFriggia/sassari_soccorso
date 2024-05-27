@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/ChecklistMezzo.css"; // Import the CSS file for styling
 
 function ChecklistMezzo() {
@@ -98,8 +98,35 @@ function ChecklistMezzo() {
     }
   };
 
+  const updateThumbColor = (e) => {
+    const value = e.target.value;
+    let color;
+
+    if (value < 50) {
+      color = `rgb(${255}, ${Math.round(255 * (value / 50))}, 0)`;
+    } else {
+      color = `rgb(${255 - Math.round(255 * ((value - 50) / 50))}, 255, 0)`;
+    }
+
+    e.target.style.setProperty("--thumb-color", color);
+  };
+
+  useEffect(() => {
+    const ranges = document.querySelectorAll('input[type="range"]');
+    ranges.forEach((range) => {
+      range.addEventListener("input", updateThumbColor);
+      updateThumbColor({ target: range }); // Initial color update
+    });
+
+    return () => {
+      ranges.forEach((range) => {
+        range.removeEventListener("input", updateThumbColor);
+      });
+    };
+  }, []);
+
   return (
-    <div className="wrapper">
+    <div className="mezzo-wrapper">
       <form onSubmit={handleSubmit}>
         <h1>Checklist Ambulanza</h1>
         <label>
@@ -290,6 +317,7 @@ function ChecklistMezzo() {
         <label>
           Note:
           <textarea
+            className="notes"
             name="notes"
             value={formData.notes}
             onChange={handleChange}

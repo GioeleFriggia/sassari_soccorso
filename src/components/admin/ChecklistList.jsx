@@ -3,13 +3,12 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import jsPDF from "jspdf";
 import { FaFilePdf } from "react-icons/fa";
-import "../css/CheckListList.css"; // Import the CSS file for styling
+import "../css/CheckListList.css";
 
 const ChecklistList = () => {
   const [checklists, setChecklists] = useState([]);
   const [error, setError] = useState(null);
 
-  // Estrai le informazioni dell'utente autenticato
   const auth = useSelector((state) => state.auth);
   const { user } = auth || {};
 
@@ -22,8 +21,6 @@ const ChecklistList = () => {
         return;
       }
 
-      console.log("Token:", token); // Debugging: Log the token
-
       const response = await axios.get(
         "http://localhost:8080/admin/checklists",
         {
@@ -33,12 +30,8 @@ const ChecklistList = () => {
         }
       );
 
-      console.log("Response status:", response.status); // Log the response status
-      console.log("Response data:", response.data); // Log the response data
-
       if (response.status === 200) {
         const checklists = response.data.content || [];
-        console.log("Lista checklist:", checklists);
         setChecklists(checklists);
       } else {
         console.error("Errore nel recuperare la lista delle checklist");
@@ -47,21 +40,14 @@ const ChecklistList = () => {
     } catch (error) {
       console.error("Errore nel recuperare la lista delle checklist:", error);
       if (error.response) {
-        // Server responded with a status other than 200 range
         console.error("Response data:", error.response.data);
         console.error("Response status:", error.response.status);
-        console.error("Response headers:", error.response.headers);
-        setError(`Error: ${error.response.status} - ${error.response.data}`);
       } else if (error.request) {
-        // Request was made but no response received
         console.error("Request data:", error.request);
-        setError("No response received from the server");
       } else {
-        // Something else caused the error
         console.error("Error message:", error.message);
-        setError(`Error: ${error.message}`);
       }
-      setChecklists([]);
+      setError("Errore nel recuperare la lista delle checklist");
     }
   };
 
@@ -69,64 +55,87 @@ const ChecklistList = () => {
     fetchChecklists();
   }, []);
 
+  const loadLogo = (url) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => resolve(img);
+      img.onerror = (err) => reject(err);
+    });
+  };
+
+  const generatePDF = async (doc, checklist) => {
+    try {
+      const logo = await loadLogo("/public/logo2.png");
+
+      doc.addImage(logo, "PNG", 10, 10, 30, 30); // Adjust the size and position as needed
+
+      doc.setFontSize(20);
+      doc.setTextColor(255, 165, 0); // Orange color
+      const pageWidth = doc.internal.pageSize.getWidth();
+      doc.text("Checklist Mezzo", pageWidth / 2, 50, { align: "center" });
+
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0); // Black color
+      doc.text(`Data: ${checklist.date}`, 10, 70);
+      doc.text(`Ora: ${checklist.time}`, 10, 80);
+      doc.text(`Ambulanza: ${checklist.ambulance}`, 10, 90);
+      doc.text(`Targa: ${checklist.plate}`, 10, 100);
+      doc.text(`Km iniziali: ${checklist.initialKm}`, 10, 110);
+      doc.text(`Livello carburante: ${checklist.fuelLevel}%`, 10, 120);
+      doc.text(`Livello olio motore: ${checklist.motorOilLevel}%`, 10, 130);
+      doc.text(
+        `Livello liquido raffreddamento: ${checklist.coolantLevel}%`,
+        10,
+        140
+      );
+      doc.text(`Livello liquido freni: ${checklist.brakeFluidLevel}%`, 10, 150);
+      doc.text(
+        `Livello servosterzo: ${checklist.steeringFluidLevel}%`,
+        10,
+        160
+      );
+      doc.text(
+        `Quadro elettrico: ${checklist.electricalSystem ? "Sì" : "No"}`,
+        10,
+        170
+      );
+      doc.text(
+        `Accensione lampeggianti: ${checklist.warningLights ? "Sì" : "No"}`,
+        10,
+        180
+      );
+      doc.text(
+        `Luci anteriori: ${checklist.frontLights ? "Sì" : "No"}`,
+        10,
+        190
+      );
+      doc.text(
+        `Luci posteriori: ${checklist.rearLights ? "Sì" : "No"}`,
+        10,
+        200
+      );
+      doc.text(
+        `Luci laterali destre: ${checklist.rightSideLights ? "Sì" : "No"}`,
+        10,
+        210
+      );
+      doc.text(
+        `Luci laterali sinistre: ${checklist.leftSideLights ? "Sì" : "No"}`,
+        10,
+        220
+      );
+      doc.text(`Componenti equipaggio: ${checklist.cabinFeatures}`, 10, 230);
+      doc.text(`Note: ${checklist.notes}`, 10, 240);
+      doc.text(`Compilato da: ${user.name} ${user.surname}`, 10, 250);
+    } catch (error) {
+      console.error("Errore nel generare il PDF:", error);
+    }
+  };
+
   const downloadPDF = async (checklist) => {
     const doc = new jsPDF();
-
-    // Caricamento del logo
-    const logoUrl = "/public/logo2.png";
-    const logo = await loadImage(logoUrl);
-
-    if (logo) {
-      doc.addImage(logo, "PNG", 10, 10, 30, 30); // Aggiungi l'immagine del logo
-    }
-
-    doc.setFontSize(20);
-    doc.setTextColor(255, 165, 0); // Imposta il colore del titolo in arancione
-    doc.text("Checklist Mezzo", 50, 30); // Aggiungi il titolo
-
-    // Aggiungi il resto del contenuto
-    doc.setFontSize(12);
-    doc.setTextColor(0, 0, 0); // Imposta il colore del testo in nero
-    doc.text(`Data: ${checklist.date}`, 10, 50);
-    doc.text(`Ora: ${checklist.time}`, 10, 60);
-    doc.text(`Ambulanza: ${checklist.ambulance}`, 10, 70);
-    doc.text(`Targa: ${checklist.plate}`, 10, 80);
-    doc.text(`Km iniziali: ${checklist.initialKm}`, 10, 90);
-    doc.text(`Livello carburante: ${checklist.fuelLevel}%`, 10, 100);
-    doc.text(`Livello olio motore: ${checklist.motorOilLevel}%`, 10, 110);
-    doc.text(
-      `Livello liquido raffreddamento: ${checklist.coolantLevel}%`,
-      10,
-      120
-    );
-    doc.text(`Livello liquido freni: ${checklist.brakeFluidLevel}%`, 10, 130);
-    doc.text(`Livello servosterzo: ${checklist.steeringFluidLevel}%`, 10, 140);
-    doc.text(
-      `Quadro elettrico: ${checklist.electricalSystem ? "Sì" : "No"}`,
-      10,
-      150
-    );
-    doc.text(
-      `Accensione lampeggianti: ${checklist.warningLights ? "Sì" : "No"}`,
-      10,
-      160
-    );
-    doc.text(`Luci anteriori: ${checklist.frontLights ? "Sì" : "No"}`, 10, 170);
-    doc.text(`Luci posteriori: ${checklist.rearLights ? "Sì" : "No"}`, 10, 180);
-    doc.text(
-      `Luci laterali destre: ${checklist.rightSideLights ? "Sì" : "No"}`,
-      10,
-      190
-    );
-    doc.text(
-      `Luci laterali sinistre: ${checklist.leftSideLights ? "Sì" : "No"}`,
-      10,
-      200
-    );
-    doc.text(`Componenti equipaggio: ${checklist.cabinFeatures}`, 10, 210);
-    doc.setTextColor(255, 0, 0); // Imposta il colore del testo in rosso
-    doc.text(`Compilato da: ${user.name} ${user.surname}`, 10, 220);
-
+    await generatePDF(doc, checklist);
     doc.save(`checklist_${checklist.id}.pdf`);
   };
 
@@ -135,92 +144,13 @@ const ChecklistList = () => {
 
     for (let i = 0; i < checklists.length; i++) {
       const checklist = checklists[i];
-
       if (i > 0) {
         doc.addPage();
       }
-
-      // Caricamento del logo
-      const logoUrl = "/public/logo2.jpg";
-      const logo = await loadImage(logoUrl);
-
-      if (logo) {
-        doc.addImage(logo, "PNG", 10, 10, 30, 30); // Aggiungi l'immagine del logo
-      }
-
-      doc.setFontSize(20);
-      doc.setTextColor(255, 165, 0); // Imposta il colore del titolo in arancione
-      doc.text("Checklist Mezzo", 50, 30); // Aggiungi il titolo
-
-      // Aggiungi il resto del contenuto
-      doc.setFontSize(12);
-      doc.setTextColor(0, 0, 0); // Imposta il colore del testo in nero
-      doc.text(`Data: ${checklist.date}`, 10, 50);
-      doc.text(`Ora: ${checklist.time}`, 10, 60);
-      doc.text(`Ambulanza: ${checklist.ambulance}`, 10, 70);
-      doc.text(`Targa: ${checklist.plate}`, 10, 80);
-      doc.text(`Km iniziali: ${checklist.initialKm}`, 10, 90);
-      doc.text(`Livello carburante: ${checklist.fuelLevel}%`, 10, 100);
-      doc.text(`Livello olio motore: ${checklist.motorOilLevel}%`, 10, 110);
-      doc.text(
-        `Livello liquido raffreddamento: ${checklist.coolantLevel}%`,
-        10,
-        120
-      );
-      doc.text(`Livello liquido freni: ${checklist.brakeFluidLevel}%`, 10, 130);
-      doc.text(
-        `Livello servosterzo: ${checklist.steeringFluidLevel}%`,
-        10,
-        140
-      );
-      doc.text(
-        `Quadro elettrico: ${checklist.electricalSystem ? "Sì" : "No"}`,
-        10,
-        150
-      );
-      doc.text(
-        `Accensione lampeggianti: ${checklist.warningLights ? "Sì" : "No"}`,
-        10,
-        160
-      );
-      doc.text(
-        `Luci anteriori: ${checklist.frontLights ? "Sì" : "No"}`,
-        10,
-        170
-      );
-      doc.text(
-        `Luci posteriori: ${checklist.rearLights ? "Sì" : "No"}`,
-        10,
-        180
-      );
-      doc.text(
-        `Luci laterali destre: ${checklist.rightSideLights ? "Sì" : "No"}`,
-        10,
-        190
-      );
-      doc.text(
-        `Luci laterali sinistre: ${checklist.leftSideLights ? "Sì" : "No"}`,
-        10,
-        200
-      );
-      doc.text(`Componenti equipaggio: ${checklist.cabinFeatures}`, 10, 210);
-      doc.setTextColor(255, 0, 0); // Imposta il colore del testo in rosso
-      doc.text(`Compilato da: ${user.name} ${user.surname}`, 10, 220);
+      await generatePDF(doc, checklist);
     }
 
     doc.save("all_checklists.pdf");
-  };
-
-  const loadImage = (url) => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.src = url;
-      img.onload = () => resolve(img);
-      img.onerror = (error) => {
-        console.error("Errore nel caricamento dell'immagine", error);
-        reject(error);
-      };
-    });
   };
 
   return (

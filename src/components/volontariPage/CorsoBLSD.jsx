@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../../App.css";
+import "../css/Pblsd.css";
 import Confetti from "react-confetti";
 
-const CorsoPBLSD = () => {
+const CorsoBLSD = () => {
   const googleSlidesUrl =
     "https://docs.google.com/presentation/d/e/2PACX-1vRfgL16o_mHs3KXI_CJEJhXdOoVaZkUM33W0SS-38umOcmLcwTXRf79kcWf9h5pDw/embed?start=false&loop=false&delayms=60000";
   const [showQuiz, setShowQuiz] = useState(false);
@@ -17,6 +17,8 @@ const CorsoPBLSD = () => {
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [feedbackOption, setFeedbackOption] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const questions = [
     {
@@ -110,257 +112,6 @@ const CorsoPBLSD = () => {
       ],
       answer: "Verificare la sicurezza della scena",
     },
-    // {
-    //   question:
-    //     "Quando si deve usare il defibrillatore automatico esterno (DAE)?",
-    //   options: [
-    //     "Subito dopo il riconoscimento dell'arresto cardiaco",
-    //     "Dopo 1 minuto di RCP",
-    //     "Dopo aver chiamato i soccorsi",
-    //     "Solo se il paziente è incosciente ma respira",
-    //     "Nessuna delle precedenti",
-    //   ],
-    //   answer: "Subito dopo il riconoscimento dell'arresto cardiaco",
-    // },
-    // {
-    //   question:
-    //     "Qual è la posizione corretta per le mani durante le compressioni toraciche su un adulto?",
-    //   options: [
-    //     "Sulla parte superiore dello sterno",
-    //     "Sulla parte inferiore dello sterno",
-    //     "Al centro del torace, tra i capezzoli",
-    //     "Su un lato del torace",
-    //     "Nessuna delle precedenti",
-    //   ],
-    //   answer: "Al centro del torace, tra i capezzoli",
-    // },
-    // {
-    //   question:
-    //     "Qual è il rapporto corretto tra compressioni e ventilazioni durante la RCP a due soccorritori su un bambino?",
-    //   options: ["15:1", "15:2", "30:1", "30:2", "Nessuna delle precedenti"],
-    //   answer: "15:2",
-    // },
-    // {
-    //   question:
-    //     "Quale dispositivo è utilizzato per somministrare ventilazioni durante la RCP?",
-    //   options: [
-    //     "Maschera con pallone autoespandibile (AMBU)",
-    //     "Tubo endotracheale",
-    //     "Cannula nasale",
-    //     "Ventilatore meccanico",
-    //     "Nessuna delle precedenti",
-    //   ],
-    //   answer: "Maschera con pallone autoespandibile (AMBU)",
-    // },
-    //   {
-    //     question: "Qual è la durata ideale di una ventilazione durante la RCP?",
-    //     options: [
-    //       "1 secondo",
-    //       "2 secondi",
-    //       "3 secondi",
-    //       "4 secondi",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "1 secondo",
-    //   },
-    //   {
-    //     question:
-    //       "Quale dei seguenti è un segno di una ventilazione efficace durante la RCP?",
-    //     options: [
-    //       "Gonfiore dello stomaco",
-    //       "Movimento del torace",
-    //       "Respiro affannoso",
-    //       "Sudorazione",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Movimento del torace",
-    //   },
-    //   {
-    //     question:
-    //       "Qual è il tasso di sopravvivenza se la RCP viene iniziata immediatamente dopo l'arresto cardiaco?",
-    //     options: [
-    //       "2-5%",
-    //       "6-10%",
-    //       "11-15%",
-    //       "16-20%",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "6-10%",
-    //   },
-    //   {
-    //     question:
-    //       "Qual è la posizione corretta per un paziente incosciente che respira normalmente?",
-    //     options: [
-    //       "Posizione prona",
-    //       "Posizione supina",
-    //       "Posizione laterale di sicurezza",
-    //       "Posizione seduta",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Posizione laterale di sicurezza",
-    //   },
-    //   {
-    //     question: "Quando si dovrebbe interrompere la RCP?",
-    //     options: [
-    //       "Quando arriva il DAE",
-    //       "Quando il paziente inizia a respirare normalmente",
-    //       "Quando arrivano i soccorsi avanzati",
-    //       "Quando il soccorritore è esausto",
-    //       "Tutte le precedenti",
-    //     ],
-    //     answer: "Tutte le precedenti",
-    //   },
-    //   {
-    //     question: "Qual è la prima cosa da fare quando si utilizza un DAE?",
-    //     options: [
-    //       "Applicare le placche",
-    //       "Accendere il dispositivo",
-    //       "Analizzare il ritmo",
-    //       "Iniziare la RCP",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Accendere il dispositivo",
-    //   },
-    //   {
-    //     question: "Qual è la funzione principale del DAE?",
-    //     options: [
-    //       "Stimolare il cuore",
-    //       "Defibrillare il cuore",
-    //       "Monitorare il cuore",
-    //       "Registrare l'ECG",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Defibrillare il cuore",
-    //   },
-    //   {
-    //     question:
-    //       "Qual è la posizione corretta delle placche del DAE su un adulto?",
-    //     options: [
-    //       "Una sul torace destro e una sul torace sinistro",
-    //       "Una sotto la clavicola destra e una sotto l'ascella sinistra",
-    //       "Una sotto la clavicola sinistra e una sotto l'ascella destra",
-    //       "Una sullo sterno e una sulla schiena",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Una sotto la clavicola destra e una sotto l'ascella sinistra",
-    //   },
-    //   {
-    //     question: "Quando si deve verificare il polso durante la RCP?",
-    //     options: [
-    //       "Ogni 30 secondi",
-    //       "Ogni 1 minuto",
-    //       "Ogni 2 minuti",
-    //       "Ogni 5 minuti",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Ogni 2 minuti",
-    //   },
-    //   {
-    //     question:
-    //       "Quale delle seguenti affermazioni è vera riguardo alla ventilazione durante la RCP?",
-    //     options: [
-    //       "È più importante delle compressioni toraciche",
-    //       "Deve essere somministrata solo da soccorritori addestrati",
-    //       "Non è necessaria se non si dispone di una barriera di protezione",
-    //       "Deve essere somministrata dopo ogni 30 compressioni",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Deve essere somministrata solo da soccorritori addestrati",
-    //   },
-    //   {
-    //     question: "Qual è il segno principale di un'arresto cardiaco improvviso?",
-    //     options: [
-    //       "Dolore toracico",
-    //       "Mancanza di respiro",
-    //       "Incoscienza e assenza di respiro",
-    //       "Sudorazione",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Incoscienza e assenza di respiro",
-    //   },
-    //   {
-    //     question: "Qual è l'obiettivo principale della RCP?",
-    //     options: [
-    //       "Ripristinare la respirazione normale",
-    //       "Mantenere la circolazione del sangue e l'ossigenazione degli organi vitali",
-    //       "Ridurre il dolore del paziente",
-    //       "Curare la causa sottostante dell'arresto cardiaco",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer:
-    //       "Mantenere la circolazione del sangue e l'ossigenazione degli organi vitali",
-    //   },
-    //   {
-    //     question:
-    //       "Qual è la corretta sequenza di azioni durante un arresto cardiaco secondo l'algoritmo CAB?",
-    //     options: [
-    //       "Circulation, Airway, Breathing",
-    //       "Airway, Circulation, Breathing",
-    //       "Breathing, Airway, Circulation",
-    //       "Airway, Breathing, Circulation",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Circulation, Airway, Breathing",
-    //   },
-    //   {
-    //     question:
-    //       "Qual è il tempo massimo consigliato per l'interruzione delle compressioni toraciche per effettuare le ventilazioni?",
-    //     options: [
-    //       "5 secondi",
-    //       "10 secondi",
-    //       "15 secondi",
-    //       "20 secondi",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "10 secondi",
-    //   },
-    //   {
-    //     question:
-    //       "Qual è il primo passo da compiere se si sospetta un'ostruzione delle vie aeree in un adulto cosciente?",
-    //     options: [
-    //       "Iniziare la RCP",
-    //       "Chiamare i soccorsi",
-    //       "Dare cinque colpi dorsali",
-    //       "Eseguire la manovra di Heimlich",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Dare cinque colpi dorsali",
-    //   },
-    //   {
-    //     question: "Quando si deve usare la manovra di Heimlich?",
-    //     options: [
-    //       "Quando il paziente è incosciente",
-    //       "Quando il paziente è cosciente e non può parlare o respirare",
-    //       "Quando il paziente ha dolore toracico",
-    //       "Quando il paziente è in arresto cardiaco",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Quando il paziente è cosciente e non può parlare o respirare",
-    //   },
-    //   {
-    //     question:
-    //       "Quale delle seguenti è una controindicazione per l'uso della manovra di Heimlich?",
-    //     options: [
-    //       "Paziente in gravidanza",
-    //       "Paziente obeso",
-    //       "Paziente anziano",
-    //       "Paziente con lesioni toraciche",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Paziente in gravidanza",
-    //   },
-    //   {
-    //     question:
-    //       "Qual è il segno principale di un'ostruzione completa delle vie aeree?",
-    //     options: [
-    //       "Tosse rumorosa",
-    //       "Difficoltà a parlare",
-    //       "Respiro affannoso",
-    //       "Assenza di suono e incapacità di respirare",
-    //       "Nessuna delle precedenti",
-    //     ],
-    //     answer: "Assenza di suono e incapacità di respirare",
-    //   },
   ];
 
   useEffect(() => {
@@ -378,6 +129,7 @@ const CorsoPBLSD = () => {
   const handleAnswer = (option) => {
     setSelectedOption(option);
     setShowFeedback(true);
+    setFeedbackOption(option);
     setSelectedAnswers((prev) => ({
       ...prev,
       [currentQuestionIndex]: option,
@@ -385,12 +137,16 @@ const CorsoPBLSD = () => {
     if (option === questions[currentQuestionIndex].answer) {
       setScore(score + 1);
     } else {
-      setIncorrectAnswers((prev) => [...prev, questions[currentQuestionIndex]]);
+      setIncorrectAnswers((prev) => [
+        ...prev,
+        { ...questions[currentQuestionIndex], selectedAnswer: option },
+      ]);
     }
     setTimeout(() => {
       setShowFeedback(false);
+      setFeedbackOption(null);
       handleNextQuestion();
-    }, 1000);
+    }, 2000);
   };
 
   const handleNextQuestion = () => {
@@ -428,12 +184,17 @@ const CorsoPBLSD = () => {
 
   const isPassed = calculatePercentage(score, questions.length) >= 55;
 
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="pblsd-container">
       <h1>{title}</h1>
       {!showQuiz && !showResults && (
         <>
           <div className="pblsd-responsive-iframe-container">
+            {isLoading && <div className="spinner"></div>}
             <iframe
               src={googleSlidesUrl}
               frameBorder="0"
@@ -442,6 +203,8 @@ const CorsoPBLSD = () => {
               webkitAllowFullScreen
               title="Manuale BLSD"
               className="pblsd-responsive-iframe"
+              onLoad={handleIframeLoad}
+              style={{ display: isLoading ? "none" : "block" }}
             ></iframe>
           </div>
           <button className="pblsd-start-btn" onClick={startQuiz}>
@@ -467,12 +230,13 @@ const CorsoPBLSD = () => {
                 <button
                   key={option}
                   className={`pblsd-option-btn ${
-                    showFeedback
+                    feedbackOption === option
                       ? option === questions[currentQuestionIndex].answer
                         ? "pblsd-option-correct"
-                        : option === selectedOption
-                        ? "pblsd-option-incorrect"
-                        : ""
+                        : "pblsd-option-incorrect"
+                      : option === questions[currentQuestionIndex].answer &&
+                        showFeedback
+                      ? "pblsd-option-correct"
                       : ""
                   }`}
                   onClick={() => handleAnswer(option)}
@@ -517,9 +281,11 @@ const CorsoPBLSD = () => {
                     <li key={qIndex} className="pblsd-question-container">
                       <p className="pblsd-question-text">{question.question}</p>
                       <p className="pblsd-incorrect-answer">
-                        {selectedAnswers[questions.indexOf(question)]}
+                        Tua risposta: {question.selectedAnswer}
                       </p>
-                      <p className="pblsd-correct-answer">{question.answer}</p>
+                      <p className="pblsd-correct-answer">
+                        Risposta corretta: {question.answer}
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -535,4 +301,4 @@ const CorsoPBLSD = () => {
   );
 };
 
-export default CorsoPBLSD;
+export default CorsoBLSD;

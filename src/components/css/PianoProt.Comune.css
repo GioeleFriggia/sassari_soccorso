@@ -6,6 +6,7 @@
 }
 
 .piano-header {
+  margin-top: 60px;
   background-color: #fafbfb; /* Light background color */
   padding: 20px;
   border-radius: 10px;
@@ -16,7 +17,7 @@
 }
 
 .header-content {
-  margin-top: 2200px;
+  margin-top: 0; /* Removed the large margin-top */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,17 +30,16 @@
 }
 
 .download-button {
-  margin-top: 100px;
+  margin-top: 70px; /* Reduced the margin-top */
   position: absolute;
   top: 90px; /* Adjust this value based on your navbar height */
-  right: -1000px; /* Align it to the left side */
+  right: -900px; /* Align it to the left side */
   z-index: 1000; /* Ensure it stays on top */
 }
 
 .download-button button {
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 16px;
-
   background-color: #0069d9;
   color: white;
   border: none;
@@ -74,7 +74,7 @@
 @media (max-width: 767px) {
   .piano-header {
     text-align: center;
-    margin-top: 2400px;
+    margin-top: 0; /* Removed the large margin-top */
     padding: 15px;
   }
 
@@ -154,6 +154,12 @@
 
   .logo-pt-comune {
     max-width: 150px; /* Even larger logo for desktops */
+  }
+
+  .download-button {
+    position: fixed;
+    top: 90px;
+    left: 50px; /* Adjusted to move slightly to the left */
   }
 
   .download-button button {

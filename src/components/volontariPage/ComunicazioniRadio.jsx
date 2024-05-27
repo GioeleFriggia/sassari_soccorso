@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "../../App.css";
+import "../css/RadioCommunication .css";
 
 const RadioCommunication = () => {
   const [name, setName] = useState("");
   const [icaoName, setIcaoName] = useState("");
 
-  // Funzione per convertire il nome in alfabeto ICAO
   const convertToICAO = (inputName) => {
     const icaoLetters = {
       A: "Alfa",
@@ -48,7 +47,7 @@ const RadioCommunication = () => {
   };
 
   return (
-    <div className="wrapper">
+    <div className="radio-wrapper">
       <h1>Utilizzo degli Apparati Radio nei Contesti di Protezione Civile</h1>
 
       <h2>Tipi di Apparati Radio</h2>
@@ -212,8 +211,8 @@ const RadioCommunication = () => {
       </p>
 
       <h2>Esercizio Pratico con l'Alfabeto ICAO</h2>
-      <p>Inserisci un nome e convertilo in Alfabeto ICAO:</p>
-      <div className="input-container">
+      <div className="radio-input-container">
+        <p>Inserisci un nome e convertilo in Alfabeto ICAO:</p>
         <input
           type="text"
           value={name}
@@ -222,19 +221,19 @@ const RadioCommunication = () => {
             convertToICAO(e.target.value);
           }}
           placeholder="Inserisci un nome"
-          className="input-field"
+          className="radio-input-field"
         />
       </div>
       {icaoName && (
-        <div className="result-container">
-          <p className="result-text">
+        <div className="radio-result-container">
+          <p className="radio-result-text">
             Il nome in Alfabeto ICAO è: <strong>{icaoName}</strong>
           </p>
         </div>
       )}
 
       <h2>Alfabeto ICAO</h2>
-      <table className="icao-table">
+      <table className="radio-icao-table">
         <thead>
           <tr>
             <th>Lettera</th>

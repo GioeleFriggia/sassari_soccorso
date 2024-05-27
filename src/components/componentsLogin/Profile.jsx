@@ -82,7 +82,7 @@ const ProfilePage = () => {
         <h2 className="profile-header">Profilo</h2>
         {user.role === "ADMIN" && (
           <div className="profile-admin">
-            <strong>Ruolo:</strong> <span>ADMIN</span>
+            <strong>ADMIN</strong>
           </div>
         )}
         <div className="profile-field">

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../../App.css"; // Import the CSS file for styling
+import React, { useState, useEffect } from "react";
+import "../css/ChecklistVanoSani.css"; // Import the CSS file for styling
 
 function ChecklistVanoSanitario() {
   const [formData, setFormData] = useState({
@@ -163,6 +163,33 @@ function ChecklistVanoSanitario() {
       console.error("There was a problem with the fetch operation:", error);
     }
   };
+
+  const updateThumbColor = (e) => {
+    const value = e.target.value;
+    let color;
+
+    if (value < 50) {
+      color = `rgb(${255}, ${Math.round(255 * (value / 50))}, 0)`;
+    } else {
+      color = `rgb(${255 - Math.round(255 * ((value - 50) / 50))}, 255, 0)`;
+    }
+
+    e.target.style.setProperty("--thumb-color", color);
+  };
+
+  useEffect(() => {
+    const ranges = document.querySelectorAll('input[type="range"]');
+    ranges.forEach((range) => {
+      range.addEventListener("input", updateThumbColor);
+      updateThumbColor({ target: range }); // Initial color update
+    });
+
+    return () => {
+      ranges.forEach((range) => {
+        range.removeEventListener("input", updateThumbColor);
+      });
+    };
+  }, []);
 
   return (
     <div className="sanitary-wrapper">
@@ -401,12 +428,12 @@ function ChecklistVanoSanitario() {
         </div>
         <label>
           Note:
-          <input
-            type="text"
+          <textarea
+            className="notes"
             name="note"
             value={formData.note}
             onChange={handleChange}
-          />
+          ></textarea>
         </label>
         <button type="submit">Invia</button>
       </form>

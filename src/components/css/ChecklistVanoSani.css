@@ -1,63 +1,195 @@
-/* lista checklist vano sanitario per ADMIN  */
-.checklist-vanosanitario-container {
-  margin: 20px;
+/* Global styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  height: 100%;
 }
 
-.styled-table-vanosanitario {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 18px;
+/* checklist vano sanitario */
+.sanitary-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: left;
+  margin-top: 110px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.styled-table-vanosanitario thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
-}
-
-.styled-table-vanosanitario th,
-.styled-table-vanosanitario td {
-  padding: 12px 15px;
-}
-
-.styled-table-vanosanitario tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.styled-table-vanosanitario tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.styled-table-vanosanitario tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.error-message {
-  color: red;
-  font-weight: bold;
-}
-
-/* login page  */
-
-/* Custom styling for the register link */
-.register-link {
-  color: #007bff; /* Blue color */
-  cursor: default; /* Default cursor */
-}
-.sign-in-page-container {
-  max-width: 1280px;
-  margin: 100px auto 0 auto; /* Adjusted top margin for sign-in page */
-  padding: 0 2rem;
+.sanitary-wrapper h1 {
+  color: orange;
   text-align: center;
-  box-sizing: border-box;
+  margin-bottom: 2px;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-/* Make form wider */
-.sign-in-form .form-control {
+.sanitary-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sanitary-wrapper label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.sanitary-wrapper input[type="text"],
+.sanitary-wrapper input[type="date"],
+.sanitary-wrapper input[type="time"],
+.sanitary-wrapper input[type="range"],
+.sanitary-wrapper textarea.notes {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #0d0c0c;
+  background-color: #eaeaea;
+}
+
+.sanitary-wrapper textarea.notes {
+  height: 100px; /* Increase the height of the textarea */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.sanitary-wrapper input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  transform: scale(1.2); /* Increase checkbox size */
+  accent-color: red;
+}
+
+.sanitary-wrapper .checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.sanitary-wrapper .checkbox-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ensure columns take equal space */
+}
+
+.sanitary-wrapper .checkbox-item {
+  display: flex;
+  align-items: start;
+  gap: 2px; /* Reduce gap between checkbox and label */
+}
+
+.sanitary-wrapper button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sanitary-wrapper button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.sanitary-wrapper .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.sanitary-wrapper .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.sanitary-wrapper .modal-content p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sanitary-wrapper .modal-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.sanitary-wrapper .modal-content button:hover {
+  background-color: #0056b3;
+}
+
+/* Custom styles for range inputs */
+.sanitary-wrapper input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
-  max-width: 900px; /* Maximum width for the form fields */
-  margin: 0 auto; /* Center align the form fields */
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(
+    to right,
+    #e70909,
+    #00ff00
+  ); /* Gradient background */
+  outline: none;
+  padding: 0;
+  margin: 1px;
+}
+
+.sanitary-wrapper input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--thumb-color, #e70909);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sanitary-wrapper input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--thumb-color, #e70909);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Media query per larger screens */
+@media (min-width: 1024px) {
+  .sanitary-wrapper {
+    max-width: 700px; /* Increase the max-width for larger screens */
+    width: 90%; /* Ensure the width takes most of the screen */
+  }
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+  .sanitary-wrapper {
+    margin-top: 100px;
+  }
 }
