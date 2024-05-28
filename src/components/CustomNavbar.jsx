@@ -1,3 +1,4 @@
+// src/components/CustomNavbar.jsx
 import React, { useState } from "react";
 import { Container, Navbar, Nav, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -282,7 +283,7 @@ const CustomNavbar = () => {
                 <Nav.Item className="my-1">
                   <Link
                     to="/login"
-                    className="nav-link"
+                    className="nav-link login-button"
                     onClick={handleDropdownItemClick}
                   >
                     Accedi
@@ -291,7 +292,7 @@ const CustomNavbar = () => {
                 <Nav.Item className="my-1">
                   <Link
                     to="/sign-in"
-                    className="nav-link"
+                    className="nav-link register-button"
                     onClick={handleDropdownItemClick}
                   >
                     Registrati
