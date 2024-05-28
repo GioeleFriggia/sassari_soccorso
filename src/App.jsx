@@ -15,7 +15,6 @@ import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy";
 import ServizioCivile from "./components/componentsServizi/ServizioCivile";
 import AppInitializer from "./components/AppInitializer";
 import CorsoBLSD from "./components/volontariPage/CorsoBlsd";
-
 import CorsoPBLSD from "./components/volontariPage/CorsoPblsd";
 import CorsoPTC from "./components/volontariPage/CorsoPtc";
 import AreaEmergenza from "./components/AreaEmergenza";
@@ -29,8 +28,9 @@ import ChecklistList from "./components/admin/ChecklistList";
 import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSanitario";
 import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "./components/admin/ChecklistList";
-// import Availability from "./components/Availability";
-// import AdminAvailability from "./components/admin/AdminAvailability";
+import Availability from "./components/Availability";
+
+import AdminAvailability from "./components/admin/AdminAvailability";
 import "./components/css/CustomFooter.css";
 
 function App() {
@@ -95,13 +95,11 @@ function App() {
               <Route path="/check-list" element={<CeckList />} />
               <Route path="/users" element={<UserList />} />
               <Route path="/checklists" element={<ChecklistList />} />
-              {/* Rimuovi queste rotte
               <Route path="/availability" element={<Availability />} />
               <Route
                 path="/admin/availabilities"
                 element={<AdminAvailability />}
               />
-              */}
             </Routes>
           </main>
           <CustomFooter />
