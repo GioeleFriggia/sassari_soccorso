@@ -15,6 +15,7 @@ import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy";
 import ServizioCivile from "./components/componentsServizi/ServizioCivile";
 import AppInitializer from "./components/AppInitializer";
 import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
+
 import CorsoPblsd from "./components/volontariPage/CorsoPblsd";
 import CorsoPtc from "./components/volontariPage/CorsoPtc";
 import AreaEmergenza from "./components/AreaEmergenza";
