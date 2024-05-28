@@ -28,6 +28,7 @@ import ChecklistList from "./components/admin/ChecklistList";
 import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSanitario";
 import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "./components/admin/ChecklistList";
+import NotFound from "./components/NotFound";
 // import Availability from "./components/Availability";
 // import AdminAvailability from "./components/admin/AdminAvailability";
 import "./components/css/CustomFooter.css";
@@ -96,6 +97,7 @@ function App() {
               <Route path="/checklists" element={<ChecklistList />} />
               {/* <Route path="/availability" element={<Availability />} />
               <Route path="/admin/availabilities" element={<AdminAvailability />} /> */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <CustomFooter />

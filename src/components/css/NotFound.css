@@ -1,0 +1,62 @@
+/* src/components/css/NotFound.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.not-found-container {
+  text-align: center;
+  margin-top: 20px; /* Mobile-first margin-top */
+}
+
+.not-found-title {
+  font-size: 1.5em; /* Mobile-first font-size */
+  animation: blink 1s infinite; /* Animazione di lampeggiamento */
+}
+
+.not-found-image {
+  width: 80%; /* Mobile-first width */
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.not-found-message {
+  font-size: 1em; /* Mobile-first font-size */
+  color: #666;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Media query per schermi più grandi */
+@media (min-width: 600px) {
+  .not-found-container {
+    margin-top: 40px; /* Ridotto a 40px */
+  }
+
+  .not-found-title {
+    font-size: 2em; /* Desktop font-size */
+  }
+
+  .not-found-image {
+    width: 50%; /* Desktop width */
+  }
+
+  .not-found-message {
+    font-size: 1.2em; /* Desktop font-size */
+  }
+}
