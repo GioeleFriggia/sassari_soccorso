@@ -14,9 +14,9 @@ import Profile from "./components/componentsLogin/Profile";
 import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy";
 import ServizioCivile from "./components/componentsServizi/ServizioCivile";
 import AppInitializer from "./components/AppInitializer";
-import CorsoBLSD from "./components/volontariPage/CorsoBlsd";
-import CorsoPBLSD from "./components/volontariPage/CorsoPblsd";
-import CorsoPTC from "./components/volontariPage/CorsoPtc";
+import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
+import CorsoPblsd from "./components/volontariPage/CorsoPblsd";
+import CorsoPtc from "./components/volontariPage/CorsoPtc";
 import AreaEmergenza from "./components/AreaEmergenza";
 import AreaProtezioneCivile from "./components/AreaProtezioneCivile";
 import PianoEmComunale from "./components/volontariPage/PianoEmComunale";
@@ -60,9 +60,9 @@ function App() {
               <Route path="/register" element={<SignIn />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-              <Route path="/emergenza/blsd" element={<CorsoBLSD />} />
-              <Route path="/emergenza/pblsd" element={<CorsoPBLSD />} />
-              <Route path="/emergenza/ptc" element={<CorsoPTC />} />
+              <Route path="/emergenza/blsd" element={<CorsoBlsd />} />
+              <Route path="/emergenza/pblsd" element={<CorsoPblsd />} />
+              <Route path="/emergenza/ptc" element={<CorsoPtc />} />
               <Route path="/emergenza" element={<AreaEmergenza />} />
               <Route
                 path="/area-protezione-civile/piano-di-emergenza"

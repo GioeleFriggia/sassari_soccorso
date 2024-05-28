@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/Pblsd.css";
 import Confetti from "react-confetti";
 
-const CorsoPBLSD = () => {
+const CorsoPblsd = () => {
   const googleSlidesUrl =
     "https://docs.google.com/presentation/d/e/2PACX-1vQK_O6ED8IYjpMYboIcihrHnbVQq-TpTg2sXWtMbl7MvKnCefL4drD1biEZUIU6OA/embed?start=true&loop=false&delayms=60000";
   const [showQuiz, setShowQuiz] = useState(false);
@@ -301,4 +301,4 @@ const CorsoPBLSD = () => {
   );
 };
 
-export default CorsoPBLSD;
+export default CorsoPblsd;
