@@ -15,7 +15,6 @@ import PrivacyPolicyPage from "../src/components/componentsLogin/PrivactPolicy";
 import ServizioCivile from "../src/components/componentsServizi/ServizioCivile";
 import AppInitializer from "../src/components/AppInitializer";
 import CorsoBlsd from "../src/components/volontariPage/CorsoBlsd";
-
 import CorsoPblsd from "../src/components/volontariPage/CorsoPblsd";
 import CorsoPtc from "../src/components/volontariPage/CorsoPtc";
 import AreaEmergenza from "../src/components/AreaEmergenza";
@@ -29,10 +28,9 @@ import ChecklistList from "../src/components/admin/ChecklistList";
 import ChecklistVanoSanitario from "../src/components/volontariPage/ChecklistVanoSanitario";
 import ChecklistVanoSanitarioList from "../src/components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "../src/components/admin/ChecklistList";
-// import Availability from "./components/Availability";
-
-// import AdminAvailability from "./components/admin/AdminAvailability";
-import "./components/css/CustomFooter.css";
+// import Availability from "../src/components/Availability";
+// import AdminAvailability from "../src/components/admin/AdminAvailability";
+import "../src/components/css/CustomFooter.css";
 
 function App() {
   return (
@@ -97,10 +95,7 @@ function App() {
               <Route path="/users" element={<UserList />} />
               <Route path="/checklists" element={<ChecklistList />} />
               {/* <Route path="/availability" element={<Availability />} />
-              <Route
-                path="/admin/availabilities"
-                element={<AdminAvailability />}
-              /> */}
+              <Route path="/admin/availabilities" element={<AdminAvailability />} /> */}
             </Routes>
           </main>
           <CustomFooter />
