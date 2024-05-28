@@ -33,6 +33,9 @@
 
 /* Profile Icon Styles */
 .profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
   color: #fdf9f9; /* Default icon color */
   background-color: transparent; /* Remove black background */
 }
@@ -40,6 +43,19 @@
 .profile-icon:hover,
 .profile-icon:focus {
   color: #0056b3; /* Icon color on hover/focus */
+}
+
+/* Profile Image Container */
+.profile-image-container {
+  border-radius: 50%; /* Ensures the container is circular */
+  overflow: hidden; /* Ensures the image does not overflow the container */
+  background-color: transparent; /* Ensure no background color */
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container */
 }
 
 /* Custom margin for login and register links */
@@ -50,6 +66,11 @@
 .nav-link-separator {
   padding-right: 15px;
   margin-left: auto; /* Use auto margin to push the links to the far right */
+}
+
+/* Move profile dropdown to the right */
+.profile-dropdown {
+  margin-left: auto;
 }
 
 /* Center items in mobile view */
@@ -85,21 +106,6 @@ h4,
 h5,
 h6 {
   color: #0000ff; /* Set the desired blue color */
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 @keyframes logo-spin {

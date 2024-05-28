@@ -66,7 +66,7 @@ const ChecklistVanoSanitarioList = () => {
 
   const generatePDF = async (doc, checklist) => {
     try {
-      const logo = await loadLogo("logo2.png");
+      const logo = await loadLogo("/logopdf.jpg");
 
       doc.addImage(logo, "PNG", 10, 10, 30, 30); // Adjust the size and position as needed
 

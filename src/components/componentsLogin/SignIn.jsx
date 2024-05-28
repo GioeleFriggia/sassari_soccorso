@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../redux/actions/index";
 import { useNavigate } from "react-router-dom";
-import "../css/SignIn.css"; // Import the CSS file
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Importa le icone dell'occhio
+import "../css/SignIn.css"; // Importa il file CSS
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,8 @@ const Register = () => {
     city: "",
     membershipNumber: "",
   });
+
+  const [showPassword, setShowPassword] = useState(false); // Stato per la visibilità della password
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -54,6 +57,10 @@ const Register = () => {
     }
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+
   return (
     <div className="register-wrapper">
       <div className="register-container">
@@ -89,15 +96,20 @@ const Register = () => {
             placeholder="Inserisci la tua email..."
             required
           />
-          <input
-            className="register-input"
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Inserisci la tua password..."
-            required
-          />
+          <div className="password-container">
+            <input
+              className="register-input"
+              type={showPassword ? "text" : "password"} // Cambia il tipo di input
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Inserisci la tua password..."
+              required
+            />
+            <span className="password-toggle-icon" onClick={toggleShowPassword}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
           <input
             className="register-input"
             type="date"

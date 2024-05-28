@@ -128,7 +128,8 @@ function ChecklistMezzo() {
   return (
     <div className="mezzo-wrapper">
       <form onSubmit={handleSubmit}>
-        <h1>Checklist Ambulanza</h1>
+        <h1>Checklist Mezzo</h1>
+        <h4>SCHEDA CONTROLLO VANO GUIDA</h4>
         <label>
           Data:
           <input

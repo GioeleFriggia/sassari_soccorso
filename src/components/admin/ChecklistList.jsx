@@ -64,10 +64,8 @@ const ChecklistList = () => {
     });
   };
 
-  const generatePDF = async (doc, checklist) => {
+  const generatePDF = async (doc, checklist, logo) => {
     try {
-      const logo = await loadLogo("logo2.png");
-
       doc.addImage(logo, "PNG", 10, 10, 30, 30); // Adjust the size and position as needed
 
       doc.setFontSize(20);
@@ -135,19 +133,21 @@ const ChecklistList = () => {
 
   const downloadPDF = async (checklist) => {
     const doc = new jsPDF();
-    await generatePDF(doc, checklist);
+    const logo = await loadLogo("/logopdf.jpg"); // Assicurati che il percorso sia corretto
+    await generatePDF(doc, checklist, logo);
     doc.save(`checklist_${checklist.id}.pdf`);
   };
 
   const downloadAllPDFs = async () => {
     const doc = new jsPDF();
+    const logo = await loadLogo("/logo2.png"); // Assicurati che il percorso sia corretto
 
     for (let i = 0; i < checklists.length; i++) {
       const checklist = checklists[i];
       if (i > 0) {
         doc.addPage();
       }
-      await generatePDF(doc, checklist);
+      await generatePDF(doc, checklist, logo);
     }
 
     doc.save("all_checklists.pdf");

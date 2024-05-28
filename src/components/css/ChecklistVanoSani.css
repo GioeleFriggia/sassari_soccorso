@@ -1,4 +1,3 @@
-/* Global styles */
 body,
 html {
   margin: 0;
@@ -8,7 +7,6 @@ html {
   height: 100%;
 }
 
-/* checklist vano sanitario */
 .sanitary-wrapper {
   max-width: 900px;
   margin: 0 auto;
@@ -23,15 +21,23 @@ html {
 .sanitary-wrapper h1 {
   color: orange;
   text-align: center;
-  margin-bottom: 2px;
-  font-size: 30px;
+  margin: 10px 0 5px; /* Riduci il margin-top e bottom */
+  font-size: 38px; /* Aumenta la dimensione del testo */
   font-weight: 700;
+}
+
+.sanitary-wrapper h4 {
+  color: blue;
+  text-align: center;
+  margin: 0 0 10px; /* Riduci il margin-bottom */
+  font-size: 18px; /* Riduci la dimensione del testo */
+  font-weight: 600;
 }
 
 .sanitary-wrapper form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px; /* Riduci il gap tra gli elementi */
 }
 
 .sanitary-wrapper label {

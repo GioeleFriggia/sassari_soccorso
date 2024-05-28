@@ -195,6 +195,7 @@ function ChecklistVanoSanitario() {
     <div className="sanitary-wrapper">
       <form onSubmit={handleSubmit}>
         <h1>Checklist Vano Sanitario</h1>
+        <h4>SCHEDA CONTROLLO VANO SANITARIO</h4>
         <label>
           Data:
           <input

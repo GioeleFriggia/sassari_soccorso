@@ -35,7 +35,6 @@ const UserList = () => {
         const fetchedUsers = response.data.content || [];
         setUsers((prevUsers) => [...prevUsers, ...fetchedUsers]);
         if (!response.data.last) {
-          // Se ci sono altre pagine, richiama la funzione per ottenere la pagina successiva
           fetchUsers(page + 1, size);
         }
       } else {
@@ -71,24 +70,28 @@ const UserList = () => {
   };
 
   const generatePDF = async (doc, user) => {
-    const logo = await loadLogo("logo2.png");
+    try {
+      const logo = await loadLogo("logo2.png");
 
-    doc.addImage(logo, "PNG", 10, 10, 30, 30); // Adjust the size and position as needed
+      doc.addImage(logo, "PNG", 10, 10, 30, 30); // Adjust the size and position as needed
 
-    doc.setFontSize(20);
-    doc.setTextColor(255, 165, 0); // Orange color
-    const pageWidth = doc.internal.pageSize.getWidth();
-    doc.text("User Details", pageWidth / 2, 50, { align: "center" });
+      doc.setFontSize(20);
+      doc.setTextColor(255, 165, 0); // Orange color
+      const pageWidth = doc.internal.pageSize.getWidth();
+      doc.text("User Details", pageWidth / 2, 50, { align: "center" });
 
-    doc.setFontSize(12);
-    doc.setTextColor(0, 0, 0); // Black color
-    doc.text(`Nome: ${user.name}`, 10, 70);
-    doc.text(`Cognome: ${user.surname}`, 10, 80);
-    doc.text(`Email: ${user.email}`, 10, 90);
-    doc.text(`Città: ${user.city}`, 10, 100);
-    doc.text(`Residenza: ${user.residence}`, 10, 110);
-    doc.text(`Data di nascita: ${user.birthdate}`, 10, 120);
-    doc.text(`Ruolo: ${user.role === "ADMIN" ? "Admin" : "User"}`, 10, 130); // Update role line
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0); // Black color
+      doc.text(`Nome: ${user.name}`, 10, 70);
+      doc.text(`Cognome: ${user.surname}`, 10, 80);
+      doc.text(`Email: ${user.email}`, 10, 90);
+      doc.text(`Città: ${user.city}`, 10, 100);
+      doc.text(`Residenza: ${user.residence}`, 10, 110);
+      doc.text(`Data di nascita: ${user.birthdate}`, 10, 120);
+      doc.text(`Ruolo: ${user.role === "ADMIN" ? "Admin" : "User"}`, 10, 130); // Update role line
+    } catch (error) {
+      console.error("Errore nella generazione del PDF:", error);
+    }
   };
 
   const downloadPDF = async (user) => {
@@ -98,6 +101,11 @@ const UserList = () => {
   };
 
   const downloadAllPDFs = async () => {
+    if (users.length === 0) {
+      console.error("Nessun utente da scaricare");
+      return;
+    }
+
     const doc = new jsPDF();
 
     for (let i = 0; i < users.length; i++) {
@@ -135,6 +143,14 @@ const UserList = () => {
       }
     } catch (error) {
       console.error("Errore nella cancellazione dell'utente:", error);
+      if (error.response) {
+        console.error("Response data:", error.response.data);
+        console.error("Response status:", error.response.status);
+      } else if (error.request) {
+        console.error("Request data:", error.request);
+      } else {
+        console.error("Error message:", error.message);
+      }
       setError("Errore nella cancellazione dell'utente");
     }
   };

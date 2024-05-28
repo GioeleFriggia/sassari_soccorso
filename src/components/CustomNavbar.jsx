@@ -36,7 +36,7 @@ const CustomNavbar = () => {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleDropdownItemClick}>
-          <img src="logo2.png" width="90" height="90" alt="Logo" />
+          <img src="/logo2.png" width="90" height="90" alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
@@ -276,7 +276,7 @@ const CustomNavbar = () => {
               </>
             )}
           </Nav>
-          <Nav className="justify-content-end">
+          <Nav className="profile-dropdown">
             {!user ? (
               <>
                 <Nav.Item className="my-1">
@@ -311,17 +311,31 @@ const CustomNavbar = () => {
                   style={{ display: "flex", alignItems: "center" }}
                 >
                   <div
+                    className="profile-image-container"
                     style={{
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       borderRadius: "50%",
                       backgroundColor: "orange",
-                      width: "35px",
-                      height: "35px",
+                      width: "50px",
+                      height: "50px",
+                      border: user.avatarURL ? "3px solid green" : "none",
                     }}
                   >
-                    <PersonCircle size={30} style={{ color: "blue" }} />
+                    {user.avatarURL ? (
+                      <img
+                        src={user.avatarURL}
+                        alt="Profile"
+                        className="profile-image"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = "/path/to/default-avatar.png"; // Percorso dell'icona predefinita
+                        }}
+                      />
+                    ) : (
+                      <PersonCircle size={30} style={{ color: "blue" }} />
+                    )}
                   </div>
                 </Dropdown.Toggle>
                 <Dropdown.Menu>

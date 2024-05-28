@@ -70,7 +70,16 @@ const ProfilePage = () => {
           }}
         >
           {loading && <div className="spinner"></div>}
-          {!loading && <img src={user.avatarURL || ""} alt="Avatar" />}
+          {!loading && (
+            <img
+              src={user.avatarURL || ""}
+              alt="Avatar"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/path/to/default-avatar.png"; // Percorso dell'icona predefinita
+              }}
+            />
+          )}
         </div>
         <div className="profile-avatar-text">{avatarText}</div>
         <input
