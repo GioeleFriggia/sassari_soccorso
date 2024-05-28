@@ -50,7 +50,7 @@ export const loginUser = (credentials, navigate) => async (dispatch) => {
 
       // Fetch user data after successful login
       dispatch(fetchUserData(token));
-      localStorage.setItem("user", user);
+      localStorage.setItem("userDetails", JSON.stringify(user));
       localStorage.setItem("token", token);
       navigate("/profile");
     } else {

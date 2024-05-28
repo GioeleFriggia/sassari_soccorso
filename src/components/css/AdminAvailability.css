@@ -1,0 +1,34 @@
+.admin-availability {
+  padding: 20px;
+}
+
+.admin-availability h1 {
+  text-align: center;
+  color: #f39c12;
+}
+
+.admin-availability table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-availability table th,
+.admin-availability table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.admin-availability table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.admin-availability table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.admin-availability table tr:hover {
+  background-color: #ddd;
+}

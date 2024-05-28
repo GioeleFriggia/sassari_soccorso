@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CustomNavbar from "./components/CustomNavbar";
 import CustomFooter from "../src/components/CustomFooter";
@@ -29,6 +28,8 @@ import ChecklistList from "./components/admin/ChecklistList";
 import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSanitario";
 import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "./components/admin/ChecklistList";
+// import Availability from "./components/Availability";
+// import AdminAvailability from "./components/admin/AdminAvailability";
 import "./components/css/CustomFooter.css";
 
 function App() {
@@ -93,6 +94,13 @@ function App() {
               <Route path="/check-list" element={<CeckList />} />
               <Route path="/users" element={<UserList />} />
               <Route path="/checklists" element={<ChecklistList />} />
+              {/* Rimuovi queste rotte
+              <Route path="/availability" element={<Availability />} />
+              <Route
+                path="/admin/availabilities"
+                element={<AdminAvailability />}
+              />
+              */}
             </Routes>
           </main>
           <CustomFooter />

@@ -156,7 +156,7 @@ const CustomNavbar = () => {
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-                {user.role === "ADMIN" && (
+                {user.role === "ADMIN" ? (
                   <>
                     <Nav.Item className="my-1">
                       <Link
@@ -199,7 +199,7 @@ const CustomNavbar = () => {
                       </Dropdown.Menu>
                     </Dropdown>
                   </>
-                )}
+                ) : null}
               </>
             ) : (
               <>
