@@ -1,6 +1,8 @@
+/* src/components/css/NavBar.css */
+
 .servizio-civile-page-container {
   max-width: 1280px;
-  margin: 8rem auto 0 auto; /* Ridotto il margine superiore */
+  margin: 1rem auto 0 auto; /* Ridotto il margine superiore */
   padding: 0 2rem;
   text-align: center;
   box-sizing: border-box;
