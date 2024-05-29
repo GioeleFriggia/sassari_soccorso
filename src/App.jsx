@@ -29,7 +29,8 @@ import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSani
 import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "./components/admin/ChecklistList";
 import NotFound from "./components/NotFound";
-import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
+// import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
+import Test from "./components/Test";
 // import Availability from "./components/Availability";
 // import AdminAvailability from "./components/admin/AdminAvailability";
 import "./components/css/CustomFooter.css";
@@ -61,7 +62,7 @@ function App() {
               <Route path="/register" element={<SignIn />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-              <Route path="/emergenza/blsd" element={<CorsoBlsd />} />
+              <Route path="/emergenza/blsd" element={<Test />} />
               <Route path="/emergenza/pblsd" element={<CorsoPblsd />} />
               <Route path="/emergenza/ptc" element={<CorsoPtc />} />
               <Route path="/emergenza" element={<AreaEmergenza />} />
