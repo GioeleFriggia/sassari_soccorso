@@ -29,7 +29,7 @@ import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSani
 import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "./components/admin/ChecklistList";
 import NotFound from "./components/NotFound";
-import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
+import CorsoBlsd from "../CorsoBlsd";
 
 // import Availability from "./components/Availability";
 // import AdminAvailability from "./components/admin/AdminAvailability";
