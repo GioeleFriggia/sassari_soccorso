@@ -14,7 +14,7 @@ import Profile from "./components/componentsLogin/Profile";
 import PrivacyPolicyPage from "./components/componentsLogin/PrivactPolicy";
 import ServizioCivile from "./components/componentsServizi/ServizioCivile";
 import AppInitializer from "./components/AppInitializer";
-import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
+
 import CorsoPblsd from "./components/volontariPage/CorsoPblsd";
 import CorsoPtc from "./components/volontariPage/CorsoPtc";
 import AreaEmergenza from "./components/AreaEmergenza";
@@ -29,6 +29,7 @@ import ChecklistVanoSanitario from "./components/volontariPage/ChecklistVanoSani
 import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitarioList";
 import ChecklistMezzoList from "./components/admin/ChecklistList";
 import NotFound from "./components/NotFound";
+import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
 // import Availability from "./components/Availability";
 // import AdminAvailability from "./components/admin/AdminAvailability";
 import "./components/css/CustomFooter.css";
