@@ -30,7 +30,7 @@ import ChecklistVanoSanitarioList from "./components/admin/ChecklistVanoSanitari
 import ChecklistMezzoList from "./components/admin/ChecklistList";
 import NotFound from "./components/NotFound";
 // import CorsoBlsd from "./components/volontariPage/CorsoBlsd";
-import Test from "./components/Test";
+import Test from "./components/volontariPage/Test";
 // import Availability from "./components/Availability";
 // import AdminAvailability from "./components/admin/AdminAvailability";
 import "./components/css/CustomFooter.css";
