@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../redux/actions/index";
 import { useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Importa le icone dell'occhio
-import "../css/SignIn.css"; // Importa il file CSS
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import "../css/SignIn.css";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -65,7 +65,7 @@ const Register = () => {
     <div className="register-wrapper">
       <div className="register-container">
         <div className="register-logo">
-          <img src="/public/logo2.png" alt="Logo" />
+          <img src="logo2.png" alt="Logo" />
         </div>
         <h2>Registrazione</h2>
         <form onSubmit={handleRegister} className="register-form">

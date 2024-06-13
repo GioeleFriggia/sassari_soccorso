@@ -37,7 +37,7 @@ const CustomNavbar = () => {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleDropdownItemClick}>
-          <img src="/logo2.png" width="90" height="90" alt="Logo" />
+          <img src="logo2.png" width="90" height="90" alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
